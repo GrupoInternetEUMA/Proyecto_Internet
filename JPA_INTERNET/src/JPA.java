@@ -1,4 +1,4 @@
 
 public class JPA {
-	asxds
+	
 }
