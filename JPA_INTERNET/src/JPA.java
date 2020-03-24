@@ -1,5 +1,5 @@
 
 public class JPA {
 	
-	/*hola que pasa
+	hola qué pasa
 }
