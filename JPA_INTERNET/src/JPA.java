@@ -1,4 +1,4 @@
 
-public class JPA { 
-	//María acaba de editar
+public class JPA {
+	//María ha editado este mensaje
 }
