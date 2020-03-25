@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="ModeloE_RModeler" id="E89E5B05-8DC2-C5CD-1972-B6FC8031CF5A" version="3.5">
+<createdBy>Antonio</createdBy>
+<createdTime>2020-03-25 10:11:49 UTC</createdTime>
+<ownerDesignName>ModeloE_RModeler</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>E89E5B05-8DC2-C5CD-1972-B6FC8031CF5A</designId>
+</OSDM_Design>
