@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5EBAF5AC-7558-17CD-1606-0081024612EF" name="ONG">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4761825C-75ED-ECBE-5B3D-C80DABC5E40A" name="INFORME">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:57:09 UTC</createdTime>
+<createdTime>2020-03-30 10:05:00 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
@@ -15,35 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_ONG" id="385A1CF0-F7E0-3B5E-19C2-C77575C1C752">
+<Attribute name="ID_INFORME" id="34B9D8EF-3283-2197-24BC-5591BC94944D">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:57:26 UTC</createdTime>
-<ownerDesignName>ModeloE_RModeler</ownerDesignName>
-<engineerTo>
-<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="NOMBRE" id="5F82187B-53F0-2DCA-634D-E103F600DB79">
-<createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:57:34 UTC</createdTime>
-<ownerDesignName>ModeloE_RModeler</ownerDesignName>
-<engineerTo>
-<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="DESCRIPCIÓN" id="112DDE34-89B7-76D3-4958-C9853CBF11DC">
-<createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:58:11 UTC</createdTime>
+<createdTime>2020-03-30 10:05:09 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
@@ -53,48 +27,9 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="EMAIL" id="E551F5FE-ADB8-E0C9-257A-C6B5E4E3A954">
+<Attribute name="EVALUACION" id="C86DC5F3-0279-0C91-8C66-F4CF3B67C226">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:58:33 UTC</createdTime>
-<ownerDesignName>ModeloE_RModeler</ownerDesignName>
-<engineerTo>
-<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="TELEFONO" id="E4226D33-E57A-8636-B675-351F9743C832">
-<createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:58:49 UTC</createdTime>
-<ownerDesignName>ModeloE_RModeler</ownerDesignName>
-<engineerTo>
-<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>15</dataTypeSize>
-<ownDataTypeParameters>15,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="DIRECCION" id="9492FC5B-368F-7403-C7CF-E12E14943C03">
-<createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:59:11 UTC</createdTime>
-<ownerDesignName>ModeloE_RModeler</ownerDesignName>
-<engineerTo>
-<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>40,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="PAIS" id="FA4433D7-FD14-852F-D60F-A0873095082E">
-<createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:59:37 UTC</createdTime>
+<createdTime>2020-03-30 10:07:25 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
@@ -104,32 +39,71 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_LOGIN" id="A7893F1E-9AC9-BBDE-049C-CB2134FD9672">
+<Attribute name="TIEMPO_EMPLEADO" id="82818EB0-54F7-956D-B97C-E71655BE6376">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-03-30 10:33:04 UTC</createdTime>
-<generatorID>23816A2F-CD64-910A-2127-AB967ECC16A1</generatorID>
+<createdTime>2020-03-30 10:07:53 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
 </engineerTo>
-<referedAttribute>49D140AE-7944-982B-DA47-7FF0FBD9C914</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TAREAS_REALIZADAS" id="8D8D400B-B6F6-E7D4-DD81-9F9F40CA862B">
+<createdBy>Antonio</createdBy>
+<createdTime>2020-03-30 10:10:35 UTC</createdTime>
+<ownerDesignName>ModeloE_RModeler</ownerDesignName>
+<engineerTo>
+<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_USUARIO" id="EE7D5B01-681D-7BDC-04A9-FE234B2DC3B6">
+<createdBy>Antonio</createdBy>
+<createdTime>2020-03-30 10:11:57 UTC</createdTime>
+<generatorID>5F664127-BD07-E32B-5589-BDF5FC69B183</generatorID>
+<ownerDesignName>ModeloE_RModeler</ownerDesignName>
+<engineerTo>
+<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>F474F43E-04AA-776B-AE29-6B35F7FC9549</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_ACTIVIDAD" id="C0562C2B-EE0C-9097-D962-31F94915C710">
+<createdBy>Antonio</createdBy>
+<createdTime>2020-03-30 10:12:47 UTC</createdTime>
+<generatorID>CA147458-8FEA-9248-5E59-20AC89E62844</generatorID>
+<ownerDesignName>ModeloE_RModeler</ownerDesignName>
+<engineerTo>
+<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>6930E8B4-8EB9-823D-5248-44C41A83FEA8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="85078A06-D762-8FD4-A61C-26B82C8606E0" name="ONG PK">
+<identifier id="5F580E36-A46B-BD2B-2537-3C1B98CF66FB" name="INFORME PK">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 10:57:31 UTC</createdTime>
+<createdTime>2020-03-30 10:07:23 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>385A1CF0-F7E0-3B5E-19C2-C77575C1C752</attributeRef>
+<attributeRef>34B9D8EF-3283-2197-24BC-5591BC94944D</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

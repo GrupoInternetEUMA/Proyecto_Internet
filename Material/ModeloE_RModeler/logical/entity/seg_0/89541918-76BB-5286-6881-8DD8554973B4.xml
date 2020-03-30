@@ -27,5 +27,19 @@
 <use>1</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="ID_LOGIN" id="27AE511F-67FA-9FEA-C513-9C842CA8191D">
+<createdBy>Antonio</createdBy>
+<createdTime>2020-03-30 10:03:31 UTC</createdTime>
+<generatorID>37A5C79B-FC1D-8348-1671-AAAB3EB1DFD0</generatorID>
+<ownerDesignName>ModeloE_RModeler</ownerDesignName>
+<engineerTo>
+<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
+</engineerTo>
+<referedAttribute>49D140AE-7944-982B-DA47-7FF0FBD9C914</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 </Entity>
