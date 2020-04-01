@@ -41,7 +41,7 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="DESCRIPCIÓN" id="112DDE34-89B7-76D3-4958-C9853CBF11DC">
+<Attribute name="DESCRIPCION" id="112DDE34-89B7-76D3-4958-C9853CBF11DC">
 <createdBy>Antonio</createdBy>
 <createdTime>2020-03-25 10:58:11 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
@@ -104,19 +104,16 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_LOGIN" id="15DAF12B-63EB-1F96-3536-6FFB6D2F69C4">
+<Attribute name="PASSWORD" id="5F161033-DFA7-99D2-4B5F-FC4E9750D0DA">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-04-01 16:16:16 UTC</createdTime>
-<generatorID>C5723801-4FE4-A683-7E63-C6C041314BEB</generatorID>
+<createdTime>2020-04-01 17:03:24 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
 </engineerTo>
-<referedAttribute>715B50E7-7AC8-25C1-12D4-798BD0F2D885</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

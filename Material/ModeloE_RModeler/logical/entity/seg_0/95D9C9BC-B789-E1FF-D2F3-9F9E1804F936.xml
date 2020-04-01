@@ -16,7 +16,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="TITULACIÓN" id="BB2B1199-D4AD-BB6E-7AF8-A23772BC1E2F">
+<Attribute name="TITULACION" id="BB2B1199-D4AD-BB6E-7AF8-A23772BC1E2F">
 <createdBy>Antonio</createdBy>
 <createdTime>2020-03-25 11:29:53 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
