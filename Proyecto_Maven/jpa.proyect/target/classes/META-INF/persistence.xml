@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="jpa.proyect" transaction-type="RESOURCE_LOCAL">
+		<class>es.uma.informatica.jpa.proyect.Actividad</class>
+		<class>es.uma.informatica.jpa.proyect.informe</class>
+		<class>es.uma.informatica.jpa.proyect.ONG</class>
+		<class>es.uma.informatica.jpa.proyect.solicitud</class>
+		<class>es.uma.informatica.jpa.proyect.login</class>
+		<class>es.uma.informatica.jpa.proyect.usuario</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/practicasSII"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="admin"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+		</properties>
+	</persistence-unit>
+</persistence>

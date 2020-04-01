@@ -43,4 +43,18 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C796526B-B699-D462-1E6A-845CC1052DA4" name="Key_1">
+<createdBy>Antonio</createdBy>
+<createdTime>2020-03-30 09:48:57 UTC</createdTime>
+<ownerDesignName>ModeloE_RModeler</ownerDesignName>
+<engineerTo>
+<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
+</engineerTo>
+<newElementsIDs>A60DE051-3C2E-410A-09F0-518A8DD9EFC0</newElementsIDs>
+<usedAttributes>
+<attributeRef>A60DE051-3C2E-410A-09F0-518A8DD9EFC0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>
