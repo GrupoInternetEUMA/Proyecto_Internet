@@ -11,11 +11,10 @@ import javax.persistence.*;
  *
  */
 @Entity
-
 public class solicitud implements Serializable {
 
 	   
-	@Id @GeneratedValue
+	@id @GeneratedValue
 	private Integer id;
 	private String descripcion;
 	private Date fecha_solicitud;
