@@ -3,6 +3,7 @@ package es.uma.informatica.jpa.proyect;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -22,6 +23,21 @@ public class Actividad implements Serializable {
 	private String estado;
 	private String tipo;
 	private String lugar;
+	
+	@ManyToMany(mappedBy="actividades")
+	private Collection<Alumno> alumnos;
+	
+	@ManyToOne
+	@JoinColumn(name="Responsable_id")
+	private Responsable_actividad responsable_actividad;
+	
+	@ManyToOne
+	@JoinColumn(name="ONG_id")
+	private ONG ong;
+	
+	@OneToMany(mappedBy="actividad")
+	private Collection<Informe> informes;
+	
 	private static final long serialVersionUID = 1L;
 
 	public Actividad() {

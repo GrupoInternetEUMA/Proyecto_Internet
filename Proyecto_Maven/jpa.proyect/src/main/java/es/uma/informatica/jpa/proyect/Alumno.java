@@ -1,9 +1,11 @@
 package es.uma.informatica.jpa.proyect;
 
-import es.uma.informatica.jpa.proyect.usuario;
+import es.uma.informatica.jpa.proyect.Usuario;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Collection;
+
 import javax.persistence.*;
 
 /**
@@ -12,15 +14,18 @@ import javax.persistence.*;
  */
 @Entity
 
-public class alumno extends usuario implements Serializable {
+public class Alumno extends Usuario implements Serializable {
 
 	
 	private String titulacion;
 	@Column(nullable = false)
 	private Integer num_expediente;
+	@ManyToMany
+	private Collection<Actividad> actividades;
+	
 	private static final long serialVersionUID = 1L;
 
-	public alumno() {
+	public Alumno() {
 		super();
 	}   
 	public String getTitulacion() {
