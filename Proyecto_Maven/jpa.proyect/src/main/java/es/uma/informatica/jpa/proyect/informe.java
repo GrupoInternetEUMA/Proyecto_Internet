@@ -10,10 +10,11 @@ import javax.persistence.*;
  *
  */
 @Entity
+
 public class informe implements Serializable {
 
 	   
-	@id @GeneratedValue
+	@Id @GeneratedValue
 	private Integer id;
 	private String evaluacion;
 	private String tiempo_empleado;

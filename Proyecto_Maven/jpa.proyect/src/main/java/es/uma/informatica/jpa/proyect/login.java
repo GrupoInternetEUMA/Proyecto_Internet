@@ -10,10 +10,11 @@ import javax.persistence.*;
  *
  */
 @Entity
+
 public class login implements Serializable {
 
 	   
-	@id @GeneratedValue
+	@Id @GeneratedValue
 	private Integer id;
 	private String nick; //hace falta ponerla como clave unica
 	private String contraseña;

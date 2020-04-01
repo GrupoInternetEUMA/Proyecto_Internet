@@ -11,9 +11,11 @@ import javax.persistence.*;
  *
  */
 @Entity
+
 public class usuario implements Serializable {
 
-	@id @GeneratedValue
+	   
+	@Id @GeneratedValue
 	private Integer id;
 	private Integer dni; // hace falta ponerla como clave unica
 	private String nombre;
