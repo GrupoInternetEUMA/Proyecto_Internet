@@ -104,22 +104,6 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_USUARIO1" id="69933358-D5CB-1CF8-66B3-450066B32225">
-<createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 11:47:50 UTC</createdTime>
-<generatorID>A92ED706-F82D-FAAE-9AE8-B226603E8AAB</generatorID>
-<ownerDesignName>ModeloE_RModeler</ownerDesignName>
-<engineerTo>
-<item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>F474F43E-04AA-776B-AE29-6B35F7FC9549</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="B73DE015-0B1E-D2FD-C941-A49277A80BE0" name="ACTIVIDAD PK">

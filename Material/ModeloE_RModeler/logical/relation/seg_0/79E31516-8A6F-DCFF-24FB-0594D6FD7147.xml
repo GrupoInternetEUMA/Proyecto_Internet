@@ -9,6 +9,7 @@
 <sourcePk>F2130C1B-03C2-EEB0-7564-38A76EC6A78A</sourcePk>
 <identifying>false</identifying>
 <nameOnSource>Coordinada por</nameOnSource>
+<nameOnTarget>Crea</nameOnTarget>
 <optionalSource>false</optionalSource>
 <optionalTarget>true</optionalTarget>
 <sourceCardinality>1</sourceCardinality>

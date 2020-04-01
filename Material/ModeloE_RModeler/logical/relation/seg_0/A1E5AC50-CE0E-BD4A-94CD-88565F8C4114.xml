@@ -7,7 +7,7 @@
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
 </engineerTo>
 <identifying>false</identifying>
-<nameOnTarget>Realiza petición</nameOnTarget>
+<nameOnTarget>Realiza Peticion Actividad</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>*</sourceCardinality>

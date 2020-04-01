@@ -117,18 +117,19 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_LOGIN" id="ED36BAD2-6B87-72E5-F38D-2407AE882B66">
+<Attribute name="ID_LOGIN" id="3BC7ADC0-6B5F-5545-1107-9310B909ECC8">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-03-30 10:03:49 UTC</createdTime>
-<generatorID>37A5C79B-FC1D-8348-1671-AAAB3EB1DFD0</generatorID>
+<createdTime>2020-04-01 16:16:05 UTC</createdTime>
+<generatorID>34FB3D33-C617-FCFA-0F56-216910FB8213</generatorID>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
 </engineerTo>
-<referedAttribute>49D140AE-7944-982B-DA47-7FF0FBD9C914</referedAttribute>
+<referedAttribute>715B50E7-7AC8-25C1-12D4-798BD0F2D885</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
