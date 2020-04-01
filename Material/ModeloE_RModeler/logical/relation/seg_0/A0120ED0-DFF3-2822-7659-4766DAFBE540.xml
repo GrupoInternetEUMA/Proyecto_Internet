@@ -1,18 +1,18 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_6" directorySegmentName="seg_0" id="A92ED706-F82D-FAAE-9AE8-B226603E8AAB">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_11" directorySegmentName="seg_0" id="A0120ED0-DFF3-2822-7659-4766DAFBE540">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 11:47:50 UTC</createdTime>
+<createdTime>2020-04-01 16:50:26 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
 </engineerTo>
-<sourcePk>F2130C1B-03C2-EEB0-7564-38A76EC6A78A</sourcePk>
+<sourcePk>85078A06-D762-8FD4-A61C-26B82C8606E0</sourcePk>
 <identifying>false</identifying>
-<nameOnTarget>Genera</nameOnTarget>
+<nameOnSource>Colabora con</nameOnSource>
 <optionalSource>false</optionalSource>
 <optionalTarget>true</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
-<sourceEntity>89541918-76BB-5286-6881-8DD8554973B4</sourceEntity>
+<sourceEntity>5EBAF5AC-7558-17CD-1606-0081024612EF</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>
 <targetEntity>30724761-292A-76F3-583E-684DA8256946</targetEntity>
 <transferable>true</transferable>

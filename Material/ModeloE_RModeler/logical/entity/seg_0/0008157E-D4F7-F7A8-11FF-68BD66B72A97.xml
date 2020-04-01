@@ -45,7 +45,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="ID_SOLICITUD" id="020DC707-9C8F-6F8E-1076-11D6E77FF8A0">
 <createdBy>Antonio</createdBy>
@@ -60,7 +60,7 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="DESCRIPCIÓN" id="A0ADF289-6670-BBFA-25F6-EE04AFC46CBA">
+<Attribute name="DESCRIPCION" id="A0ADF289-6670-BBFA-25F6-EE04AFC46CBA">
 <createdBy>Antonio</createdBy>
 <createdTime>2020-03-25 11:42:26 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>

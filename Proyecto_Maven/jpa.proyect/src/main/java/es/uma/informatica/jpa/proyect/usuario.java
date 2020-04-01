@@ -18,8 +18,7 @@ public class usuario implements Serializable {
 	   
 	@Id @GeneratedValue
 	private Integer id;
-	@Column(nullable = false)
-	private Integer dni; 
+	private Integer dni; // hace falta ponerla como clave unica
 	private String nombre;
 	private String apellidos;
 	private String estudios;
@@ -27,7 +26,6 @@ public class usuario implements Serializable {
 	private Date fecha_nacimiento;
 	@Column(nullable = false)
 	private String email;
-	private String password;
 	private static final long serialVersionUID = 1L;
 
 	public usuario() {

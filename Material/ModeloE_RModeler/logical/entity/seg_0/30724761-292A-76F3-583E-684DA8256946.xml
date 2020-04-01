@@ -104,21 +104,21 @@
 <dataTypeSize>20</dataTypeSize>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ID_USUARIO1" id="69933358-D5CB-1CF8-66B3-450066B32225">
+<Attribute name="ID_ONG" id="69D4103E-D849-169C-3423-C77E61A4D208">
 <createdBy>Antonio</createdBy>
-<createdTime>2020-03-25 11:47:50 UTC</createdTime>
-<generatorID>A92ED706-F82D-FAAE-9AE8-B226603E8AAB</generatorID>
+<createdTime>2020-04-01 16:52:14 UTC</createdTime>
+<generatorID>A0120ED0-DFF3-2822-7659-4766DAFBE540</generatorID>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
 <engineerTo>
 <item key="78D1ED82-0817-79C3-9C51-F12E9B8988B8" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>F474F43E-04AA-776B-AE29-6B35F7FC9549</referedAttribute>
+<referedAttribute>385A1CF0-F7E0-3B5E-19C2-C77575C1C752</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

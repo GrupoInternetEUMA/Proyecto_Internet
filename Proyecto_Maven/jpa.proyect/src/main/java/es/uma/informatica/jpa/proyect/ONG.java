@@ -10,11 +10,10 @@ import javax.persistence.*;
  *
  */
 @Entity
-
 public class ONG implements Serializable {
 
 	   
-	@Id @GeneratedValue
+	@id @GeneratedValue
 	private Integer id;
 	private String nombre;
 	private String descripcion;
