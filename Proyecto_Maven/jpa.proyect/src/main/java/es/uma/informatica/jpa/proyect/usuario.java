@@ -11,19 +11,23 @@ import javax.persistence.*;
  *
  */
 @Entity
+@Inheritance( strategy = InheritanceType.TABLE_PER_CLASS )
 
 public class usuario implements Serializable {
 
 	   
 	@Id @GeneratedValue
 	private Integer id;
-	private Integer dni; // hace falta ponerla como clave unica
+	@Column(nullable = false)
+	private Integer dni; 
 	private String nombre;
 	private String apellidos;
 	private String estudios;
 	private String idioma;
 	private Date fecha_nacimiento;
+	@Column(nullable = false)
 	private String email;
+	private String password;
 	private static final long serialVersionUID = 1L;
 
 	public usuario() {

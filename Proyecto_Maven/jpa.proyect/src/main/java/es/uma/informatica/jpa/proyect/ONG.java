@@ -18,10 +18,12 @@ public class ONG implements Serializable {
 	private Integer id;
 	private String nombre;
 	private String descripcion;
+	@Column(nullable = false)
 	private String email;
 	private Integer telefono;
 	private String direccion;
 	private String pais;
+	private String password;
 	private static final long serialVersionUID = 1L;
 
 	public ONG() {
