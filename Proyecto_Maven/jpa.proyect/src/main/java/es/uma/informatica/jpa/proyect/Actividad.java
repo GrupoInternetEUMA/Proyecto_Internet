@@ -11,11 +11,10 @@ import javax.persistence.*;
  *
  */
 @Entity
-
 public class Actividad implements Serializable {
 
 	   
-	@Id @GeneratedValue
+	@id @GeneratedValue
 	private Integer id;
 	private Date fecha_inicio;
 	private Date fecha_fin;
