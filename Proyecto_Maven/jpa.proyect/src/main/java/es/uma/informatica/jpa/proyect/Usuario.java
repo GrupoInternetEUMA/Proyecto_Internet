@@ -24,6 +24,7 @@ public class Usuario implements Serializable {
 	private String apellidos;
 	private String estudios;
 	private String idioma;
+	@Temporal(TemporalType.DATE)
 	private Date fecha_nacimiento;
 	@Column(nullable = false)
 	private String email;

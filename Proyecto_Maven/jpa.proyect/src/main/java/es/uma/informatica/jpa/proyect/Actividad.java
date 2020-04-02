@@ -18,7 +18,9 @@ public class Actividad implements Serializable {
 	   
 	@Id @GeneratedValue
 	private Integer id;
+	@Temporal(TemporalType.DATE)
 	private Date fecha_inicio;
+	@Temporal(TemporalType.DATE)
 	private Date fecha_fin;
 	private String estado;
 	private String tipo;

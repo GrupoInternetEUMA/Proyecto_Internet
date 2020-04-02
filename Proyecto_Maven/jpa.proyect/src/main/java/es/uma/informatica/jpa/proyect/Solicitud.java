@@ -18,7 +18,9 @@ public class Solicitud implements Serializable {
 	@Id @GeneratedValue
 	private Integer id;
 	private String descripcion;
+	@Temporal(TemporalType.DATE)
 	private Date fecha_solicitud;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="Responsable_id")
