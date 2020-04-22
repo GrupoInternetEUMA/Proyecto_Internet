@@ -1,0 +1,8 @@
+1. Añadir atributos a SOLICITUD para controlar el estado de aceptacion de las actividades
+2. Añadir atributo a SOLICITUD para controlar el tipo de actividad del que se trata.
+
+Falta la validación de las actividades y tipo de actividad. Con este diseño no hay solicitudes, se los usuario se aceptan 
+directamente en las actividades (no se cumple RF-7 ni RF-9). La entidad SOLICITUD no aparece en requisitos tal y como está planteada. 
+La solicitudes de actividad deben ir a una actividad concreta.
+
+3. Hacer metodos equals y hashcode de todas las entidades.
