@@ -12,7 +12,7 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Solicitud implements Serializable {
+public class Propuesta_Actividad implements Serializable {
 
 	   
 	@Override
@@ -30,7 +30,7 @@ public class Solicitud implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Solicitud other = (Solicitud) obj;
+		Propuesta_Actividad other = (Propuesta_Actividad) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -44,6 +44,7 @@ public class Solicitud implements Serializable {
 	private String descripcion;
 	@Temporal(TemporalType.DATE)
 	private Date fecha_solicitud;
+	private String estado;
 	
 	
 	@ManyToOne
@@ -56,7 +57,7 @@ public class Solicitud implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	public Solicitud() {
+	public Propuesta_Actividad() {
 		super();
 	}   
 	public Integer getId() {
