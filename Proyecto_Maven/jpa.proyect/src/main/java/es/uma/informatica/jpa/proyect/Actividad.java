@@ -27,7 +27,7 @@ public class Actividad implements Serializable {
 	private String lugar;
 	
 	@ManyToMany(mappedBy="actividades")
-	private Collection<Alumno> alumnos;
+	private Collection<Usuario> usuario;
 	
 	@ManyToOne
 	@JoinColumn(name="Responsable_id")

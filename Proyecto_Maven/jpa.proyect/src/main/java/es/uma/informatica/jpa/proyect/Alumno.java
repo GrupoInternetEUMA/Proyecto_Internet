@@ -20,8 +20,7 @@ public class Alumno extends Usuario implements Serializable {
 	private String titulacion;
 	@Column(nullable = false)
 	private Integer num_expediente;
-	@ManyToMany
-	private Collection<Actividad> actividades;
+	
 	
 	private static final long serialVersionUID = 1L;
 
