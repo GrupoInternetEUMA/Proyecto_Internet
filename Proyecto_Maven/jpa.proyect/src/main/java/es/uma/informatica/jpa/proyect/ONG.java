@@ -3,6 +3,8 @@ package es.uma.informatica.jpa.proyect;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Collection;
+
 import javax.persistence.*;
 
 /**
@@ -24,6 +26,13 @@ public class ONG implements Serializable {
 	private String direccion;
 	private String pais;
 	private String password;
+	
+	@OneToMany(mappedBy="ong")
+	private Collection<Actividad> actividades;
+	
+	@OneToMany(mappedBy="ong")
+	private Collection<Solicitud> solicitudes;
+	
 	private static final long serialVersionUID = 1L;
 
 	public ONG() {

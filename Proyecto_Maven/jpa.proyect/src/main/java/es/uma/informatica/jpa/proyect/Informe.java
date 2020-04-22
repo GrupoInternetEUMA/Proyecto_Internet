@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 
-public class informe implements Serializable {
+public class Informe implements Serializable {
 
 	   
 	@Id @GeneratedValue
@@ -19,9 +19,18 @@ public class informe implements Serializable {
 	private String evaluacion;
 	private String tiempo_empleado;
 	private String tareas_realizadas;
+	
+	@ManyToOne
+	@JoinColumn(name="Actividad_id")
+	private Actividad actividad;
+	
+	@ManyToOne
+	@JoinColumn(name="Usuario_id")
+	private Usuario usuario;
+	
 	private static final long serialVersionUID = 1L;
 
-	public informe() {
+	public Informe() {
 		super();
 	}   
 	public Integer getId() {

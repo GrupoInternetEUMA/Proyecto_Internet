@@ -3,6 +3,7 @@ package es.uma.informatica.jpa.proyect;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Entity
 @Inheritance( strategy = InheritanceType.TABLE_PER_CLASS )
 
-public class usuario implements Serializable {
+public class Usuario implements Serializable {
 
 	   
 	@Id @GeneratedValue
@@ -23,12 +24,22 @@ public class usuario implements Serializable {
 	private String apellidos;
 	private String estudios;
 	private String idioma;
+	@Temporal(TemporalType.DATE)
 	private Date fecha_nacimiento;
 	@Column(nullable = false)
 	private String email;
+	
+	@ManyToMany(mappedBy="usuarios")
+	private Collection<Responsable_actividad> responsables;
+	
+	@ManyToMany
+	private Collection<Actividad> actividades;
+	
+	@OneToMany(mappedBy="usuario")
+	private Collection<Informe> informes;
 	private static final long serialVersionUID = 1L;
 
-	public usuario() {
+	public Usuario() {
 		super();
 	}   
 	public Integer getId() {
