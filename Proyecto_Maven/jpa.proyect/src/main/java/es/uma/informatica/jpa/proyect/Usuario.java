@@ -32,6 +32,9 @@ public class Usuario implements Serializable {
 	@ManyToMany(mappedBy="usuarios")
 	private Collection<Responsable_actividad> responsables;
 	
+	@ManyToMany
+	private Collection<Actividad> actividades;
+	
 	@OneToMany(mappedBy="usuario")
 	private Collection<Informe> informes;
 	private static final long serialVersionUID = 1L;
