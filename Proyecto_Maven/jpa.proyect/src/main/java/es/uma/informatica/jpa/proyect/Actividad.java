@@ -89,6 +89,7 @@ public class Actividad implements Serializable {
 		this.lugar = lugar;
 	}
 
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -146,5 +147,6 @@ public class Actividad implements Serializable {
         }
         return Objects.equals(this.informes, other.informes);
     }
+
    
 }
