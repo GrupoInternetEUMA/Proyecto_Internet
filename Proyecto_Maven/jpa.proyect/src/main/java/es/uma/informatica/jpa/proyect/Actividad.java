@@ -39,6 +39,9 @@ public class Actividad implements Serializable {
 	private ONG ong;
 	
 	@OneToMany(mappedBy="actividad")
+	private Collection<Solicitud_Actividad> solicitud_Actividad;
+	
+	@OneToMany(mappedBy="actividad")
 	private Collection<Informe> informes;
 	
 	private static final long serialVersionUID = 1L;
