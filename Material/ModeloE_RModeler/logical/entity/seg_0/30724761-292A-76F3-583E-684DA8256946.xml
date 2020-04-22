@@ -62,7 +62,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="TIPO" id="9B258B52-663A-F2D0-EF39-846ECF15379B">
+<Attribute name="TIPO_DE_ACTIVIDAD" id="9B258B52-663A-F2D0-EF39-846ECF15379B">
 <createdBy>Antonio</createdBy>
 <createdTime>2020-03-25 11:04:14 UTC</createdTime>
 <ownerDesignName>ModeloE_RModeler</ownerDesignName>
@@ -118,7 +118,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
