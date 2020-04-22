@@ -41,5 +41,28 @@ public class Alumno extends Usuario implements Serializable {
 	public void setNum_expediente(Integer num_expediente) {
 		this.num_expediente = num_expediente;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((num_expediente == null) ? 0 : num_expediente.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumno other = (Alumno) obj;
+		if (num_expediente == null) {
+			if (other.num_expediente != null)
+				return false;
+		} else if (!num_expediente.equals(other.num_expediente))
+			return false;
+		return true;
+	}
    
 }

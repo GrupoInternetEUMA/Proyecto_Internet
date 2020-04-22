@@ -5,6 +5,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Objects;
 import javax.persistence.*;
 
 /**
@@ -87,5 +88,65 @@ public class Actividad implements Serializable {
 	public void setLugar(String lugar) {
 		this.lugar = lugar;
 	}
+
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.id);
+        hash = 67 * hash + Objects.hashCode(this.fecha_inicio);
+        hash = 67 * hash + Objects.hashCode(this.fecha_fin);
+        hash = 67 * hash + Objects.hashCode(this.estado);
+        hash = 67 * hash + Objects.hashCode(this.tipo);
+        hash = 67 * hash + Objects.hashCode(this.lugar);
+        hash = 67 * hash + Objects.hashCode(this.usuario);
+        hash = 67 * hash + Objects.hashCode(this.responsable_actividad);
+        hash = 67 * hash + Objects.hashCode(this.ong);
+        hash = 67 * hash + Objects.hashCode(this.informes);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Actividad other = (Actividad) obj;
+        if (!Objects.equals(this.estado, other.estado)) {
+            return false;
+        }
+        if (!Objects.equals(this.tipo, other.tipo)) {
+            return false;
+        }
+        if (!Objects.equals(this.lugar, other.lugar)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.fecha_inicio, other.fecha_inicio)) {
+            return false;
+        }
+        if (!Objects.equals(this.fecha_fin, other.fecha_fin)) {
+            return false;
+        }
+        if (!Objects.equals(this.usuario, other.usuario)) {
+            return false;
+        }
+        if (!Objects.equals(this.responsable_actividad, other.responsable_actividad)) {
+            return false;
+        }
+        if (!Objects.equals(this.ong, other.ong)) {
+            return false;
+        }
+        return Objects.equals(this.informes, other.informes);
+    }
+
    
 }

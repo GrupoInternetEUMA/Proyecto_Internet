@@ -16,6 +16,42 @@ import javax.persistence.*;
 public class Responsable_actividad extends Usuario implements Serializable {
 
 	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((actividades == null) ? 0 : actividades.hashCode());
+		result = prime * result + ((departamento == null) ? 0 : departamento.hashCode());
+		result = prime * result + ((usuarios == null) ? 0 : usuarios.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Responsable_actividad other = (Responsable_actividad) obj;
+		if (actividades == null) {
+			if (other.actividades != null)
+				return false;
+		} else if (!actividades.equals(other.actividades))
+			return false;
+		if (departamento == null) {
+			if (other.departamento != null)
+				return false;
+		} else if (!departamento.equals(other.departamento))
+			return false;
+		if (usuarios == null) {
+			if (other.usuarios != null)
+				return false;
+		} else if (!usuarios.equals(other.usuarios))
+			return false;
+		return true;
+	}
+
 	private String departamento;
 	
 	@ManyToMany
