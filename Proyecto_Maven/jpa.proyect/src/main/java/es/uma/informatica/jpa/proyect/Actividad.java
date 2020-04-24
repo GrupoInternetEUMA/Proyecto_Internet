@@ -27,9 +27,6 @@ public class Actividad implements Serializable {
 	private String tipo;
 	private String lugar;
 	
-	@ManyToMany(mappedBy="actividades")
-	private Collection<Usuario> usuario;
-	
 	@ManyToOne
 	@JoinColumn(name="Responsable_id")
 	private Responsable_actividad responsable_actividad;
@@ -102,7 +99,6 @@ public class Actividad implements Serializable {
         hash = 67 * hash + Objects.hashCode(this.estado);
         hash = 67 * hash + Objects.hashCode(this.tipo);
         hash = 67 * hash + Objects.hashCode(this.lugar);
-        hash = 67 * hash + Objects.hashCode(this.usuario);
         hash = 67 * hash + Objects.hashCode(this.responsable_actividad);
         hash = 67 * hash + Objects.hashCode(this.ong);
         hash = 67 * hash + Objects.hashCode(this.informes);
@@ -137,9 +133,6 @@ public class Actividad implements Serializable {
             return false;
         }
         if (!Objects.equals(this.fecha_fin, other.fecha_fin)) {
-            return false;
-        }
-        if (!Objects.equals(this.usuario, other.usuario)) {
             return false;
         }
         if (!Objects.equals(this.responsable_actividad, other.responsable_actividad)) {

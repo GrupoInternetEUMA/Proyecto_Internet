@@ -54,9 +54,6 @@ public class ONG implements Serializable {
 	@OneToMany(mappedBy="ong")
 	private Collection<Actividad> actividades;
 	
-	@OneToMany(mappedBy="ong")
-	private Collection<Propuesta_Actividad> solicitudes;
-	
 	private static final long serialVersionUID = 1L;
 
 	public ONG() {
