@@ -16,13 +16,14 @@ import javax.persistence.*;
 public class Responsable_actividad extends Usuario implements Serializable {
 
 	
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + ((actividades == null) ? 0 : actividades.hashCode());
 		result = prime * result + ((departamento == null) ? 0 : departamento.hashCode());
-		result = prime * result + ((usuarios == null) ? 0 : usuarios.hashCode());
 		return result;
 	}
 	@Override
@@ -44,18 +45,10 @@ public class Responsable_actividad extends Usuario implements Serializable {
 				return false;
 		} else if (!departamento.equals(other.departamento))
 			return false;
-		if (usuarios == null) {
-			if (other.usuarios != null)
-				return false;
-		} else if (!usuarios.equals(other.usuarios))
-			return false;
 		return true;
 	}
 
 	private String departamento;
-	
-	@ManyToMany
-	private Collection<Usuario> usuarios;
 	
 	@OneToMany(mappedBy="responsable_actividad")
 	private Collection<Actividad> actividades;
