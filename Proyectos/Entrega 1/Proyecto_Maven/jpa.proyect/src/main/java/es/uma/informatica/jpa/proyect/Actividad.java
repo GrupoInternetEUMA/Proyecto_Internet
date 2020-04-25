@@ -42,7 +42,8 @@ public class Actividad implements Serializable {
 	private Collection<Informe> informes;
 	
 	private static final long serialVersionUID = 1L;
-
+        
+        
 	public Actividad() {
 		super();
 	}   
