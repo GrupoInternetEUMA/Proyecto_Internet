@@ -15,7 +15,88 @@ import javax.persistence.*;
 
 public class ONG implements Serializable {
 
-	   
+
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	private String nombre;
+	private String descripcion;
+	@Column(nullable = false)
+	private String email;
+	private Integer telefono;
+	private String direccion;
+	private String pais;
+	private String password;
+
+	@OneToMany(mappedBy="ong")
+	private Collection<Actividad> actividades;
+
+	private static final long serialVersionUID = 1L;
+
+	public ONG() {
+		super();
+	}
+
+	public ONG(Integer id, String nombre, String descripcion, String email, Integer telefono, String direccion, String pais, String password) {
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.email = email;
+		this.telefono = telefono;
+		this.direccion = direccion;
+		this.pais = pais;
+		this.password = password;
+	}
+
+	public Integer getId() {
+		return this.id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getNombre() {
+		return this.nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getDescripcion() {
+		return this.descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Integer getTelefono() {
+		return this.telefono;
+	}
+
+	public void setTelefono(Integer telefono) {
+		this.telefono = telefono;
+	}
+	public String getDireccion() {
+		return this.direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public String getPais() {
+		return this.pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -40,73 +121,9 @@ public class ONG implements Serializable {
 		return true;
 	}
 
-	@Id @GeneratedValue
-	private Integer id;
-	private String nombre;
-	private String descripcion;
-	@Column(nullable = false)
-	private String email;
-	private Integer telefono;
-	private String direccion;
-	private String pais;
-	private String password;
-	
-	@OneToMany(mappedBy="ong")
-	private Collection<Actividad> actividades;
-	
-	private static final long serialVersionUID = 1L;
-
-	public ONG() {
-		super();
-	}   
-	public Integer getId() {
-		return this.id;
+	@Override
+	public String toString() {
+		return "ONG [id=" + id + ", nombre=" + nombre + "]";
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}   
-	public String getNombre() {
-		return this.nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}   
-	public String getDescripcion() {
-		return this.descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}   
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}   
-	public Integer getTelefono() {
-		return this.telefono;
-	}
-
-	public void setTelefono(Integer telefono) {
-		this.telefono = telefono;
-	}   
-	public String getDireccion() {
-		return this.direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}   
-	public String getPais() {
-		return this.pais;
-	}
-
-	public void setPais(String pais) {
-		this.pais = pais;
-	}
-   
 }

@@ -15,40 +15,47 @@ import javax.persistence.*;
 
 public class Solicitud_Actividad implements Serializable {
 
-	   
-	@Id @GeneratedValue
+
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String estado;
 	@Temporal(TemporalType.DATE)
 	private Date fecha_solicitud;
 	private static final long serialVersionUID = 1L;
-	
+
 	@ManyToOne
 	@JoinColumn(name="Actividad_id")
 	private Actividad actividad;
-	
+
 	@ManyToOne
 	@JoinColumn(name="Usuario_id")
 	private Usuario usuario;
-	
-	
+
+
 	public Solicitud_Actividad() {
 		super();
-	}   
+	}
+
+	public Solicitud_Actividad(Integer id, String estado, Date fecha_solicitud) {
+		this.id = id;
+		this.estado = estado;
+		this.fecha_solicitud = fecha_solicitud;
+	}
+
 	public Integer getId() {
 		return this.id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
-	}   
+	}
 	public String getEstado() {
 		return this.estado;
 	}
 
 	public void setEstado(String estado) {
 		this.estado = estado;
-	}   
+	}
 	public Date getFecha_solicitud() {
 		return this.fecha_solicitud;
 	}
@@ -78,6 +85,12 @@ public class Solicitud_Actividad implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Solicitud_Actividad [id=" + id + ", estado=" + estado + ", actividad=" + actividad + ", usuario="
+				+ usuario + "]";
 	}
    
 }
