@@ -27,6 +27,12 @@ public class Alumno extends Usuario implements Serializable {
 	public Alumno() {
 		super();
 	}   
+	
+	public Alumno(String titulacion, Integer num_expediente) {
+		this.titulacion = titulacion;
+		this.num_expediente = num_expediente;
+	}
+	
 	public String getTitulacion() {
 		return this.titulacion;
 	}
@@ -64,5 +70,13 @@ public class Alumno extends Usuario implements Serializable {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Alumno [titulacion=" + titulacion + ", num_expediente=" + num_expediente + ", getNombre()="
+				+ getNombre() + ", getApellidos()=" + getApellidos() + "]";
+	}
+	
+	
    
 }

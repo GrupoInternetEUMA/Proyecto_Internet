@@ -15,9 +15,28 @@ import javax.persistence.*;
 
 public class Responsable_actividad extends Usuario implements Serializable {
 
+	private String departamento;
 	
-	
+	@OneToMany(mappedBy="responsable_actividad")
+	private Collection<Actividad> actividades;
+	private static final long serialVersionUID = 1L;
 
+	public Responsable_actividad() {
+		super();
+	}   
+	
+	public Responsable_actividad(String departamento) {
+		this.departamento = departamento;
+	}
+
+	public String getDepartamento() {
+		return this.departamento;
+	}
+
+	public void setDepartamento(String departamento) {
+		this.departamento = departamento;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -47,22 +66,11 @@ public class Responsable_actividad extends Usuario implements Serializable {
 			return false;
 		return true;
 	}
-
-	private String departamento;
 	
-	@OneToMany(mappedBy="responsable_actividad")
-	private Collection<Actividad> actividades;
-	private static final long serialVersionUID = 1L;
-
-	public Responsable_actividad() {
-		super();
-	}   
-	public String getDepartamento() {
-		return this.departamento;
-	}
-
-	public void setDepartamento(String departamento) {
-		this.departamento = departamento;
+	@Override
+	public String toString() {
+		return "Responsable_actividad [departamento=" + departamento + ", getId()=" + getId() + ", getNombre()="
+				+ getNombre() + ", getApellidos()=" + getApellidos() + "]";
 	}
    
 }

@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class Usuario implements Serializable {
 
 	   
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private Integer dni; // hace falta ponerla como clave unica
 	private String nombre;
@@ -42,6 +42,18 @@ public class Usuario implements Serializable {
 	public Usuario() {
 		super();
 	}   
+	
+	public Usuario(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email) {
+		this.id = id;
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.estudios = estudios;
+		this.idioma = idioma;
+		this.fecha_nacimiento = fecha_nacimiento;
+		this.email = email;
+	} 
+
 	public Integer getId() {
 		return this.id;
 	}
@@ -120,6 +132,11 @@ public class Usuario implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+	
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", estudios=" + estudios + "]";
 	}
    
 }
