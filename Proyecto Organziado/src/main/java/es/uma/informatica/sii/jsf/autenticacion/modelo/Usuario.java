@@ -13,7 +13,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author francis
+ * @author Jose Antonio Bravo Gonzalez
  */
 @Entity
 public class Usuario implements Serializable {
@@ -30,8 +30,7 @@ public class Usuario implements Serializable {
     @Enumerated(EnumType.STRING)
     private Rol rol;
     
-    public Usuario()
-    {
+    public Usuario(){
         
     }
     
