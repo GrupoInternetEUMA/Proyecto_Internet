@@ -14,13 +14,18 @@ import javax.faces.context.FacesContext;
 
 /**
  *
- * @author francis
+ * @author Jose Antonio Bravo Gonzalez
  */
 @Named(value = "controlAutorizacion")
 @SessionScoped
 public class ControlAutorizacion implements Serializable {
 
-    private Usuario usuario;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private Usuario usuario;
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -36,7 +41,17 @@ public class ControlAutorizacion implements Serializable {
         // Si no hay usuario debe devolver la página de login
         // Si el usuario es el administrador debe devolver la página admin.xhtml
         // Si el usuario es un usuario normal debe devolver la página normal.xhtml
+        if(getUsuario()==null){
+            return "login.xhtml";
+        }
         
+        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+            return "admin.xhtml";
+        }
+        
+        if(getUsuario().getRol().equals(getUsuario().getRol().NORMAL)){
+            return "normal.xhtml";
+        }
         return null;
     }
     
