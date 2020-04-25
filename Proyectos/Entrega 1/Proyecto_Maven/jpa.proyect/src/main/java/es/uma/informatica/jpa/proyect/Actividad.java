@@ -1,3 +1,4 @@
+
 package es.uma.informatica.jpa.proyect;
 
 import java.io.Serializable;
@@ -162,6 +163,7 @@ public class Actividad implements Serializable {
 	public String toString() {
 		return "Actividad [id=" + id + ", nombre=" + nombre + ", estado=" + estado + ", tipo=" + tipo + "]";
 	}
+
 
 
 }
