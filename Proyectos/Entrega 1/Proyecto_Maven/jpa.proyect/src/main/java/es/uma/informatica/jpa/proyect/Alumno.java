@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -28,7 +29,8 @@ public class Alumno extends Usuario implements Serializable {
 		super();
 	}
 
-	public Alumno(String titulacion, Integer num_expediente) {
+	public Alumno(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String titulacion, Integer num_expediente) {
+		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email);
 		this.titulacion = titulacion;
 		this.num_expediente = num_expediente;
 	}

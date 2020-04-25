@@ -4,6 +4,7 @@ import es.uma.informatica.jpa.proyect.Usuario;
 import java.io.Serializable;
 import java.lang.String;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -25,7 +26,8 @@ public class Responsable_actividad extends Usuario implements Serializable {
 		super();
 	}
 
-	public Responsable_actividad(String departamento) {
+	public Responsable_actividad(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String departamento) {
+		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email);
 		this.departamento = departamento;
 	}
 
