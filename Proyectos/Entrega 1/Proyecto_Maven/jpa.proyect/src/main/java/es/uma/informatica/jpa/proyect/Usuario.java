@@ -38,7 +38,7 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany(mappedBy="Usuario")
-	private Collection<Solicitud_Actividad> solicitud_Actividad;
+	private Collection<Solicitud_Actividad> Solicitud_Actividad;
 
 	public Usuario() {
 		super();

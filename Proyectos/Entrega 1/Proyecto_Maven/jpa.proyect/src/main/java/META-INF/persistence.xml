@@ -4,10 +4,10 @@
 		<class>es.uma.informatica.jpa.proyect.Actividad</class>
 		<class>es.uma.informatica.jpa.proyect.Informe</class>
 		<class>es.uma.informatica.jpa.proyect.ONG</class>
-		<class>es.uma.informatica.jpa.proyect.Solicitud</class>
 		<class>es.uma.informatica.jpa.proyect.Usuario</class>
 		<class>es.uma.informatica.jpa.proyect.Alumno</class>
 		<class>es.uma.informatica.jpa.proyect.Responsable_actividad</class> 
+		<class>es.uma.informatica.jpa.proyect.Solicitud_Actividad</class> 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/practicasSII"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>

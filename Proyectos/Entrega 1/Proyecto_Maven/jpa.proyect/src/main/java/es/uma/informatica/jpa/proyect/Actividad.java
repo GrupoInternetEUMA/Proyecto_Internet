@@ -21,9 +21,9 @@ public class Actividad implements Serializable {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@Temporal(TemporalType.DATE)
 	private String nombre;
 	private String descripcion;
+	@Temporal(TemporalType.DATE)
 	private Date fecha_inicio;
 	@Temporal(TemporalType.DATE)
 	private Date fecha_fin;

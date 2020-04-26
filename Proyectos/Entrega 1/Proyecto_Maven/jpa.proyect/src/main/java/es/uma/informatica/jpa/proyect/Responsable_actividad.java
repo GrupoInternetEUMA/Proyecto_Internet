@@ -17,7 +17,9 @@ import javax.persistence.*;
 public class Responsable_actividad extends Usuario implements Serializable {
 
 	private String departamento;
-
+	@ManyToMany
+	private Collection<Usuario>usuarios;
+	
 	@OneToMany(mappedBy="responsable_actividad")
 	private Collection<Actividad> actividades;
 	private static final long serialVersionUID = 1L;
