@@ -96,6 +96,15 @@ public class ONG implements Serializable {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
+	
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 
 	@Override
 	public int hashCode() {

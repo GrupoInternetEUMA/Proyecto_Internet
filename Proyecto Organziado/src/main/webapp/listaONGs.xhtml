@@ -4,44 +4,40 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
-    <ui:define name="title">Lista de usuarios</ui:define>
+    <ui:define name="title">Lista de ONGs</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>LISTA DE USUARIOS</h1>
-                <div class="bordeTablaUsuarios">
-                    <table id="tablaListaUsuarios">
+                <h1>LISTA DE ONGS</h1>
+                <div class="bordeTablaONGs">
+                    <table id="tablaListaONGs">
                     <thead>
 				<tr>
 					<th>Nombre</th>
-                                        <th>Apellido</th>
+                                        
 					<th>ID</th>
-                                        <th>DNI</th>
-                                        <th>Estudios</th>
-                                        <th>Idioma</th>
-                                        <th>Fecha Nacimiento</th>
                                         <th>Email</th>
+                                        <th>Telefono</th>
+                                        <th>Direccion</th>
+                                        <th>Pais</th>
+                                        <th>Descripcion</th>
                                         <th>Password</th>
-                                        <th>Rol</th>
                                         
                 </tr>
 			</thead>
 			<body>
-                        <ui:repeat var = "i" value="#{ListaUsuarios.usuarios}">
+                        <ui:repeat var = "i" value="#{ListaONGs.ongs}">
                             <tr>
                                 <td>#{i.nombre}</td>
-                                <td>#{i.apellido}</td>
                                 <td>#{i.id}</td>
-                                <td>#{i.dni}</td>
-                                <td>#{i.estudios}</td>
-                                <td>#{i.idioma}</td>
-                                <td>#{i.fecha_nacimiento}</td>
                                 <td>#{i.email}</td>
+                                <td>#{i.telefono}</td>
+                                <td>#{i.direccion}</td>
+                                <td>#{i.descripcion}</td>
                                 <td>#{i.password}</td>
-                                <td>#{i.rol}</td>
                                 <td> 
-                                        <h:form id = "usuarioaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarUsuario.verUsuario(i.id)}"/> </h:column> </h:form>
-                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listaUsuarios.xhtml"/> </h:column> </h:form>
+                                        <h:form id = "ongaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarONG.verONG(i.id)}"/> </h:column> </h:form>
+                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listaONGs.xhtml"/> </h:column> </h:form>
                                 </td>
                             </tr>
                             
@@ -50,9 +46,9 @@
                     
                 </table>
                 </div>
-                <h:form id = "usuario">
+                <h:form id = "ong">
                     <h:column>
-                        <h:commandButton value="Inserta nuevo usuario" action="#{ListaUsuario.crearUsuario()}"/>
+                        <h:commandButton value="Inserta nueva ONG" action="#{ListaONGs.crearONG()}"/>
                     </h:column>               
                 </h:form>
 

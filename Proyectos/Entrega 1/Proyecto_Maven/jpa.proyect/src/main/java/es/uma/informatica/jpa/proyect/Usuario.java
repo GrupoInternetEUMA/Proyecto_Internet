@@ -29,6 +29,8 @@ public class Usuario implements Serializable {
 	private Date fecha_nacimiento;
 	@Column(nullable = false)
 	private String email;
+	private String password;
+	private String rol;
 
 	@ManyToMany(mappedBy="usuarios")
 	private Collection<Responsable_actividad> responsables;
@@ -44,7 +46,7 @@ public class Usuario implements Serializable {
 		super();
 	}
 
-	public Usuario(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email) {
+	public Usuario(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password, String rol) {
 		this.id = id;
 		this.dni = dni;
 		this.nombre = nombre;
@@ -53,6 +55,8 @@ public class Usuario implements Serializable {
 		this.idioma = idioma;
 		this.fecha_nacimiento = fecha_nacimiento;
 		this.email = email;
+		this.password = password;
+		this.rol = rol;
 	}
 
 	public Integer getId() {
@@ -62,6 +66,7 @@ public class Usuario implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
 	public Integer getDni() {
 		return this.dni;
 	}
@@ -111,6 +116,24 @@ public class Usuario implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public String getRol() {
+		return this.rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -137,7 +160,7 @@ public class Usuario implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", estudios=" + estudios + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + " rol: " + rol + ", estudios=" + estudios + "]";
 	}
 
 }
