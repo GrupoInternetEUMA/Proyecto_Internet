@@ -1,62 +1,58 @@
 
-<!-- NOTA: depende de un jsf llamado ModAlumno con un alumno a, una función editar() y los campos correspondientes-->
+<!-- NOTA: depende de un jsf llamado ModResponsable con un responsable r, una función editar() y los campos correspondientes-->
 <ui:composition template="/WEB-INF/templates/plantilla.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <ui:define name="title">editar alumno</ui:define>
+    <ui:define name="title">editar responsable</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
-                <h:form id="editarAlumno">
+                <h:form id="editarResponsable">
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ModAlumno.a.nombre}"/></td>
+                            <td><h:inputText value="#{ModResponsable.r.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{ModAlumno.a.apellidos}"/></td>
+                            <td><h:inputText value="#{ModResponsable.r.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{ModAlumno.a.estudios}"/></td>
+                            <td><h:inputText value="#{ModResponsable.r.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{ModAlumno.a.idioma}"/></td>
+                            <td><h:inputText value="#{ModResponsable.r.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{ModAlumno.a.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{ModResponsable.r.fecha_nacimiento}"/></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{ModAlumno.a.email}"/></td>
+                            <td><h:inputText value="#{ModResponsable.r.email}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Titulación: </td>
-                            <td><h:inputText value="#{ModAlumno.a.titulacion}"/></td>
+                            <td>Departamento: </td>
+                            <td><h:inputText value="#{ModResponsable.r.departamento}"/></td>
                         </tr>
 
-                        <tr>
-                            <td>Nº expediente: </td>
-                            <td><h:inputText value="#{ModAlumno.a.n_expediente}"/></td>
-                        </tr>
                         <tr>
                             <td>Password: </td>
                             <td><h:inputText value="#{ModAlumno.a.password}"/></td>
                         </tr>
 
                         <tr>
-                            <td colspan="7">
+                            <td colspan="6">
                                 <h:commandButton value="Editar Alumno" action="#{ModAlumno.editar()}" style="background-color: lightblue"/>
                             </td>
                         </tr>
