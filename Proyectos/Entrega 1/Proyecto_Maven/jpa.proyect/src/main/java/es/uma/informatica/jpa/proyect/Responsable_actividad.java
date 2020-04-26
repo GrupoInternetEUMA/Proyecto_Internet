@@ -26,8 +26,8 @@ public class Responsable_actividad extends Usuario implements Serializable {
 		super();
 	}
 
-	public Responsable_actividad(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String departamento) {
-		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email);
+	public Responsable_actividad(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password, String departamento) {
+		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email, password);
 		this.departamento = departamento;
 	}
 

@@ -29,6 +29,7 @@ public class Usuario implements Serializable {
 	private Date fecha_nacimiento;
 	@Column(nullable = false)
 	private String email;
+	private String password;
 
 	@ManyToMany(mappedBy="usuarios")
 	private Collection<Responsable_actividad> responsables;
@@ -44,7 +45,7 @@ public class Usuario implements Serializable {
 		super();
 	}
 
-	public Usuario(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email) {
+	public Usuario(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password) {
 		this.id = id;
 		this.dni = dni;
 		this.nombre = nombre;
@@ -53,6 +54,7 @@ public class Usuario implements Serializable {
 		this.idioma = idioma;
 		this.fecha_nacimiento = fecha_nacimiento;
 		this.email = email;
+		this.password = password;
 	}
 
 	public Integer getId() {
@@ -111,6 +113,16 @@ public class Usuario implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
