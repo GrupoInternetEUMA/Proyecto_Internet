@@ -29,8 +29,8 @@ public class Alumno extends Usuario implements Serializable {
 		super();
 	}
 
-	public Alumno(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password, String titulacion, Integer num_expediente) {
-		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email, password);
+	public Alumno(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password, String rol, String titulacion, Integer num_expediente) {
+		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email, password, rol);
 		this.titulacion = titulacion;
 		this.num_expediente = num_expediente;
 	}
@@ -75,8 +75,8 @@ public class Alumno extends Usuario implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Alumno [titulacion=" + titulacion + ", num_expediente=" + num_expediente + ", getNombre()="
-				+ getNombre() + ", getApellidos()=" + getApellidos() + "]";
+		return "Alumno [titulacion=" + titulacion + ", Id: " + getId() + ", num_expediente=" + num_expediente + ", Nombre: "
+				+ getNombre() + ", Apellidos: " + getApellidos() + " Rol: " + getRol() + "]";
 	}
 	   
 }

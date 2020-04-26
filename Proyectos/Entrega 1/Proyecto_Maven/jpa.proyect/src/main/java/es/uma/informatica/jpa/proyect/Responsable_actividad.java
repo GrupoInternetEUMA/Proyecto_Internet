@@ -26,8 +26,8 @@ public class Responsable_actividad extends Usuario implements Serializable {
 		super();
 	}
 
-	public Responsable_actividad(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password, String departamento) {
-		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email, password);
+	public Responsable_actividad(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password, String rol, String departamento) {
+		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email, password, rol);
 		this.departamento = departamento;
 	}
 
@@ -71,8 +71,8 @@ public class Responsable_actividad extends Usuario implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Responsable_actividad [departamento=" + departamento + ", getId()=" + getId() + ", getNombre()="
-				+ getNombre() + ", getApellidos()=" + getApellidos() + "]";
+		return "Responsable_actividad [departamento=" + departamento + ", Id: " + getId() + ", Nombre: "
+				+ getNombre() + ", Apellidos: " + getApellidos() + " Rol: " + getRol() + "]";
 	}
 
 }
