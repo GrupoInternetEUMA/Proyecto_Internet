@@ -4,13 +4,13 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
-    <ui:define name="title">Lista de usuarios</ui:define>
+    <ui:define name="title">Lista de Responsables de actividades</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA DE USUARIOS</h1>
-                <div class="bordeTablaUsuarios">
-                    <table id="tablaListaUsuarios">
+                <div class="bordeTablaResponsables">
+                    <table id="tablaListaResponsables">
                     <thead>
 				<tr>
 					<th>Nombre</th>
@@ -23,11 +23,12 @@
                                         <th>Email</th>
                                         <th>Password</th>
                                         <th>Rol</th>
+                                        <th>Departamento</th>
                                         
                 </tr>
 			</thead>
 			<body>
-                        <ui:repeat var = "i" value="#{ListaUsuarios.usuarios}">
+                        <ui:repeat var = "i" value="#{ListaResponsables.responsables}">
                             <tr>
                                 <td>#{i.nombre}</td>
                                 <td>#{i.apellido}</td>
@@ -39,9 +40,10 @@
                                 <td>#{i.email}</td>
                                 <td>#{i.password}</td>
                                 <td>#{i.rol}</td>
+                                <td>#{i.departamento}</td>
                                 <td> 
-                                        <h:form id = "usuarioaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarUsuario.verUsuario(i.id)}"/> </h:column> </h:form>
-                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listaUsuarios.xhtml"/> </h:column> </h:form>
+                                        <h:form id = "responsableaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarResponsable.verResponsable(i.id)}"/> </h:column> </h:form>
+                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listaResponsables.xhtml"/> </h:column> </h:form>
                                 </td>
                             </tr>
                             
@@ -50,9 +52,9 @@
                     
                 </table>
                 </div>
-                <h:form id = "usuario">
+                <h:form id = "responsable">
                     <h:column>
-                        <h:commandButton value="Inserta nuevo usuario" action="#{ListaUsuario.crearUsuario()}"/>
+                        <h:commandButton value="Inserta nuevo responsable" action="#{ListaResponsables.crearResponsable()}"/>
                     </h:column>               
                 </h:form>
 
