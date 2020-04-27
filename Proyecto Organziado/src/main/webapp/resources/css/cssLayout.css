@@ -1,11 +1,26 @@
 
 #top {
     position: relative;
-    background-color: #036fab;
+    background-color: #204a87;
     color: white;
     padding: 5px;
-    height: 3em;
+    height: 5em;
     margin: 0px 0px 10px 0px;
+}
+
+#menu {
+    text-align: center;
+}
+
+#footer {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #204a87;
+    color: white;
+    height: 5em;
+    text-align: center;
+    display: block;
 }
 
 #bottom {

@@ -68,6 +68,13 @@ public class ControlAutorizacion implements Serializable {
         return null;
     }
     
+    public String listaONGs() {
+        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+            return "listaONGs.xhtml";
+        }
+        return null;
+    }
+    
     public String logout()
     {
         // Destruye la sesión (y con ello, el ámbito de este bean)
