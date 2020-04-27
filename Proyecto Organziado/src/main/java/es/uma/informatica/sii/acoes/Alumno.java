@@ -1,6 +1,6 @@
-package es.uma.informatica.jpa.proyect;
+package es.uma.informatica.sii.acoes;
 
-import es.uma.informatica.jpa.proyect.Usuario;
+import es.uma.informatica.sii.acoes.Usuario;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
