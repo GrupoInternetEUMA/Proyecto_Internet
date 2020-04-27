@@ -16,11 +16,18 @@ import javax.persistence.*;
 @Inheritance( strategy = InheritanceType.TABLE_PER_CLASS )
 
 public class Usuario implements Serializable {
+	
+	public enum Rol {
+	      ADMINISTRADOR,
+	      ONG,
+	      RESPONSABLE,
+	      ALUMNO
+	    };
 
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private Integer dni; // hace falta ponerla como clave unica
+	private Integer dni; 
 	private String nombre;
 	private String apellidos;
 	private String estudios;
@@ -29,8 +36,11 @@ public class Usuario implements Serializable {
 	private Date fecha_nacimiento;
 	@Column(nullable = false)
 	private String email;
-	private String password;
-	private String rol;
+	private String contrasenia;
+	@Enumerated(EnumType.STRING)
+	private Rol rol;
+	@Id
+	private String usuario;
 
 	@ManyToMany(mappedBy="usuarios")
 	private Collection<Responsable_actividad> responsables;
@@ -45,8 +55,15 @@ public class Usuario implements Serializable {
 	public Usuario() {
 		super();
 	}
+	
+	public Usuario (String usuario, String contrasenia, Rol rol)
+    {
+        setUsuario(usuario);
+        setContrasenia(contrasenia);
+        setRol(rol);
+    }
 
-	public Usuario(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password, String rol) {
+	public Usuario(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String contrasenia, Rol rol, String usuario) {
 		this.id = id;
 		this.dni = dni;
 		this.nombre = nombre;
@@ -55,8 +72,9 @@ public class Usuario implements Serializable {
 		this.idioma = idioma;
 		this.fecha_nacimiento = fecha_nacimiento;
 		this.email = email;
-		this.password = password;
+		this.contrasenia = contrasenia;
 		this.rol = rol;
+		this.usuario = usuario;
 	}
 
 	public Integer getId() {
@@ -117,20 +135,28 @@ public class Usuario implements Serializable {
 		this.email = email;
 	}
 	
-	public String getPassword() {
-		return this.password;
+	public String getContrasenia() {
+		return this.contrasenia;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
 	}
 	
-	public String getRol() {
+	public Rol getRol() {
 		return this.rol;
 	}
 
-	public void setRol(String rol) {
+	public void setRol(Rol rol) {
 		this.rol = rol;
+	}
+	
+	public String getUsuario() {
+		return this.usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 	
 	
@@ -160,7 +186,7 @@ public class Usuario implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + " rol: " + rol + ", estudios=" + estudios + "]";
+		return "Usuario [id=" + id + " usuario: " + usuario + " nombre=" + nombre + ", apellidos=" + apellidos + " rol: " + rol + ", estudios=" + estudios + "]";
 	}
 
 }

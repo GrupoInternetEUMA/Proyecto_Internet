@@ -30,8 +30,8 @@ public class Alumno extends Usuario implements Serializable {
 		super();
 	}
 
-	public Alumno(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String password, String rol, String titulacion, Integer num_expediente) {
-		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email, password, rol);
+	public Alumno(Integer id, Integer dni, String nombre, String apellidos, String estudios, String idioma, Date fecha_nacimiento, String email, String contrasenia, Rol rol,String usuario, String titulacion, Integer num_expediente) {
+		super(id, dni, nombre, apellidos, estudios, idioma, fecha_nacimiento, email, contrasenia, rol, usuario);
 		this.titulacion = titulacion;
 		this.num_expediente = num_expediente;
 	}

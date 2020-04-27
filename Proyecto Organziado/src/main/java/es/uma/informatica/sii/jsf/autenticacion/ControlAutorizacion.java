@@ -4,11 +4,11 @@
  */
 package es.uma.informatica.sii.jsf.autenticacion;
 
-import es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario;
-import static es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol.ADMINISTRADOR;
-import static es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol.ONG;
-import static es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol.RESPONSABLE;
-import static es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol.ALUMNO;
+import es.uma.informatica.sii.acoes.Usuario;
+import static es.uma.informatica.sii.acoes.Usuario.Rol.ADMINISTRADOR;
+import static es.uma.informatica.sii.acoes.Usuario.Rol.ONG;
+import static es.uma.informatica.sii.acoes.Usuario.Rol.RESPONSABLE;
+import static es.uma.informatica.sii.acoes.Usuario.Rol.ALUMNO;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;

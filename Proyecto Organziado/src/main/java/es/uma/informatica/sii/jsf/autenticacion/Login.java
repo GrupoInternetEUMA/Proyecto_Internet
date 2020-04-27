@@ -14,8 +14,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario;
-import es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol;
+import  es.uma.informatica.sii.acoes.Usuario;
+import  es.uma.informatica.sii.acoes.Usuario.Rol;
 
 /**
  *
