@@ -61,6 +61,13 @@ public class ControlAutorizacion implements Serializable {
         return null;
     }
     
+    public String registro() {
+        if(getUsuario()==null){
+            return "registrarse.xhtml";
+        }
+        return null;
+    }
+    
     public String logout()
     {
         // Destruye la sesión (y con ello, el ámbito de este bean)

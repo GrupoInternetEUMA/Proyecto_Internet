@@ -17,10 +17,46 @@
         <div id="top" class="top">
             <h:form id="menu">
                 <ul class="menulist">
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Home"/></li>
-                    <c:if test="#{controlAutorizacion.usuario != null}">
+                	
+                	<!-- OPCIONES PARA NO USUARIOS-->
+                	<c:if test="#{controlAutorizacion.usuario.rol == null}">
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inicio"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.registro()}" value="Registrarse"/></li>
+                    </c:if>
+                    
+                    <!-- OPCIONES PARA CUALQUIER USUARIO-->
+                    <c:if test="#{controlAutorizacion.usuario.rol != null}">
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inicio"/></li>
+                    </c:if>
+                    
+                    <!-- OPCIONES PARA ALUMNO-->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
+                        <li><h:commandLink action="#{controlAutorizacion.ListaSocios()}" value="Borrar ONG"/></li>                      
+                    </c:if>
+                    
+                    <!-- OPCIONES PARA RESPONSABLE-->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
+                        <li><h:commandLink action="#{controlAutorizacion.ListaSocios()}" value="Borrar ONG"/></li>                      
+                    </c:if>
+                    
+                    <!-- OPCIONES PARA ONG-->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ONG'}">
+                        <li><h:commandLink action="#{controlAutorizacion.ListaSocios()}" value="Borrar ONG"/></li>                      
+                    </c:if>
+                    
+                    <!-- OPCIONES PARA ADMINISTRADOR-->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                        <li><h:commandLink action="#{controlAutorizacion.ListaSocios()}" value="Borrar ONG"/></li>                      
+                    </c:if>
+                
+                
+                	 <!-- ULTIMA OPCIÓN PARA SALIR -->
+                    <c:if test="#{!empty controlAutorizacion.usuario}">
                         <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Salir"/></li>
                     </c:if>
+                
+                
+                
                 </ul>
             </h:form>
         </div>
