@@ -75,6 +75,42 @@ public class ControlAutorizacion implements Serializable {
         return null;
     }
     
+    public String listaAlumnos() {
+        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+            return "listaAlumnos.xhtml";
+        }
+        return null;
+    }
+    
+    public String listaUsuarios() {
+        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+            return "listaUsuarios.xhtml";
+        }
+        return null;
+    }
+    
+    public String listaResponsables() {
+        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+            return "listaResponsables.xhtml";
+        }
+        return null;
+    }
+    
+    public String listaActividades() {
+        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+            return "listaActividades.xhtml";
+        }
+        return null;
+    }
+    
+    public String listaSolicitudes() {
+        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+            return "listaSolicitudes.xhtml";
+        }
+        return null;
+    }
+
+    
     public String logout()
     {
         // Destruye la sesión (y con ello, el ámbito de este bean)
