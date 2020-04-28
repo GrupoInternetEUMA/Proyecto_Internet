@@ -53,7 +53,7 @@ public class Actividad implements Serializable {
 
 	public Actividad (Integer id, String nombre ,String descripcion, Date fecha_inicio, Date fecha_fin, String estado, String tipo, String lugar) {
 		this.id = id;
-
+                this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.fecha_inicio = fecha_inicio;
 		this.fecha_fin = fecha_fin;
