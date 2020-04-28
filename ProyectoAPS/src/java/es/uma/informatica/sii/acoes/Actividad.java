@@ -1,4 +1,3 @@
-
 package es.uma.informatica.sii.acoes;
 
 import java.io.Serializable;
@@ -17,153 +16,163 @@ import javax.persistence.*;
 
 public class Actividad implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+    private String nombre;
+    private String descripcion;
+    @Temporal(TemporalType.DATE)
+    private Date fecha_inicio;
+    @Temporal(TemporalType.DATE)
+    private Date fecha_fin;
+    private String estado;
+    private String tipo;
+    private String lugar;
 
+    @ManyToOne
+    @JoinColumn(name = "Responsable_id")
+    private Responsable_actividad responsable_actividad;
 
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-	private String nombre;
-	private String descripcion;
-	@Temporal(TemporalType.DATE)
-	private Date fecha_inicio;
-	@Temporal(TemporalType.DATE)
-	private Date fecha_fin;
-	private String estado;
-	private String tipo;
-	private String lugar;
+    @ManyToOne
+    @JoinColumn(name = "ONG_id")
+    private ONG ong;
 
-	@ManyToOne
-	@JoinColumn(name="Responsable_id")
-	private Responsable_actividad responsable_actividad;
+    @OneToMany(mappedBy = "actividad")
+    private Collection<Solicitud_Actividad> solicitud_Actividad;
 
-	@ManyToOne
-	@JoinColumn(name="ONG_id")
-	private ONG ong;
+    @OneToMany(mappedBy = "actividad")
+    private Collection<Informe> informes;
 
-	@OneToMany(mappedBy="actividad")
-	private Collection<Solicitud_Actividad> solicitud_Actividad;
+    private static final long serialVersionUID = 1L;
 
-	@OneToMany(mappedBy="actividad")
-	private Collection<Informe> informes;
+    public Actividad() {
+        super();
+    }
 
-	private static final long serialVersionUID = 1L;
+    public Actividad(Integer id, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, String estado, String tipo, String lugar) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fecha_inicio = fecha_inicio;
+        this.fecha_fin = fecha_fin;
+        this.estado = estado;
+        this.tipo = tipo;
+        this.lugar = lugar;
+    }
 
-	public Actividad() {
-		super();
-	}
+    public Integer getId() {
+        return this.id;
+    }
 
-	public Actividad (Integer id, String nombre ,String descripcion, Date fecha_inicio, Date fecha_fin, String estado, String tipo, String lugar) {
-		this.id = id;
-                this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.fecha_inicio = fecha_inicio;
-		this.fecha_fin = fecha_fin;
-		this.estado = estado;
-		this.tipo = tipo;
-		this.lugar = lugar;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Integer getId() {
-		return this.id;
-	}
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getNombre() {
-		return this.nombre;
-	}
+    public String getDescripcion() {
+        return this.descripcion;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setdescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-	public String getDescripcion() {
-		return this.descripcion;
-	}
+    public Date getFecha_inicio() {
+        return this.fecha_inicio;
+    }
 
-	public void setdescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
+    public void setFecha_inicio(Date fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
+    }
 
-	public Date getFecha_inicio() {
-		return this.fecha_inicio;
-	}
+    public Date getFecha_fin() {
+        return this.fecha_fin;
+    }
 
-	public void setFecha_inicio(Date fecha_inicio) {
-		this.fecha_inicio = fecha_inicio;
-	}
-	public Date getFecha_fin() {
-		return this.fecha_fin;
-	}
+    public void setFecha_fin(Date fecha_fin) {
+        this.fecha_fin = fecha_fin;
+    }
 
-	public void setFecha_fin(Date fecha_fin) {
-		this.fecha_fin = fecha_fin;
-	}
-	public String getEstado() {
-		return this.estado;
-	}
+    public String getEstado() {
+        return this.estado;
+    }
 
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-	public String getTipo() {
-		return this.tipo;
-	}
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-	public String getLugar() {
-		return this.lugar;
-	}
+    public String getTipo() {
+        return this.tipo;
+    }
 
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
-	}
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
-		return result;
-	}
+    public String getLugar() {
+        return this.lugar;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Actividad other = (Actividad) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (tipo == null) {
-			if (other.tipo != null)
-				return false;
-		} else if (!tipo.equals(other.tipo))
-			return false;
-		return true;
-	}
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
 
-	@Override
-	public String toString() {
-		return "Actividad [id=" + id + ", nombre=" + nombre + ", estado=" + estado + ", tipo=" + tipo + "]";
-	}
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+        result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
+        return result;
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Actividad other = (Actividad) obj;
+        if (id == null) {
+            if (other.id != null) {
+                return false;
+            }
+        } else if (!id.equals(other.id)) {
+            return false;
+        }
+        if (nombre == null) {
+            if (other.nombre != null) {
+                return false;
+            }
+        } else if (!nombre.equals(other.nombre)) {
+            return false;
+        }
+        if (tipo == null) {
+            if (other.tipo != null) {
+                return false;
+            }
+        } else if (!tipo.equals(other.tipo)) {
+            return false;
+        }
+        return true;
+    }
 
+    @Override
+    public String toString() {
+        return "Actividad [id=" + id + ", nombre=" + nombre + ", estado=" + estado + ", tipo=" + tipo + "]";
+    }
 
 }

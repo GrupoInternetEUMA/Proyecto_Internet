@@ -1,10 +1,3 @@
-/*
- * Sistemas de Información para Intenet
- * Grupo G
- * Universidad de Málaga
- */
-
-
 package es.uma.informatica.sii.acoes;
 
 import javax.persistence.EntityManager;
@@ -14,12 +7,12 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author Jesús
+ * @author
  */
-public class ACOES {
+public class APS {
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ACOESPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("APSUP");
         EntityManager em = emf.createEntityManager();
         /*
         EntityTransaction tx = em.getTransaction();
@@ -29,9 +22,9 @@ public class ACOES {
         tx.begin();
         em.persist(nino1);
         tx.commit();*/
-        
+
         em.close();
         emf.close();
     }
-    
+
 }

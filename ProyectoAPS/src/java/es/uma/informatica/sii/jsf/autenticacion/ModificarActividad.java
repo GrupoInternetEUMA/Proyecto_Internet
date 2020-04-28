@@ -6,7 +6,6 @@
 package es.uma.informatica.sii.jsf.autenticacion;
 
 import es.uma.informatica.sii.acoes.Actividad;
-
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -69,33 +68,25 @@ public class ModificarActividad implements Serializable {
     }
 
     public String anadir() throws ParseException {  // Pasar parámetros del login
-
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir la actividad, inténtelo más tarde", "No ha sido posible añadir la actividad, inténtelo más tarde"));
-
         return null;
 
     }
 
     public String editar() throws ParseException {  // Pasar parámetros del login
-
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible editar la actividad, inténtelo más tarde", "No ha sido posible editar la actividad, inténtelo más tarde"));
-
         return null;
-
     }
 
     public String eliminar() throws ParseException {  // Pasar parámetros del login
-
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible eliminar la actividad, inténtelo más tarde", "No ha sido posible eliminar la actividad, inténtelo más tarde"));
-
         return null;
-
     }
 
     public ModificarActividad() {

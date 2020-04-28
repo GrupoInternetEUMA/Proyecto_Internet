@@ -7,7 +7,6 @@ package es.uma.informatica.sii.jsf.autenticacion;
 
 import es.uma.informatica.sii.acoes.Actividad;
 import es.uma.informatica.sii.acoes.Usuario;
-
 import es.uma.informatica.sii.acoes.Usuario.Rol;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -32,7 +31,6 @@ public class ListaActividades implements Serializable {
 
     public ListaActividades() {
         actividades = new ArrayList<>();
-
         actividades.add(new Actividad(000005, "Recogida Alimentos", "Se va a recoger alimentos por malaga", new Date(2020, 5, 13), new Date(2020, 5, 20), "ACEPTADA", "Voluntariado", "Malaga"));
         actividades.add(new Actividad(000006, "Campaña E.T.S", "Test gratuitos de enfermedades de transimion sexual a cualquier persona", new Date(2020, 2, 11), new Date(2020, 2, 18), "FINALIZADA", "ApS", "Malaga"));
 
@@ -63,23 +61,19 @@ public class ListaActividades implements Serializable {
     }
 
     public String home() {
-
         // Si no ha iniciado sesion, le lleva al login
         if (getUsuario() == null) {
             return "login.xhtml";
         }
-
         // Si el usuario es un ADMINISTRADOR, le lleva a la pagina a la lista de Alumnos
         if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "ListaActividades.xhtml";
         }
-
         // Si el usuario es Alumno, le llevará a la página web de INDEX
         // REVISAR
         if (getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
             return "login.xhtml";
         }
-
         return null;
     }
 

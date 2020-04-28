@@ -22,12 +22,9 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class ControlAutorizacion implements Serializable {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
-	private Usuario usuario;
+    private static final long serialVersionUID = 1L;
+
+    private Usuario usuario;
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -38,88 +35,81 @@ public class ControlAutorizacion implements Serializable {
     }
 
     public String home() {
-        if(getUsuario()==null){
+        if (getUsuario() == null) {
             return "login.xhtml";
         }
-        
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "admin.xhtml";
         }
-        
-        if(getUsuario().getRol().equals(getUsuario().getRol().ONG)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ONG)) {
             return "ong.xhtml";
         }
-        
-        if(getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)) {
             return "responsable.xhtml";
         }
-        
-        if(getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
             return "alumno.xhtml";
         }
-        
         return null;
     }
-    
+
     public String registro() {
-        if(getUsuario()==null){
+        if (getUsuario() == null) {
             return "registrarse.xhtml";
         }
         return null;
     }
-    
+
     public String listaONGs() {
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "listaONGs.xhtml";
         }
         return null;
     }
-    
-     public String listaInformes() {
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+
+    public String listaInformes() {
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "listaInformes.xhtml";
         }
         return null;
     }
-    
+
     public String listaAlumnos() {
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "listaAlumnos.xhtml";
         }
         return null;
     }
-    
+
     public String listaUsuarios() {
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "listaUsuarios.xhtml";
         }
         return null;
     }
-    
+
     public String listaResponsables() {
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "listaResponsables.xhtml";
         }
         return null;
     }
-    
+
     public String listaActividades() {
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "listaActividades.xhtml";
         }
         return null;
     }
-    
+
     public String listaSolicitudes() {
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
             return "listaSolicitudes.xhtml";
         }
         return null;
     }
 
-    
-    public String logout()
-    {
+    public String logout() {
         // Destruye la sesión (y con ello, el ámbito de este bean)
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.getExternalContext().invalidateSession();
@@ -127,9 +117,6 @@ public class ControlAutorizacion implements Serializable {
         return "login.xhtml";
     }
 
-    /**
-     * Creates a new instance of ControlAutorizacion
-     */
     public ControlAutorizacion() {
     }
 }

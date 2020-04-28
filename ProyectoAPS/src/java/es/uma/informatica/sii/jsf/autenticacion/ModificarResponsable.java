@@ -7,7 +7,6 @@ package es.uma.informatica.sii.jsf.autenticacion;
 
 import es.uma.informatica.sii.acoes.Usuario;
 import es.uma.informatica.sii.acoes.Responsable_actividad;
-
 import es.uma.informatica.sii.acoes.Usuario.Rol;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -87,33 +86,24 @@ public class ModificarResponsable implements Serializable {
     }
 
     public String anadir() throws ParseException {  // Pasar parámetros del login
-
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir a un responsable, inténtelo más tarde", "No ha sido posible añadir a un responsable, inténtelo más tarde"));
-
         return null;
-
     }
 
     public String editar() throws ParseException {  // Pasar parámetros del login
-
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible editar a un responsable, inténtelo más tarde", "No ha sido posible editar a un responsable, inténtelo más tarde"));
-
         return null;
-
     }
 
     public String eliminar() throws ParseException {  // Pasar parámetros del login
-
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible eliminar a un responsable, inténtelo más tarde", "No ha sido posible eliminar a un responsable, inténtelo más tarde"));
-
         return null;
-
     }
 
     public ModificarResponsable() {

@@ -15,14 +15,13 @@ import javax.inject.Named;
 
 /**
  *
- * @author Carlos
+ * @author Jose
  */
-
 @Named(value = "EditarONG")
 @SessionScoped
 public class editarONG implements Serializable {
-    private ONG ong;
 
+    private ONG ong;
 
     public ONG getONG() {
         return ong;
@@ -31,51 +30,47 @@ public class editarONG implements Serializable {
     public void setONG(ONG ong) {
         this.ong = ong;
     }
-    
+
     public Integer getId() {
         return this.ong.getId();
     }
-     
-    public String getNombre(){
+
+    public String getNombre() {
         return this.ong.getNombre();
     }
-    
-    public String getDescripcion(){
+
+    public String getDescripcion() {
         return this.ong.getDescripcion();
     }
-    
-    public String getEmail(){
+
+    public String getEmail() {
         return this.ong.getEmail();
     }
-    
-    public Integer getTelefono(){
+
+    public Integer getTelefono() {
         return this.ong.getTelefono();
     }
-    
-    public String getDireccion(){
+
+    public String getDireccion() {
         return this.ong.getDireccion();
     }
-    
-    public String getPais(){
+
+    public String getPais() {
         return this.ong.getPais();
     }
-    
-    public String getPassword(){
+
+    public String getPassword() {
         return this.ong.getPassword();
     }
-    
-    public String ListaONGs(){
+
+    public String ListaONGs() {
         return "listaONGs.xhtml";
     }
-     
-   public String verONG(int id){
+
+    public String verONG(int id) {
         return "editarONG.xhtml";
     }
 
-    /**
-     * Creates a new instance of ControlAutorizacion
-     */
-    public editarONG(){
+    public editarONG() {
     }
 }
-

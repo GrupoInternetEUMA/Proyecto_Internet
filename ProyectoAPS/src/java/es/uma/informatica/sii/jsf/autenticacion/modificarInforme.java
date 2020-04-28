@@ -14,12 +14,12 @@ import javax.inject.Named;
 
 /**
  *
- * @author Jesús Correa Conejero
+ * @author
  */
-
 @Named(value = "modificarInforme")
 @SessionScoped
 public class modificarInforme implements Serializable {
+
     private Informe informe;
 
     public Informe getInforme() {
@@ -29,7 +29,7 @@ public class modificarInforme implements Serializable {
     public void setInforme(Informe informe) {
         this.informe = informe;
     }
-    
+
     public Integer getId() {
         return this.informe.getId();
     }
@@ -41,23 +41,19 @@ public class modificarInforme implements Serializable {
     public String getTiempo_empleado() {
         return this.informe.getTiempo_empleado();
     }
-    
+
     public String getTareas_realizadas() {
         return this.informe.getTareas_realizadas();
     }
-    
-    public String ListaInformes(){
+
+    public String ListaInformes() {
         return "listaInformes.xhtml";
     }
-     
-   public String verInforme(int id){
+
+    public String verInforme(int id) {
         return "modificarInforme.xhtml";
     }
 
-    /**
-     * Creates a new instance of ControlAutorizacion
-     */
-    public modificarInforme(){
+    public modificarInforme() {
     }
 }
-
