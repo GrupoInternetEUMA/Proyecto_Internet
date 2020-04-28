@@ -1,5 +1,3 @@
-<!-- NOTA: depende de un jsf llamado ModONG con una ONG o, una función editar() y los campos correspondientes-->
-
 <ui:composition template="/WEB-INF/templates/plantilla.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -10,49 +8,54 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                <h1 var = "i" value="#{editarONG.ong}">Modificar ONG</h1>
                 <h:form id="editarONG">
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ModONG.o.nombre}"/></td>
+                            <td><h:inputText value="#{i.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Descripción: </td>
-                            <td><h:inputText value="#{ModONG.o.descripcion}"/></td>
+                            <td><h:inputText value="#{i.descripcion}"/></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{ModONG.o.email}"/></td>
+                            <td><h:inputText value="#{i.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Teléfono: </td>
-                            <td><h:inputText value="#{ModONG.o.telefono}"/></td>
+                            <td><h:inputText value="#{i.telefono}"/></td>
                         </tr>
 
                         <tr>
                             <td>Dirección: </td>
-                            <td><h:inputText value="#{ModONG.o.direccion}"/></td>
+                            <td><h:inputText value="#{i.direccion}"/></td>
                         </tr>
 
                         <tr>
                             <td>País: </td>
-                            <td><h:inputText value="#{ModONG.o.pais}"/></td>
+                            <td><h:inputText value="#{i.pais}"/></td>
                         </tr>
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{ModONG.o.password}"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="7">
-                                <h:commandButton value="Editar ONG" action="#{ModONG.editar()}"/>
-                                <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column> 
-                            </td>
+                            <td><h:inputText value="#{i.password}"/></td>
                         </tr>
                     </table>
                 </h:form>
+
+                <h:form> 
+                    <h:column> 
+                        <h:commandButton value="Actualizar"/> 
+                    </h:column> 
+                    <h:column> 
+                        <h:commandButton value="Cancelar" action="listaSolicitudes.xhtml" /> 
+                    </h:column> 
+                </h:form>
+
             </c:when>
             <c:otherwise>
                 <p>Ha ocurrido un error inesperado</p>

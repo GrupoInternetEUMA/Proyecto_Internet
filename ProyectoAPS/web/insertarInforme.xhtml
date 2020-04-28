@@ -9,8 +9,8 @@
             <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>Insertar informe</h1>
-                <h:form id="inf" >
-                    <h:panelGrid columns="3" >
+                <h:form id="insertarInforme" >
+                    <h:panelGrid columns="4" >
                         <h:outputText value="Id"/>
                         <h:inputText id ="id" value="#{listaInformes.informe.id}" />
                         <h:message for="id"/>

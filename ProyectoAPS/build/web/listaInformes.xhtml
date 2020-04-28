@@ -5,22 +5,22 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
                 >
-    
+
     <ui:define name="title">Lista de informes</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>MIS INFORMES</h1>
-                 <div class="bordeTablaInformes">
-                 <table id="tablaListaInformes">
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Evaluación</th>
-					<th>Tiempo_empleado</th>
-					<th>Tareas_realizadas</th>
-				</tr>
-			</thead>
+                <div class="bordeTablaInformes">
+                    <table id="tablaListaInformes">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Evaluación</th>
+                                <th>Tiempo_empleado</th>
+                                <th>Tareas_realizadas</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <ui:repeat var="i" value="#{ListaInformes.informes}">
                                 <tr>
@@ -28,20 +28,28 @@
                                     <td>#{i.evaluacion}</td>
                                     <td>#{i.tiempo_empleado}</td>
                                     <td>#{i.tareas_realizadas}</td>
-                                    
+
                                     <td> 
-                                        <h:form id = "informeaccion"> <h:column> <h:commandButton value="Modificar" action="#{modificarInforme.verInforme(i.id)}"/> </h:column> </h:form>
-                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listaInformes.xhtml"/> </h:column> </h:form>
+                                        <h:form id = "informeaccion"> 
+                                            <h:column> 
+                                                <h:commandButton value="Editar" action="#{modificarInforme.verInforme(i.id)}"/> 
+                                            </h:column> 
+                                        </h:form>
+                                        <h:form> 
+                                            <h:column> 
+                                                <h:commandButton value="Borrar" action="listaInformes.xhtml"/> 
+                                            </h:column> 
+                                        </h:form>
                                     </td>
-                                    
+
                                 </tr>
                             </ui:repeat>
                         </tbody>
-                </table>
+                    </table>
                 </div> 
-                <h:form id="informe">
+                <h:form id="ilistaInforme">
                     <h:column>
-                            <h:commandButton value="Insertar informe" action="#{listaInformes.crearInforme()}"/>
+                        <h:commandButton value="Insertar Informe" action="#{listaInformes.crearInforme()}"/>
                     </h:column>
                 </h:form>
             </c:when>

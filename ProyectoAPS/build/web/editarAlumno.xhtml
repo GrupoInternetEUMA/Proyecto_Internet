@@ -9,6 +9,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+                <h1 var = "i" value="#{ModificarAlumno.alumno}">Modificar Alumno</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
@@ -58,14 +59,11 @@
                             <td>Rol: </td>
                             <td><h:inputText value="#{i.rol}"/></td>
                         </tr>
-
-                        <tr>
-                            <td colspan="7">
-                                <h:commandButton value="Editar Alumno"/>
-                                <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column> 
-                            </td>
-                        </tr>
                     </table>
+                </h:form>
+                <h:form> 
+                    <h:column> <h:commandButton value="Actualizar"/> </h:column> 
+                    <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>
             <c:otherwise>

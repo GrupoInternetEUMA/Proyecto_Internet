@@ -7,7 +7,8 @@
     <ui:define name="title">editar alumno</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">                                
+                <h1 var = "i" value="#{ModificarActividad.actividad}">Modificar Actividad</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
@@ -42,14 +43,18 @@
                             <td>Descripcion: </td>
                             <td><h:inputText value="#{i.descripcion}"/></td>
                         </tr>
-                        <tr>
-                            <td colspan="7">
-                                <h:commandButton value="Editar Actividad"/>
-                                <h:column> <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> </h:column> 
-                            </td>
-                        </tr>
+
                     </table>
                 </h:form>
+                <h:form>
+                    <h:column> 
+                    <h:commandButton value="Actualizar"/> 
+                </h:column>
+                <h:column> 
+                    <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
+                </h:column>
+                </h:form>
+                 
             </c:when>
             <c:otherwise>
                 <p>Ha ocurrido un error inesperado</p>

@@ -14,7 +14,6 @@
                         <thead>
                             <tr>
                                 <th>Nombre</th>
-
                                 <th>ID</th>
                                 <th>Tipo</th>
                                 <th>Estado</th>
@@ -22,8 +21,6 @@
                                 <th>Fecha Inicio</th>
                                 <th>Fecha Fin</th>
                                 <th>Descripcion</th>
-
-
                             </tr>
                         </thead>
                         <body>
@@ -37,33 +34,32 @@
                                     <td>#{i.fecha_inicio}</td>
                                     <td>#{i.fecha_fin}</td>
                                     <td>#{i.descripcion}</td>
-                                    <td> <h:form id="actividadaccion">
-                                        <h:column>
-                                            <h:commandButton value="Editar" action="editarActividad.xhtml" />
-                                        </h:column>
-                                    </h:form> <h:form>
-                                    <h:column>
-                                        <h:commandButton value="Borrar" action="#{ModificarActividad.eliminar()}" />
-                                    </h:column>
-                                </h:form>
+                                    <td> 
+                                        <h:form id="actividadaccion">
+                                            <h:column>
+                                                <h:commandButton value="Editar" action="editarActividad.xhtml" />
+                                            </h:column>
+                                        </h:form> <h:form>
+                                            <h:column>
+                                                <h:commandButton value="Borrar" action="#{ModificarActividad.eliminar()}" />
+                                            </h:column>
+                                        </h:form>
                                     </td>
-                        </tr>
-                    </ui:repeat>
-                </body>
+                                </tr>
+                            </ui:repeat>
+                        </body>
 
-            </table>
-        </div>
-        <h:form id = "actividad">
-            <h:column>
-                <h:commandButton value="Inserta nueva actividad" action="anadirActividad.xhtml"/>
-            </h:column>               
-        </h:form>
-
-
-    </c:when>
-    <c:otherwise>
-        <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
-    </c:otherwise>
-</c:choose>
-</ui:define>
+                    </table>
+                </div>
+                <h:form id = "actividad">
+                    <h:column>
+                        <h:commandButton value="Insertar Actividad" action="anadirActividad.xhtml"/>
+                    </h:column>               
+                </h:form>
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
 </ui:composition>
