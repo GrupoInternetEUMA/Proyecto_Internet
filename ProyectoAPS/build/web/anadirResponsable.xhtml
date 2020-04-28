@@ -1,60 +1,67 @@
 
-<!-- NOTA: depende de un jsf llamado ModResponsable con un responsable r, una función editar() y los campos correspondientes-->
 
 <ui:composition template="/WEB-INF/templates/plantilla.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <ui:define name="title">editar responsable</ui:define>
+    <ui:define name="title">Añadir Responsable</ui:define>
+
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
-                <h:form id="editarResponsable">
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+
+                <h:form id="anadirResponsable">
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ModResponsable.r.nombre}"/></td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{ModResponsable.r.apellidos}"/></td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{ModResponsable.r.estudios}"/></td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{ModResponsable.r.idioma}"/></td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{ModResponsable.r.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.fecha_nacimiento}"/></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{ModResponsable.r.email}"/></td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.email}"/></td>
+                        </tr>
+
+                       
+                        <tr>
+                            <td>Departamento </td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.departamento}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Contrasenia: </td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.contrasenia}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Departamento: </td>
-                            <td><h:inputText value="#{ModResponsable.r.departamento}"/></td>
+                            <td>Rol: </td>
+                            <td><h:inputText value="#{ModificarResponsable.responsable.rol}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Password: </td>
-                            <td><h:inputText value="#{ModResponsable.r.password}"/></td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="6">
-                                <h:commandButton value="Editar Alumno" action="#{ModResponsable.anadir()}" style="background-color: lightblue"/>
+                            <td colspan="7">
+                                <h:commandButton value="Añadir Responsable"/>
+                                <h:column> <h:commandButton value="Cancelar" action="listaResponsables.xhtml" /> </h:column> 
                             </td>
                         </tr>
                     </table>
@@ -67,4 +74,5 @@
         <h:messages/>
     </ui:define>
 </ui:composition>
+
 
