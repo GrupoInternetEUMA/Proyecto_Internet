@@ -27,7 +27,7 @@
                                 <td>#{i.estado}</td>                               
                                 <td>#{i.fecha_solicitud}</td>                                                        
                                 <td> 
-                                        <h:form id = "solicitudaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarSolicitud.verSolicitud(i.id)}"/> </h:column> </h:form>
+                                        <h:form id = "solicitudaccion"> <h:column> <h:commandButton value="Modificar" action="#{ModificarSolicitud.verSolicitud(i.id)}"/> </h:column> </h:form>
                                         <h:form> <h:column> <h:commandButton value="Borrar" action="listaSolicitudes.xhtml"/> </h:column> </h:form>
                                 </td>
                             </tr>
@@ -42,7 +42,8 @@
                         <h:commandButton value="Inserta nueva solicitud" action="#{ListaSolicitudes.crearSolicitud()}"/>
                     </h:column>               
                 </h:form>
-
+               
+                    
 
             </c:when>
             <c:otherwise>

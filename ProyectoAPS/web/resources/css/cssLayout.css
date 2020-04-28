@@ -22,6 +22,11 @@
     display: block;
 }
 
+#login {
+    text-align: center;
+    margin: 0 auto;
+}
+
 #bottom {
     position: relative;
     background-color: #c2dfef;
@@ -45,7 +50,7 @@
 
 .center_content {
     position: relative;
-    background-color: #dddddd;
+    background-color: #ffffff;
     padding: 5px;
 }
 
