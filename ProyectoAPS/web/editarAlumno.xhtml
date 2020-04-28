@@ -8,56 +8,61 @@
     <ui:define name="title">editar alumno</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ModAlumno.a.nombre}"/></td>
+                            <td><h:inputText value="#{i.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{ModAlumno.a.apellidos}"/></td>
+                            <td><h:inputText value="#{i.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{ModAlumno.a.estudios}"/></td>
+                            <td><h:inputText value="#{i.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{ModAlumno.a.idioma}"/></td>
+                            <td><h:inputText value="#{i.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{ModAlumno.a.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{i.fecha_nacimiento}"/></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{ModAlumno.a.email}"/></td>
+                            <td><h:inputText value="#{i.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Titulación: </td>
-                            <td><h:inputText value="#{ModAlumno.a.titulacion}"/></td>
+                            <td><h:inputText value="#{i.titulacion}"/></td>
                         </tr>
 
                         <tr>
                             <td>Nº expediente: </td>
-                            <td><h:inputText value="#{ModAlumno.a.n_expediente}"/></td>
+                            <td><h:inputText value="#{i.num_expediente}"/></td>
                         </tr>
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{ModAlumno.a.password}"/></td>
+                            <td><h:inputText value="#{i.contrasenia}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Rol: </td>
+                            <td><h:inputText value="#{i.rol}"/></td>
                         </tr>
 
                         <tr>
                             <td colspan="7">
-                                <h:commandButton value="Editar Alumno" action="#{ModAlumno.editar()}" style="background-color: lightblue"/>
+                                <h:commandButton value="Editar Alumno"/>
+                                <h:column> <h:commandButton value="Cancelar" action="listasocios.xhtml" /> </h:column> 
                             </td>
                         </tr>
                     </table>
