@@ -3,46 +3,47 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
- 
 package es.uma.informatica.sii.jsf.autenticacion;
 
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
-import javax.faces.context.FacesContext;
 import es.uma.informatica.sii.acoes.*;
+
 /**
  *
- * @author josea
+ * @author Jose Antonio
  */
 @Named(value = "ListaONGs")
 @SessionScoped
 
 public class listaONGs implements Serializable {
+
     private final ArrayList<ONG> ongs;
-    private Usuario usuario;
     private ONG ong;
-    
-    public listaSolicitudes(){
+
+    public listaONGs() {
         ongs = new ArrayList<>();
-        ongs.add(new Solicitud_Actividad(1,"Pendiente",);
-        ongs = new ONG();
+        ongs.add(new ONG(1, "Unicef", "Organizacion...", "unicef@info.com", 99999999, "C/Europa", "Spain", "unicef"));
+        ongs.add(new ONG(2, "Unesco", "Organizacion...", "Unesco@info.com", 99999998, "C/Europa", "Spain", "unesco"));
+        ong = new ONG();
     }
 
-    public ArrayList<ONG> getONGs(){
+    public ArrayList<ONG> getONGs() {
         return ongs;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public ONG getONG() {
+        return ong;
     }
-    
-    public Usuario getUsuario(){
-        return usuario;
+
+    public void setONG(ONG ong) {
+        this.ong = ong;
     }
-    
-    public String crearONG(){
+
+    public String crearInforme() {
         return "anadirONG.xhtml";
     }
+
 }

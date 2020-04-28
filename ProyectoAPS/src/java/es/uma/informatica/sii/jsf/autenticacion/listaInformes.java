@@ -61,8 +61,6 @@ public class listaInformes implements Serializable {
         this.informe = informe;
     }
 
-
-
     public String crearInforme(){
         return "insertarInforme.xhtml";
     }
