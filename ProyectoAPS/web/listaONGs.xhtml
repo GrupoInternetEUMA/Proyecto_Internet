@@ -4,6 +4,7 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    
     <ui:define name="title">Lista de ONGs</ui:define>
     <ui:define name="content">
         <c:choose>
@@ -21,7 +22,6 @@
                                 <th>Direccion</th>
                                 <th>Pais</th>
                                 <th>Password</th>
-
                             </tr>
                         </thead>
                         <body>
@@ -35,18 +35,19 @@
                                     <td>#{i.direccion}</td>
                                     <td>#{i.pais}</td>
                                     <td>#{i.password}</td>
-                                    <td><h:form id="ongaccion">
+                                    <td>
+                                        <h:form id="ongaccion">
                                             <h:column>
-                                                <h:commandButton value="Ver"
-                                                                 action="#{ModificarONG.verONG(i.id)}" />
+                                                <h:commandButton value="Editar" action="#{editarONG.verONG(i.id)}" />
                                             </h:column>
-                                        </h:form> <h:form>
+                                        </h:form> 
+                                        <h:form>
                                             <h:column>
                                                 <h:commandButton value="Borrar" action="listaONGs.xhtml" />
                                             </h:column>
-                                        </h:form></td>
+                                        </h:form>
+                                    </td>
                                 </tr>
-
                             </ui:repeat>
                         </body>
 
@@ -54,11 +55,9 @@
                 </div>
                 <h:form id="ong">
                     <h:column>
-                        <h:commandButton value="Inserta nueva ONG"
-                                         action="#{ListaONGs.crearONG()}" />
+                        <h:commandButton value="Inserta nueva ONG" action="#{ListaONGs.anadirONG()}" />
                     </h:column>
                 </h:form>
-
 
             </c:when>
             <c:otherwise>

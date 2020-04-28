@@ -5,45 +5,46 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <ui:define name="title">editar ONG</ui:define>
+
+    <ui:define name="title">Editar ONG</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
                 <h:form id="editarONG">
                     <table>
-                      <tr>
-                          <td>Nombre: </td>
-                          <td><h:inputText value="#{ModONG.o.nombre}"/></td>
-                      </tr>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText value="#{ModONG.o.nombre}"/></td>
+                        </tr>
 
-                      <tr>
-                          <td>Descripción: </td>
-                          <td><h:inputText value="#{ModONG.o.descripcion}"/></td>
-                      </tr>
+                        <tr>
+                            <td>Descripción: </td>
+                            <td><h:inputText value="#{ModONG.o.descripcion}"/></td>
+                        </tr>
 
-                      <tr>
-                          <td>Email: </td>
-                          <td><h:inputText value="#{ModONG.o.email}"/></td>
-                      </tr>
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:inputText value="#{ModONG.o.email}"/></td>
+                        </tr>
 
-                      <tr>
-                          <td>Teléfono: </td>
-                          <td><h:inputText value="#{ModONG.o.telefono}"/></td>
-                      </tr>
+                        <tr>
+                            <td>Teléfono: </td>
+                            <td><h:inputText value="#{ModONG.o.telefono}"/></td>
+                        </tr>
 
-                      <tr>
-                          <td>Dirección: </td>
-                          <td><h:inputText value="#{ModONG.o.direccion}"/></td>
-                      </tr>
+                        <tr>
+                            <td>Dirección: </td>
+                            <td><h:inputText value="#{ModONG.o.direccion}"/></td>
+                        </tr>
 
-                      <tr>
-                          <td>País: </td>
-                          <td><h:inputText value="#{ModONG.o.pais}"/></td>
-                      </tr>
-
-                          <td>Password: </td>
-                          <td><h:inputText value="#{ModONG.o.password}"/></td>
-                      </tr>
+                        <tr>
+                            <td>País: </td>
+                            <td><h:inputText value="#{ModONG.o.pais}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password: </td>
+                            <td><h:inputText value="#{ModONG.o.password}"/></td>
+                        </tr>
                         <tr>
                             <td colspan="7">
                                 <h:commandButton value="Editar ONG" action="#{ModONG.editar()}" style="background-color: lightblue"/>
