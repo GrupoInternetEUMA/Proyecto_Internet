@@ -13,8 +13,6 @@ import java.util.Date;
 import javax.faces.context.FacesContext;
 import es.uma.informatica.sii.acoes.*;
 
-
-
 /**
  *
  * @author Antonio
@@ -36,15 +34,12 @@ public class listaSolicitudes implements Serializable {
         solicitud = new Solicitud_Actividad();
     }
 
-    
     public ArrayList<Solicitud_Actividad> getSolicitudes(){
         return solicitudes;
     }
     public Actividad getActividad(){
         return actividad;
     }
-  
-
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
