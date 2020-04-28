@@ -1,4 +1,3 @@
-
 <!-- NOTA: depende de un jsf llamado ModResponsable con un responsable r, una función editar() y los campos correspondientes-->
 
 <ui:composition template="/WEB-INF/templates/plantilla.xhtml"
@@ -9,7 +8,7 @@
     <ui:define name="title">editar responsable</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
                 <h:form id="editarResponsable">
                     <table>
                         <tr>
@@ -54,7 +53,7 @@
 
                         <tr>
                             <td colspan="6">
-                                <h:commandButton value="Editar Alumno" action="#{ModResponsable.anadir()}" style="background-color: lightblue"/>
+                                <h:commandButton value="Editar responsable" action="#{ModResponsable.editar()}" style="background-color: lightblue"/>
                             </td>
                         </tr>
                     </table>

@@ -7,7 +7,7 @@
 
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
 
                 <h:form id="anadirActividad">
                     <table>
@@ -33,7 +33,7 @@
                       </tr>
                         <tr>
                             <td colspan="7">
-                                <h:commandButton value="Añadir Actividad"  action="#{ModActividad.anadir()}" style="background-color: lightblue"/>
+                                <h:commandButton value="Añadir Actividad"  action="#{ModActividad.editar()}" style="background-color: lightblue"/>
                             </td>
                         </tr>
                     </table>

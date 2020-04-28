@@ -8,7 +8,7 @@
     <ui:define name="title">editar ONG</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
                 <h:form id="editarONG">
                     <table>
                       <tr>
@@ -46,7 +46,7 @@
                       </tr>
                         <tr>
                             <td colspan="7">
-                                <h:commandButton value="Editar ONG" action="#{ModONG.anadir()}" style="background-color: lightblue"/>
+                                <h:commandButton value="Editar ONG" action="#{ModONG.editar()}" style="background-color: lightblue"/>
                             </td>
                         </tr>
                     </table>
