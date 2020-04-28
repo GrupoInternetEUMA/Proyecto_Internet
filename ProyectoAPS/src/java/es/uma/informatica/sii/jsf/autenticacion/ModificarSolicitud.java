@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.uma.informatica.sii.acoes;
+package es.uma.informatica.sii.jsf.autenticacion;
 
+import es.uma.informatica.sii.acoes.Solicitud_Actividad;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -14,7 +15,7 @@ import javax.inject.Named;
 
 /**
  *
- * @author Jesús Correa Conejero
+ * @author Carlos
  */
 
 @Named(value = "ModificarSolicitud")
@@ -27,7 +28,7 @@ public class ModificarSolicitud implements Serializable {
         return solicitud;
     }
 
-    public void setSolicitu(Solicitud_Actividad solicitud) {
+    public void setSolicitud(Solicitud_Actividad solicitud) {
         this.solicitud = solicitud;
     }
     

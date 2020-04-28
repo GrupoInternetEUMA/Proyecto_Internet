@@ -5,35 +5,38 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
     
-    <ui:define name="title">Modificar Solicitud</ui:define>
+    <ui:define name="title">Modificar Informe</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{modificarSolicitud.solicitud}">Modificar Solicitud</h1>
+                <h1 var = "i" value="#{modificarInforme.informe}">Modificar Informe</h1>
                 
-                <h:form id="ListaSolicitudes">
+                <h:form id="ListaInformes">
                     <table>
                         <tr>
-                            <td>ID </td>
+                            <td>Id </td>
                             <td><h:inputText  value="#{i.id}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Estado: </td>
-                            <td><h:inputText  value="#{i.estado}"/></td>
+                            <td>Evaluación </td>
+                            <td><h:inputText  value="#{i.evaluacion}"/></td>
                         </tr>
                         
                         <tr>
-                            <td>Fecha Solicitud: </td>
-                            <td><h:inputText  value="#{i.fecha_solicitud}"/></td>
+                            <td>Tiempo_empleado </td>
+                            <td><h:inputText  value="#{i.tiempo_empleado}"/></td>
                         </tr>
-                                       
                         
+                        <tr>
+                            <td>Tareas_realizadas </td>
+                            <td><h:inputText  value="#{i.tareas_realizadas}"/></td>
+                        </tr>
                     </table>
                 </h:form>
                 <h:form> 
-                    <h:column> <h:commandButton value="Actualizar solicitud"/> </h:column> 
-                    <h:column> <h:commandButton value="Cancelar" action="listaSolicitudes.xhtml" /> </h:column> 
+                    <h:column> <h:commandButton value="Actualizar informe"/> </h:column> 
+                    <h:column> <h:commandButton value="Cancelar" action="listaInformes.xhtml" /> </h:column>                     
                 </h:form>
                    
             </c:when>
