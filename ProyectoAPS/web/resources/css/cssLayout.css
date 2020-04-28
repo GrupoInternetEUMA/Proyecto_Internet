@@ -1,30 +1,11 @@
+
 #top {
     position: relative;
-    background-color: #204a87;
+    background-color: #036fab;
     color: white;
     padding: 5px;
-    height: 5em;
+    height: 3em;
     margin: 0px 0px 10px 0px;
-}
-
-#menu {
-    text-align: center;
-}
-
-#footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #204a87;
-    color: white;
-    height: 5em;
-    text-align: center;
-    display: block;
-}
-
-#login {
-    text-align: center;
-    margin: 0 auto;
 }
 
 #bottom {
@@ -50,7 +31,7 @@
 
 .center_content {
     position: relative;
-    background-color: #ffffff;
+    background-color: #dddddd;
     padding: 5px;
 }
 

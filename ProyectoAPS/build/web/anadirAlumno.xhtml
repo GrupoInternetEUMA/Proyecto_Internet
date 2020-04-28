@@ -8,83 +8,63 @@
 
     <ui:define name="content">
         <c:choose>
-
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
-
 
                 <h:form id="anadirAlumno">
                     <table>
                       <tr>
                           <td>Nombre: </td>
-
                           <td><h:inputText value="#{ModificarAlumno.alumno.nombre}"/></td>
-
                       </tr>
 
                       <tr>
                           <td>Apellidos: </td>
-
                           <td><h:inputText value="#{ModificarAlumno.alumno.apellidos}"/></td>
-
                       </tr>
 
                       <tr>
                           <td>Estudios: </td>
-
                           <td><h:inputText value="#{ModificarAlumno.alumno.estudios}"/></td>
-
                       </tr>
 
                       <tr>
                           <td>Idioma: </td>
-
                           <td><h:inputText value="#{ModificarAlumno.alumno.idioma}"/></td>
-
                       </tr>
 
                       <tr>
                           <td>Fecha nacimiento: </td>
-
                           <td><h:inputText value="#{ModificarAlumno.alumno.fecha_nacimiento}"/></td>
-
                       </tr>
 
                       <tr>
                           <td>Email: </td>
-
                           <td><h:inputText value="#{ModificarAlumno.alumno.email}"/></td>
-
                       </tr>
 
                       <tr>
                           <td>Titulación: </td>
-
                           <td><h:inputText value="#{ModificarAlumno.alumno.titulacion}"/></td>
-
                       </tr>
 
                       <tr>
                           <td>Nº expediente: </td>
-
                           <td><h:inputText value="#{ModificarAlumno.alumno.n_expediente}"/></td>
                       </tr>
                       <tr>
                           <td>Contrasenia: </td>
                           <td><h:inputText value="#{ModificarAlumno.alumno.contrasenia}"/></td>
                       </tr>
-
+                      
                       <tr>
                           <td>Rol: </td>
                           <td><h:inputText value="#{ModificarAlumno.alumno.rol}"/></td>
-
                       </tr>
 
                         <tr>
                             <td colspan="7">
-
                                 <h:commandButton value="Añadir Alumno" style="background-color: lightblue"/>
-                                <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column>
-
+                                <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column> 
                             </td>
                         </tr>
                     </table>

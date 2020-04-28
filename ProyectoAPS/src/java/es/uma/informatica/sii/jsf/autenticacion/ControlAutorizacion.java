@@ -75,13 +75,6 @@ public class ControlAutorizacion implements Serializable {
         return null;
     }
     
-     public String listaInformes() {
-        if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
-            return "listaInformes.xhtml";
-        }
-        return null;
-    }
-    
     public String listaAlumnos() {
         if(getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)){
             return "listaAlumnos.xhtml";
