@@ -7,7 +7,7 @@
 
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
 
                 <h:form id="anadirActividad">
                     <table>

@@ -13,15 +13,14 @@
 						<thead>
 							<tr>
 								<th>Nombre</th>
-								<th>Apellidos</th>
+								<th>Apellido</th>
 								<th>ID</th>
 								<th>DNI</th>
 								<th>Estudios</th>
 								<th>Idioma</th>
 								<th>Fecha Nacimiento</th>
 								<th>Email</th>
-								<th>Contrasenia</th>
-                                                                <th>Usuario</th>
+								<th>Password</th>
 								<th>Rol</th>
 								<th>Titulacion</th>
 								<th>Numero de expediente</th>
@@ -32,25 +31,25 @@
 							<ui:repeat var="i" value="#{ListaAlumnos.alumnos}">
 								<tr>
 									<td>#{i.nombre}</td>
-									<td>#{i.apellidos}</td>
+									<td>#{i.apellido}</td>
 									<td>#{i.id}</td>
 									<td>#{i.dni}</td>
 									<td>#{i.estudios}</td>
 									<td>#{i.idioma}</td>
 									<td>#{i.fecha_nacimiento}</td>
 									<td>#{i.email}</td>
-									<td>#{i.contrasenia}</td>
-                                                                        <td>#{i.usuario}</td>
+									<td>#{i.password}</td>
 									<td>#{i.rol}</td>
 									<td>#{i.titulacion}</td>
 									<td>#{i.num_expediente}</td>
 									<td><h:form id="alumnoaccion">
 											<h:column>
-												<h:commandButton value="Editar" action="editarAlumno.xhtml" />
+												<h:commandButton value="Ver"
+													action="#{ModificarAlumno.verAlumno(i.id)}" />
 											</h:column>
 										</h:form> <h:form>
 											<h:column>
-												<h:commandButton value="Borrar" action="#{ModificarAlumno.eliminar()}" />
+												<h:commandButton value="Borrar" action="listaAlumnos.xhtml" />
 											</h:column>
 										</h:form></td>
 								</tr>
@@ -63,7 +62,7 @@
 				<h:form id="alumno">
 					<h:column>
 						<h:commandButton value="Inserta nuevo alumno"
-                                                                 action="#{ListaAlumnos.crearAlumno()}" />
+							action="#{ListaAlumnos.crearAlumno()}" />
 					</h:column>
 				</h:form>
 
