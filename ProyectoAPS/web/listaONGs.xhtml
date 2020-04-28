@@ -1,69 +1,69 @@
 <ui:composition template="/WEB-INF/templates/plantilla.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-	<ui:define name="title">Lista de ONGs</ui:define>
-	<ui:define name="content">
-		<c:choose>
-			<c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-				<h1>LISTA DE ONGS</h1>
-				<div class="bordeTablaONGs">
-					<table id="tablaListaONGs">
-						<thead>
-							<tr>
-								<th>Nombre</th>
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <ui:define name="title">Lista de ONGs</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                <h1>LISTA DE ONGS</h1>
+                <div class="bordeTablaONGs">
+                    <table id="tablaListaONGs">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                                <th>Direccion</th>
+                                <th>Pais</th>
+                                <th>Password</th>
 
-								<th>ID</th>
-								<th>Email</th>
-								<th>Telefono</th>
-								<th>Direccion</th>
-								<th>Pais</th>
-								<th>Descripcion</th>
-								<th>Password</th>
+                            </tr>
+                        </thead>
+                        <body>
+                            <ui:repeat var="i" value="#{ListaONGs.ONGs}">
+                                <tr>
+                                    <td>#{i.id}</td>
+                                    <td>#{i.nombre}</td>
+                                    <td>#{i.descripcion}</td>
+                                    <td>#{i.email}</td>
+                                    <td>#{i.telefono}</td>
+                                    <td>#{i.direccion}</td>
+                                    <td>#{i.pais}</td>
+                                    <td>#{i.password}</td>
+                                    <td><h:form id="ongaccion">
+                                            <h:column>
+                                                <h:commandButton value="Ver"
+                                                                 action="#{ModificarONG.verONG(i.id)}" />
+                                            </h:column>
+                                        </h:form> <h:form>
+                                            <h:column>
+                                                <h:commandButton value="Borrar" action="listaONGs.xhtml" />
+                                            </h:column>
+                                        </h:form></td>
+                                </tr>
 
-							</tr>
-						</thead>
-						<body>
-							<ui:repeat var="i" value="#{ListaONGs.ongs}">
-								<tr>
-									<td>#{i.nombre}</td>
-									<td>#{i.id}</td>
-									<td>#{i.email}</td>
-									<td>#{i.telefono}</td>
-									<td>#{i.direccion}</td>
-									<td>#{i.descripcion}</td>
-									<td>#{i.password}</td>
-									<td><h:form id="ongaccion">
-											<h:column>
-												<h:commandButton value="Ver"
-													action="#{ModificarONG.verONG(i.id)}" />
-											</h:column>
-										</h:form> <h:form>
-											<h:column>
-												<h:commandButton value="Borrar" action="listaONGs.xhtml" />
-											</h:column>
-										</h:form></td>
-								</tr>
+                            </ui:repeat>
+                        </body>
 
-							</ui:repeat>
-						</body>
-
-					</table>
-				</div>
-				<h:form id="ong">
-					<h:column>
-						<h:commandButton value="Inserta nueva ONG"
-							action="#{ListaONGs.crearONG()}" />
-					</h:column>
-				</h:form>
+                    </table>
+                </div>
+                <h:form id="ong">
+                    <h:column>
+                        <h:commandButton value="Inserta nueva ONG"
+                                         action="#{ListaONGs.crearONG()}" />
+                    </h:column>
+                </h:form>
 
 
-			</c:when>
-			<c:otherwise>
-				<ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml" />
-			</c:otherwise>
-		</c:choose>
-	</ui:define>
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml" />
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
 </ui:composition>
