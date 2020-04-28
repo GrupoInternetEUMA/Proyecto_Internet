@@ -7,33 +7,46 @@
 
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
 
                 <h:form id="anadirActividad">
                     <table>
+                        <tr>
+                          <td>Nombre: </td>
+                          <td><h:inputText value="#{ModificarActividad.actividad.nombre}"/></td>
+                      </tr>
+                        <tr>
+                          <td>ID: </td>
+                          <td><h:inputText value="#{ModificarActividad.actividad.id}"/></td>
+                      </tr>
                       <tr>
                           <td>Fecha inicio: </td>
-                          <td><h:inputText value="#{ModActividad.a.fecha_inicio}"/></td>
+                          <td><h:inputText value="#{ModificarActividad.actividad.fecha_inicio}"/></td>
                       </tr>
                       <tr>
                           <td>Fecha fin: </td>
-                          <td><h:inputText value="#{ModActividad.a.fecha_fin}"/></td>
+                          <td><h:inputText value="#{ModificarActividad.actividad.fecha_fin}"/></td>
                       </tr>
                       <tr>
                           <td>Estado: </td>
-                          <td><h:inputText value="#{ModActividad.a.estado}"/></td>
+                          <td><h:inputText value="#{ModificarActividad.actividad.estado}"/></td>
                       </tr>
                       <tr>
                           <td>Tipo de actividad: </td>
-                          <td><h:inputText value="#{ModActividad.a.tipo_de_actividad}"/></td>
+                          <td><h:inputText value="#{ModificarActividad.actividad.tipo}"/></td>
                       </tr>
                       <tr>
                           <td>Lugar: </td>
-                          <td><h:inputText value="#{ModActividad.a.lugar}"/></td>
+                          <td><h:inputText value="#{ModificarActividad.actividad.lugar}"/></td>
+                      </tr>
+                        <tr>
+                          <td>Descripcion: </td>
+                          <td><h:inputText value="#{ModificarActividad.actividad.descripcion}"/></td>
                       </tr>
                         <tr>
                             <td colspan="7">
-                                <h:commandButton value="Añadir Actividad"  action="#{ModActividad.anadir()}" style="background-color: lightblue"/>
+                                <h:commandButton value="Añadir Actividad"  action="#{ModificarActividad.anadir()}"/>
+                                <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column> 
                             </td>
                         </tr>
                     </table>
