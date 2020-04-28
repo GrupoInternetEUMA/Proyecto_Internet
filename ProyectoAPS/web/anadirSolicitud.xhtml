@@ -11,18 +11,18 @@
                 <h1>Insertar socio</h1>
                 <h:form id="soc" >
                     <h:panelGrid columns="3" >
-                         <h:outputText value="id"/>
+                        <h:outputText value="id"/>
                         <h:inputText id ="id" value="#{ListaSolicitud.solicitud.id}" />
                         <h:message for="id"/>
-                        
+
                         <h:outputText value="Estado"/>
                         <h:inputText id ="estado" value="#{ListaSolicitudes.solicitud.estado}"/>
                         <h:message for="estado"/>
-                        
+
                         <h:outputText value="Fecha"/>
                         <h:inputText id ="fecha" value="#{ListaSolicitudes.solicitud.fecha_solicitud}"/>
-                        <h:message for="fecha"/>                  
-                        
+                        <h:message for="fecha"/>
+
                         <h:commandButton value="Insertar Solicitud" action="listaSolicitudes.xhtml"/>
                         <h:commandButton value="Cancelar" action="listaSolicitudes.xhtml"/>
                         <h:commandButton value="Limpiar" type="reset" />
