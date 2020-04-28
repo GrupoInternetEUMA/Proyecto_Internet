@@ -20,46 +20,47 @@ import es.uma.informatica.sii.acoes.*;
 @Named(value = "ListaSolicitudes")
 @SessionScoped
 public class listaSolicitudes implements Serializable {
+
     private final ArrayList<Solicitud_Actividad> solicitudes;
     private Actividad actividad;
     private Usuario usuario;
     private Solicitud_Actividad solicitud;
-    
-    public listaSolicitudes(){
+
+    public listaSolicitudes() {
         solicitudes = new ArrayList<>();
-        solicitudes.add(new Solicitud_Actividad(1,"Pendiente",(new Date(2000,10,23))));
-        solicitudes.add(new Solicitud_Actividad(2,"Aprobada",(new Date(2001,10,23))));
-        solicitudes.add(new Solicitud_Actividad(3,"Pendiente",(new Date(2010,12,3))));
-        solicitudes.add(new Solicitud_Actividad(4,"Pendiente",(new Date(2004,1,23))));
+        solicitudes.add(new Solicitud_Actividad(1, "Pendiente", (new Date(2000, 10, 23))));
+        solicitudes.add(new Solicitud_Actividad(2, "Aprobada", (new Date(2001, 10, 23))));
+        solicitudes.add(new Solicitud_Actividad(3, "Pendiente", (new Date(2010, 12, 3))));
+        solicitudes.add(new Solicitud_Actividad(4, "Pendiente", (new Date(2004, 1, 23))));
         solicitud = new Solicitud_Actividad();
     }
 
-    public ArrayList<Solicitud_Actividad> getSolicitudes(){
+    public ArrayList<Solicitud_Actividad> getSolicitudes() {
         return solicitudes;
     }
-    public Actividad getActividad(){
+
+    public Actividad getActividad() {
         return actividad;
     }
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
-    public Solicitud_Actividad getSolicitud(){
+
+    public Solicitud_Actividad getSolicitud() {
         return solicitud;
     }
-    
-    public void setSolicitud(Solicitud_Actividad solicitud){
-      this.solicitud = solicitud;
+
+    public void setSolicitud(Solicitud_Actividad solicitud) {
+        this.solicitud = solicitud;
     }
-    
-    public Usuario getUsuario(){
+
+    public Usuario getUsuario() {
         return usuario;
     }
-    
-    public String crearSolicitud(){
-        return "insertaSolicitud.xhtml";
+
+    public String crearSolicitud() {
+        return "anadirSolicitud.xhtml";
     }
-    
-    
+
 }
