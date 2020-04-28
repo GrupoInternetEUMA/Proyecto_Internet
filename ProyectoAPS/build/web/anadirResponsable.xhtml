@@ -9,7 +9,9 @@
     <ui:define name="title">editar responsable</ui:define>
     <ui:define name="content">
         <c:choose>
+
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+
                 <h:form id="editarResponsable">
                     <table>
                         <tr>
@@ -67,4 +69,3 @@
         <h:messages/>
     </ui:define>
 </ui:composition>
-
