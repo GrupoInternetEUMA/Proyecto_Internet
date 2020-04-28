@@ -1,4 +1,4 @@
-<!-- NOTA: depende de un jsf llamado ModResponsable con un responsable r, una función editar() y los campos correspondientes-->
+
 
 <ui:composition template="/WEB-INF/templates/plantilla.xhtml"
                 xmlns="http://www.w3.org/1999/xhtml"
@@ -8,52 +8,58 @@
     <ui:define name="title">editar responsable</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getClase() == 'ADMINISTRADOR'}">
-                <h:form id="editarResponsable">
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+                <h:form id="editarAlumno">
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ModResponsable.r.nombre}"/></td>
+                            <td><h:inputText value="#{i.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{ModResponsable.r.apellidos}"/></td>
+                            <td><h:inputText value="#{i.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{ModResponsable.r.estudios}"/></td>
+                            <td><h:inputText value="#{i.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{ModResponsable.r.idioma}"/></td>
+                            <td><h:inputText value="#{i.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{ModResponsable.r.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{i.fecha_nacimiento}"/></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{ModResponsable.r.email}"/></td>
+                            <td><h:inputText value="#{i.email}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Departamento: </td>
-                            <td><h:inputText value="#{ModResponsable.r.departamento}"/></td>
+                            <td>Departamento </td>
+                            <td><h:inputText value="#{i.departamento}"/></td>
                         </tr>
+
 
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{ModResponsable.r.password}"/></td>
+                            <td><h:inputText value="#{i.contrasenia}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Rol: </td>
+                            <td><h:inputText value="#{i.rol}"/></td>
                         </tr>
 
                         <tr>
-                            <td colspan="6">
-                                <h:commandButton value="Editar responsable" action="#{ModResponsable.editar()}" style="background-color: lightblue"/>
+                            <td colspan="7">
+                                <h:commandButton value="Editar Responsable"/>
+                                <h:column> <h:commandButton value="Cancelar" action="listaResponsables.xhtml" /> </h:column> 
                             </td>
                         </tr>
                     </table>

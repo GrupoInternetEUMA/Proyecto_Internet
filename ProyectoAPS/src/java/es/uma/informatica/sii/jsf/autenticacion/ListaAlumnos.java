@@ -41,11 +41,11 @@ public class ListaAlumnos implements Serializable{
     
     
     
-     public void setUsuario(Usuario usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
      
-     public Usuario getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     } 
      
@@ -78,7 +78,7 @@ public class ListaAlumnos implements Serializable{
             return "ListaAlumnos.xhtml";
         }
         
-        // Si el usuario es SOCIO, le llevará a la página web de INDEX
+        // Si el usuario es Alumno, le llevará a la página web de INDEX
         // REVISAR
         if(getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)){
             return "login.xhtml";

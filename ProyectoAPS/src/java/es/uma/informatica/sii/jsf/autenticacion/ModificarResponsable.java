@@ -6,7 +6,7 @@
 package es.uma.informatica.sii.jsf.autenticacion;
 
 import es.uma.informatica.sii.acoes.Usuario;
-import es.uma.informatica.sii.acoes.Alumno;
+import es.uma.informatica.sii.acoes.Responsable_actividad;
 
 import es.uma.informatica.sii.acoes.Usuario.Rol;
 import javax.inject.Named;
@@ -24,77 +24,73 @@ import javax.faces.context.FacesContext;
  *
  * @author Enriquito
  */
-@Named(value = "ModificarAlumno")
+@Named(value = "ModificarResponsable")
 @SessionScoped
-public class ModificarAlumno implements Serializable {
+public class ModificarResponsable implements Serializable {
 
-    private Alumno alumno;
+    private Responsable_actividad responsable;
 
-    public Alumno getAlumno() {
-        return alumno;
+    public Responsable_actividad getResponsable() {
+        return responsable;
     }
 
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public void setResponsable(Responsable_actividad responsable) {
+        this.responsable = responsable;
     }
 
-    public Alumno getUsuario() {
+    public Responsable_actividad getUsuario() {
         return this.getUsuario();
     }
 
-    public String getTitulacion() {
-        return this.alumno.getTitulacion();
-    }
-
-    public Integer getNum_expediente() {
-        return this.alumno.getNum_expediente();
+    public String getDepartamento() {
+        return this.responsable.getDepartamento();
     }
 
     public Integer getId() {
-        return this.alumno.getId();
+        return this.responsable.getId();
     }
 
     public Integer getDni() {
-        return this.alumno.getDni();
+        return this.responsable.getDni();
     }
 
     public String getNombre() {
-        return this.alumno.getNombre();
+        return this.responsable.getNombre();
     }
 
     public String getApellidos() {
-        return this.alumno.getApellidos();
+        return this.responsable.getApellidos();
     }
 
     public String getEstudios() {
-        return this.alumno.getEstudios();
+        return this.responsable.getEstudios();
     }
 
     public String getIdioma() {
-        return this.alumno.getIdioma();
+        return this.responsable.getIdioma();
     }
 
     public Date getFecha_nacimiento() {
-        return this.alumno.getFecha_nacimiento();
+        return this.responsable.getFecha_nacimiento();
     }
 
     public String getEmail() {
-        return this.alumno.getEmail();
+        return this.responsable.getEmail();
     }
 
     public String getContrasenia() {
-        return this.alumno.getContrasenia();
+        return this.responsable.getContrasenia();
     }
 
     public Rol getRol() {
-        return this.alumno.getRol();
+        return this.responsable.getRol();
     }
 
     public String anadir() throws ParseException {  // Pasar parámetros del login
 
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir a un alumno, inténtelo más tarde", "No ha sido posible añadir a un alumno, inténtelo más tarde"));
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir a un responsable, inténtelo más tarde", "No ha sido posible añadir a un responsable, inténtelo más tarde"));
 
         return null;
 
@@ -104,7 +100,7 @@ public class ModificarAlumno implements Serializable {
 
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible editar a un alumno, inténtelo más tarde", "No ha sido posible editar a un alumno, inténtelo más tarde"));
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible editar a un responsable, inténtelo más tarde", "No ha sido posible editar a un responsable, inténtelo más tarde"));
 
         return null;
 
@@ -114,12 +110,12 @@ public class ModificarAlumno implements Serializable {
 
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible eliminar a un alumno, inténtelo más tarde", "No ha sido posible eliminar a un alumno, inténtelo más tarde"));
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible eliminar a un responsable, inténtelo más tarde", "No ha sido posible eliminar a un responsable, inténtelo más tarde"));
 
         return null;
 
     }
 
-    public ModificarAlumno() {
+    public ModificarResponsable() {
     }
 }
