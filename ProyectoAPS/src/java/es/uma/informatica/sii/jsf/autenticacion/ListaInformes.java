@@ -17,14 +17,14 @@ import es.uma.informatica.sii.acoes.*;
  */
 @Named(value = "ListaInformes")
 @SessionScoped
-public class listaInformes implements Serializable {
+public class ListaInformes implements Serializable {
 
     private final ArrayList<Informe> informes;
     private Actividad actividad;
     private Usuario usuario;
     private Informe informe;
 
-    public listaInformes() {
+    public ListaInformes() {
         informes = new ArrayList<>();
         informes.add(new Informe(1, "Obtención de 5 créditos", "180 horas", "Curso de montaje de ordenador"));
         informes.add(new Informe(2, "Obtención de 1 créditos", "30 horas", "Tareas de mantenimiento de jardinería"));

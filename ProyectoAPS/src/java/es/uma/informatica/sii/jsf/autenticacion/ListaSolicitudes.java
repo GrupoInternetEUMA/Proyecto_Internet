@@ -19,14 +19,14 @@ import es.uma.informatica.sii.acoes.*;
  */
 @Named(value = "ListaSolicitudes")
 @SessionScoped
-public class listaSolicitudes implements Serializable {
+public class ListaSolicitudes implements Serializable {
 
     private final ArrayList<Solicitud_Actividad> solicitudes;
     private Actividad actividad;
     private Usuario usuario;
     private Solicitud_Actividad solicitud;
 
-    public listaSolicitudes() {
+    public ListaSolicitudes() {
         solicitudes = new ArrayList<>();
         solicitudes.add(new Solicitud_Actividad(1, "Pendiente", (new Date(2000, 10, 23))));
         solicitudes.add(new Solicitud_Actividad(2, "Aprobada", (new Date(2001, 10, 23))));
