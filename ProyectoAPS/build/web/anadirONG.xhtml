@@ -39,9 +39,11 @@
                         <h:inputText id ="password" value="#{listaONGs.ong.password}" />
                         <h:message for="password"/>
 
+                    </h:panelGrid>
+                </h:form>
+                <h:form>
                         <h:commandButton value="Insertar" action="listaONGs.xhtml"/>
                         <h:commandButton value="Cancelar" action="listaONGs.xhtml"/>
-                    </h:panelGrid>
                 </h:form>
             </c:when>
             <c:otherwise>

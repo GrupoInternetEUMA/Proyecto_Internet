@@ -9,7 +9,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{modificarInforme.informe}">Modificar Informe</h1>
+                <h1 var = "i" value="#{ModificarInforme.informe}">Modificar Informe</h1>
                 
                 <h:form id="ListaInformes">
                     <table>

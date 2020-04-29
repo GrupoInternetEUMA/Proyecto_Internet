@@ -8,7 +8,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{modificarSolicitud.solicitud}">Modificar Solicitud</h1>
+                <h1 var = "i" value="#{editarSolicitud.solicitud}">Modificar Solicitud</h1>
                 
                 <h:form id="ListaSolicitudes">
                     <table>

@@ -16,9 +16,9 @@ import javax.inject.Named;
  *
  * @author
  */
-@Named(value = "modificarInforme")
+@Named(value = "ModificarInforme")
 @SessionScoped
-public class modificarInforme implements Serializable {
+public class ModificarInforme implements Serializable {
 
     private Informe informe;
 
@@ -51,9 +51,9 @@ public class modificarInforme implements Serializable {
     }
 
     public String verInforme(int id) {
-        return "modificarInforme.xhtml";
+        return "editarInforme.xhtml";
     }
 
-    public modificarInforme() {
+    public ModificarInforme() {
     }
 }

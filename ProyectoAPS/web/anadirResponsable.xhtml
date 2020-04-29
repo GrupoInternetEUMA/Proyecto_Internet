@@ -5,12 +5,12 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <ui:define name="title">Añadir Responsable</ui:define>
+    <ui:define name="title">Formulario Nuevo Responsable</ui:define>
 
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
-
+                <h1>Insertar Responsable</h1>
                 <h:form id="anadirResponsable">
                     <table>
                         <tr>

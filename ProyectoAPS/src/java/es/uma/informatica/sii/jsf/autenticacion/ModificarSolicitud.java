@@ -50,7 +50,7 @@ public class ModificarSolicitud implements Serializable {
     }
      
    public String verSolicitud(int id){
-        return "modificarSolicitud.xhtml";
+        return "editarSolicitud.xhtml";
     }
 
     /**
