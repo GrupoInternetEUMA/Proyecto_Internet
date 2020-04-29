@@ -6,7 +6,7 @@
     <ui:define name="title">Lista de Alumnos</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
                 <h1>LISTA DE ALUMNOS</h1>
                 <div class="bordeTablaAlumnos">
                     <table id="tablaListaAlumnos">
@@ -20,7 +20,9 @@
                                 <th>Idioma</th>
                                 <th>Fecha Nacimiento</th>
                                 <th>Email</th>
+                                <c:if test="#{ controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                 <th>Contrasenia</th>
+                                </c:if>
                                 <th>Usuario</th>
                                 <th>Rol</th>
                                 <th>Titulacion</th>
@@ -38,11 +40,14 @@
                                     <td>#{i.idioma}</td>
                                     <td>#{i.fecha_nacimiento}</td>
                                     <td>#{i.email}</td>
+                                    <c:if test="#{ controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                     <td>#{i.contrasenia}</td>
+                                    </c:if>
                                     <td>#{i.usuario}</td>
                                     <td>#{i.rol}</td>
                                     <td>#{i.titulacion}</td>
                                     <td>#{i.num_expediente}</td>
+                                    <c:if test="#{ controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                     <td><h:form id="alumnoaccion">
                                             <h:column>
                                                 <h:commandButton value="Editar" action="#{ModificarAlumno.verAlumno(i.id)}" />
@@ -52,6 +57,7 @@
                                                 <h:commandButton value="Borrar" action="#{ModificarAlumno.eliminar()}" />
                                             </h:column>
                                         </h:form></td>
+                                    </c:if>
                                 </tr>
 
                             </ui:repeat>
@@ -59,13 +65,14 @@
 
                     </table>
                 </div>
+                <c:if test="#{ controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h:form id="alumno">
                     <h:column>
                         <h:commandButton value="Insertar Alumno"
                                          action="#{ListaAlumnos.crearAlumno()}" />
                     </h:column>
                 </h:form>
-
+                </c:if>
 
             </c:when>
             <c:otherwise>

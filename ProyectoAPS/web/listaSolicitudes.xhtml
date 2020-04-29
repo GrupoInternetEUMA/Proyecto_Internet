@@ -7,7 +7,7 @@
     <ui:define name="title">Lista de solicitudes de actividades</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ALUMNO'}">
                 <h1>LISTA DE SOLICITUDES DE ACTIVIDADES</h1>
                 <div class="bordeTablaSolicitudes">
                     <table id="tablaListaSolicitudes">
@@ -25,28 +25,33 @@
                                     <td>#{i.estado}</td>                               
                                     <td>#{i.fecha_solicitud}</td>                                                        
                                     <td> 
-                                        <h:form id = "solicitudaccion"> 
+                                        <h:form id = "solicitudaccion">
+                                            <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
                                             <h:column> 
                                                 <h:commandButton value="Editar" action="#{ModificarSolicitud.verSolicitud(i.id)}"/> 
                                             </h:column> 
+                                            </c:if>
                                         </h:form>
+                                        <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                         <h:form> 
                                             <h:column> 
                                                 <h:commandButton value="Borrar" action="#{ModificarSolicitud.eliminar()}"/> 
                                             </h:column> 
                                         </h:form>
+                                        </c:if>
                                     </td>
                                 </tr>
                             </ui:repeat>
                         </body>
                     </table>
                 </div>
+                <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h:form id = "solicitud">
                     <h:column>
                         <h:commandButton value="Inserta Solicitud" action="#{ListaSolicitudes.crearSolicitud()}"/>
                     </h:column>               
                 </h:form>
-
+                </c:if>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

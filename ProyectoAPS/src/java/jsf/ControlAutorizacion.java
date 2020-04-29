@@ -65,14 +65,15 @@ public class ControlAutorizacion implements Serializable {
     }
 
     public String listaInformes() {
-        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)|| getUsuario().getRol().equals(getUsuario().getRol().ONG)
+                || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE) || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
             return "listaInformes.xhtml";
         }
         return null;
     }
 
     public String listaAlumnos() {
-        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR) || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)) {
             return "listaAlumnos.xhtml";
         }
         return null;
@@ -93,14 +94,16 @@ public class ControlAutorizacion implements Serializable {
     }
 
     public String listaActividades() {
-        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR) || getUsuario().getRol().equals(getUsuario().getRol().ONG) 
+                || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE) || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
             return "listaActividades.xhtml";
         }
         return null;
     }
 
     public String listaSolicitudes() {
-        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)) {
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR) || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)
+                || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
             return "listaSolicitudes.xhtml";
         }
         return null;

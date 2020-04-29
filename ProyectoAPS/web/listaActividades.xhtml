@@ -7,7 +7,8 @@
     <ui:define name="title">Lista de Actividades</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ONG' 
+                            || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ALUMNO'}">
                 <h1>LISTA DE ACTIVIDADES</h1>
                 <div class="bordeTablaActividades">
                     <table id="tablaListaActividades">
@@ -34,28 +35,46 @@
                                     <td>#{i.fecha_inicio}</td>
                                     <td>#{i.fecha_fin}</td>
                                     <td>#{i.descripcion}</td>
+                                    
                                     <td> 
+                                        <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
                                         <h:form id="actividadaccion">
                                             <h:column>
                                                 <h:commandButton value="Editar" action="#{ModificarActividad.verActividad(i.id)}" />
                                             </h:column>
-                                        </h:form> <h:form>
+                                        </h:form> 
+                                        </c:if>
+                                        <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                                        <h:form>
                                             <h:column>
                                                 <h:commandButton value="Borrar" action="#{ModificarActividad.eliminar()}" />
                                             </h:column>
                                         </h:form>
+                                        </c:if>
+                                        
+                                        <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO' }">
+                                        <h:form>
+                                            <h:column>
+                                                <h:commandButton value="Apuntarse"/>
+                                            </h:column>
+                                        </h:form>
+                                        </c:if>
+                                        
                                     </td>
+                                    
                                 </tr>
                             </ui:repeat>
                         </body>
 
                     </table>
                 </div>
+                <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ONG'}">
                 <h:form id = "actividad">
                     <h:column>
                         <h:commandButton value="Insertar Actividad" action="#{ListaActividades.crearActividad()}"/>
                     </h:column>               
                 </h:form>
+                </c:if>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
