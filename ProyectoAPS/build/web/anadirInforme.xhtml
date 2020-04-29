@@ -4,19 +4,19 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
-    <ui:define name="title">Formulario Nuevo ONG</ui:define>
+    <ui:define name="title">Formulario Nuevo Informe</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>Insertar Informe</h1>
-                <h:form id="insertarONG" >
+                <h:form id="insertarInforme" >
                     <h:panelGrid columns="3" >
                         <h:outputText value="Id"/>
                         <h:inputText id ="id" value="#{listaInformes.informe.id}" />
                         <h:message for="id"/>
 
-                        <h:outputText value="Nombre"/>
-                        <h:inputText id ="evaluacion" value="#{listaInformes.informe.nombre}"/>
+                        <h:outputText value="Evaluacion"/>
+                        <h:inputText id ="evaluacion" value="#{listaInformes.informe.evaluacion}"/>
                         <h:message for="evaluacion"/>
 
                         <h:outputText value="Tiempo_empleado"/>
@@ -27,8 +27,8 @@
                         <h:inputText id ="tareas_realizadas" value="#{listaInformes.informe.tareas_realizadas}"/>
                         <h:message for="tareas_realizadas"/>
 
-                        <h:commandButton value="Insertar" action="listaONGs.xhtml"/>
-                        <h:commandButton value="Cancelar" action="listaONGs.xhtml"/>
+                        <h:commandButton value="Insertar" action="listaInformes.xhtml"/>
+                        <h:commandButton value="Cancelar" action="listaInformes.xhtml"/>
                         <h:commandButton value="Limpiar" type="reset" />
 
                     </h:panelGrid>
