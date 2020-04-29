@@ -19,7 +19,7 @@ import javax.inject.Named;
  */
 @Named(value = "EditarONG")
 @SessionScoped
-public class editarONG implements Serializable {
+public class ModificarONG implements Serializable {
 
     private ONG ong;
 
@@ -71,6 +71,6 @@ public class editarONG implements Serializable {
         return "editarONG.xhtml";
     }
 
-    public editarONG() {
+    public ModificarONG() {
     }
 }
