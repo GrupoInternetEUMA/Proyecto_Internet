@@ -27,11 +27,12 @@
                         <h:inputText id ="tareas_realizadas" value="#{listaInformes.informe.tareas_realizadas}"/>
                         <h:message for="tareas_realizadas"/>
 
+                    </h:panelGrid>
+                </h:form>
+                <h:form>
                         <h:commandButton value="Insertar" action="listaInformes.xhtml"/>
                         <h:commandButton value="Cancelar" action="listaInformes.xhtml"/>
                         <h:commandButton value="Limpiar" type="reset" />
-
-                    </h:panelGrid>
                 </h:form>
             </c:when>
             <c:otherwise>

@@ -8,7 +8,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>Insertar socio</h1>
+                <h1>Insertar solicitud</h1>
                 <h:form id="soc" >
                     <h:panelGrid columns="3" >
                         <h:outputText value="id"/>
@@ -23,11 +23,12 @@
                         <h:inputText id ="fecha" value="#{ListaSolicitudes.solicitud.fecha_solicitud}"/>
                         <h:message for="fecha"/>
 
+                    </h:panelGrid>
+                </h:form>
+                <h:form>
                         <h:commandButton value="Insertar Solicitud" action="listaSolicitudes.xhtml"/>
                         <h:commandButton value="Cancelar" action="listaSolicitudes.xhtml"/>
                         <h:commandButton value="Limpiar" type="reset" />
-
-                    </h:panelGrid>
                 </h:form>
             </c:when>
             <c:otherwise>
