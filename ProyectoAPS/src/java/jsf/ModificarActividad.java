@@ -57,6 +57,14 @@ public class ModificarActividad implements Serializable {
     public String getLugar() {
         return this.actividad.getLugar();
     }
+    
+    public String ListaActividades() {
+        return "listaActividades.xhtml";
+    }
+
+    public String verActividad(int id) {
+        return "editarActividad.xhtml";
+    }
 
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método

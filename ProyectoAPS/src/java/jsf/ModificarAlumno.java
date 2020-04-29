@@ -79,6 +79,14 @@ public class ModificarAlumno implements Serializable {
     public Rol getRol() {
         return this.alumno.getRol();
     }
+    
+    public String ListaAlumnos() {
+        return "listaAlumnos.xhtml";
+    }
+
+    public String verAlumno(int id) {
+        return "editarAlumno.xhtml";
+    }
 
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método

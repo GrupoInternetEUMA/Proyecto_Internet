@@ -39,10 +39,6 @@ public class ListaActividades implements Serializable {
         this.actividad = actividad;
     }
 
-    public String crearActividad() {
-        return "anadirActividad.xhtml";
-    }
-
     public Usuario getUsuario() {
         return usuario;
     }
@@ -50,6 +46,11 @@ public class ListaActividades implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+    
+    public String crearActividad() {
+        return "anadirActividad.xhtml";
+    }
+    
 
     public String home() {
         // Si no ha iniciado sesion, le lleva al login

@@ -75,6 +75,14 @@ public class ModificarResponsable implements Serializable {
     public Rol getRol() {
         return this.responsable.getRol();
     }
+    
+    public String ListaResponsables() {
+        return "listaResponsables.xhtml";
+    }
+
+    public String verResponsable(int id) {
+        return "editarResponsable.xhtml";
+    }
 
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
