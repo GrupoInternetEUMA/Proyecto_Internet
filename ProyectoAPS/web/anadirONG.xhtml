@@ -8,29 +8,39 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>Insertar Informe</h1>
+                <h1>Insertar ONG</h1>
                 <h:form id="insertarONG" >
                     <h:panelGrid columns="3" >
                         <h:outputText value="Id"/>
-                        <h:inputText id ="id" value="#{listaInformes.informe.id}" />
+                        <h:inputText id ="id" value="#{listaONGs.ong.id}" />
                         <h:message for="id"/>
 
                         <h:outputText value="Nombre"/>
-                        <h:inputText id ="evaluacion" value="#{listaInformes.informe.nombre}"/>
-                        <h:message for="evaluacion"/>
+                        <h:inputText id ="nombre" value="#{listaONGs.ong.nombre}" />
+                        <h:message for="nombre"/>
 
-                        <h:outputText value="Tiempo_empleado"/>
-                        <h:inputText id ="tiempo_empleado" value="#{listaInformes.informe.tiempo_empleado}"/>
-                        <h:message for="tiempo_empleado"/>
+                        <h:outputText value="Descripcion"/>
+                        <h:inputText id ="descripcion" value="#{listaONGs.ong.descripcion}" />
+                        <h:message for="descripcion"/>
 
-                        <h:outputText value="Tareas_realizadas"/>
-                        <h:inputText id ="tareas_realizadas" value="#{listaInformes.informe.tareas_realizadas}"/>
-                        <h:message for="tareas_realizadas"/>
+                        <h:outputText value="Telefono"/>
+                        <h:inputText id ="telefono" value="#{listaONGs.ong.telefono}" />
+                        <h:message for="telefono"/>
+
+                        <h:outputText value="Direccion"/>
+                        <h:inputText id ="direccion" value="#{listaONGs.ong.direccion}" />
+                        <h:message for="direccion"/>
+
+                        <h:outputText value="Pais"/>
+                        <h:inputText id ="pais" value="#{listaONGs.ong.pais}" />
+                        <h:message for="pais"/>
+
+                        <h:outputText value="Password"/>
+                        <h:inputText id ="password" value="#{listaONGs.ong.password}" />
+                        <h:message for="password"/>
 
                         <h:commandButton value="Insertar" action="listaONGs.xhtml"/>
                         <h:commandButton value="Cancelar" action="listaONGs.xhtml"/>
-                        <h:commandButton value="Limpiar" type="reset" />
-
                     </h:panelGrid>
                 </h:form>
             </c:when>
