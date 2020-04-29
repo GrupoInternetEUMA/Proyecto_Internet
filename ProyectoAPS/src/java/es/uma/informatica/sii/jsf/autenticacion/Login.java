@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.uma.informatica.sii.jsf.autenticacion;
 
 import java.util.ArrayList;
@@ -16,10 +12,9 @@ import es.uma.informatica.sii.acoes.Usuario;
 import es.uma.informatica.sii.acoes.Usuario.Rol;
 import es.uma.informatica.sii.jsf.autenticacion.ControlAutorizacion;
 
-/**
- *
- * @author Jose Antonio Bravo Gonzalez
- */
+
+
+
 @Named(value = "login")
 @RequestScoped
 public class Login {

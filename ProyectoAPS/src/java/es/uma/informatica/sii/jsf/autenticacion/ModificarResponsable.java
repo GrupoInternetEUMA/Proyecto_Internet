@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.uma.informatica.sii.jsf.autenticacion;
 
 import es.uma.informatica.sii.acoes.Usuario;
@@ -19,10 +14,9 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
-/**
- *
- * @author Enriquito
- */
+
+
+
 @Named(value = "ModificarResponsable")
 @SessionScoped
 public class ModificarResponsable implements Serializable {

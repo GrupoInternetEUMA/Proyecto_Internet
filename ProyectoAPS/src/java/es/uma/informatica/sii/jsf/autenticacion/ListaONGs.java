@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.uma.informatica.sii.jsf.autenticacion;
 
 import javax.inject.Named;
@@ -11,10 +6,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import es.uma.informatica.sii.acoes.*;
 
-/**
- *
- * @author Jose Antonio
- */
+
+
+
 @Named(value = "ListaONGs")
 @SessionScoped
 

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.uma.informatica.sii.jsf.autenticacion;
 
 import es.uma.informatica.sii.acoes.Usuario;
@@ -14,10 +10,9 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
 
-/**
- *
- * @author Jose Antonio Bravo Gonzalez
- */
+
+
+
 @Named(value = "controlAutorizacion")
 @SessionScoped
 public class ControlAutorizacion implements Serializable {
