@@ -9,10 +9,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.faces.context.FacesContext;
-import jsf.*;
-
-
-
 
 @Named(value = "ListaSolicitudes")
 @SessionScoped

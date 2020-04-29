@@ -12,8 +12,6 @@ import java.util.Iterator;
 import java.util.List;
 import javax.faces.context.FacesContext;
 
-
-
 @Named(value = "ListaActividades")
 @SessionScoped
 public class ListaActividades implements Serializable {

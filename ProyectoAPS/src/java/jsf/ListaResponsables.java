@@ -12,9 +12,6 @@ import java.util.Iterator;
 import java.util.List;
 import javax.faces.context.FacesContext;
 
-
-
-
 @Named(value = "ListaResponsables")
 @SessionScoped
 public class ListaResponsables implements Serializable {
@@ -27,7 +24,6 @@ public class ListaResponsables implements Serializable {
         responsables = new ArrayList<>();
         responsables.add(new Responsable_actividad(000003, 12345678, "Francisco", "El guay", "Fisica Nuclear", "Castellano", new Date(1975, 5, 30), "profe1@uma.es", "pass123", Rol.RESPONSABLE, "fisicoLoco", "Ciencias naturales"));
         responsables.add(new Responsable_actividad(000004, 39645678, "Vaiana", "Jimenez Guacho", "Odontologia", "Aleman", new Date(1987, 10, 6), "profe2@uma.es", "321PaS", Rol.RESPONSABLE, "Sacamuelas", "Anatomia"));
-
     }
 
     public void setUsuario(Usuario usuario) {

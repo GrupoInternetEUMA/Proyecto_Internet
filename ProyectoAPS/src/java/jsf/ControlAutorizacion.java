@@ -10,8 +10,10 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
 
-
-
+/**
+ *
+ * @author José Antonio Bravo Gonzalez
+ */
 
 @Named(value = "controlAutorizacion")
 @SessionScoped

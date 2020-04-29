@@ -12,8 +12,10 @@ import jpa.Usuario;
 import jpa.Usuario.Rol;
 import jsf.ControlAutorizacion;
 
-
-
+/**
+ *
+ * @author José Antonio Bravo Gonzalez
+ */
 
 @Named(value = "login")
 @RequestScoped

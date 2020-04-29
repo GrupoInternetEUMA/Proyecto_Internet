@@ -8,9 +8,6 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
-
-
 @Named(value = "ListaInformes")
 @SessionScoped
 public class ListaInformes implements Serializable {

@@ -8,14 +8,11 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-
-
-
 @Named(value = "ModificarSolicitud")
 @SessionScoped
 public class ModificarSolicitud implements Serializable {
-    private Solicitud_Actividad solicitud;
 
+    private Solicitud_Actividad solicitud;
 
     public Solicitud_Actividad getSolicitud() {
         return solicitud;
@@ -24,8 +21,8 @@ public class ModificarSolicitud implements Serializable {
     public void setSolicitud(Solicitud_Actividad solicitud) {
         this.solicitud = solicitud;
     }
-    
-     public Integer getId() {
+
+    public Integer getId() {
         return this.solicitud.getId();
     }
 
@@ -37,19 +34,14 @@ public class ModificarSolicitud implements Serializable {
         return this.solicitud.getFecha_solicitud();
     }
 
-   
-    public String ListaSolicitudes(){
+    public String ListaSolicitudes() {
         return "listaSolicitudes.xhtml";
     }
-     
-   public String verSolicitud(int id){
+
+    public String verSolicitud(int id) {
         return "editarSolicitud.xhtml";
     }
 
-    /**
-     * Creates a new instance of ControlAutorizacion
-     */
-    public ModificarSolicitud(){
+    public ModificarSolicitud() {
     }
 }
-

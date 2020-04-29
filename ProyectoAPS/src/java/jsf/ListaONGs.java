@@ -7,8 +7,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import jsf.*;
 
-
-
+/**
+ *
+ * @author José Antonio Bravo Gonzalez
+ */
 
 @Named(value = "ListaONGs")
 @SessionScoped

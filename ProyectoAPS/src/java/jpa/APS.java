@@ -21,8 +21,8 @@ public class APS {
         nino1.setApellidos("Lopez");;
         tx.begin();
         em.persist(nino1);
-        tx.commit();*/
-
+        tx.commit();
+        */
         em.close();
         emf.close();
     }

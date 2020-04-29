@@ -14,9 +14,6 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
-
-
-
 @Named(value = "ModificarAlumno")
 @SessionScoped
 public class ModificarAlumno implements Serializable {

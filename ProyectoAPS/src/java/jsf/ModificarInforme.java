@@ -7,9 +7,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-
-
-
 @Named(value = "ModificarInforme")
 @SessionScoped
 public class ModificarInforme implements Serializable {
