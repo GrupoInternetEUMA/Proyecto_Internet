@@ -37,7 +37,7 @@
                                     <td> 
                                         <h:form id="actividadaccion">
                                             <h:column>
-                                                <h:commandButton value="Editar" action="editarActividad.xhtml" />
+                                                <h:commandButton value="Editar" action="#{ModificarActividad.verActividad(i.id)}" />
                                             </h:column>
                                         </h:form> <h:form>
                                             <h:column>
@@ -53,7 +53,7 @@
                 </div>
                 <h:form id = "actividad">
                     <h:column>
-                        <h:commandButton value="Insertar Actividad" action="anadirActividad.xhtml"/>
+                        <h:commandButton value="Insertar Actividad" action="#{ListaActividades.crearActividad()}"/>
                     </h:column>               
                 </h:form>
             </c:when>
