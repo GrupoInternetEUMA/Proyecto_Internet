@@ -24,7 +24,6 @@ public class ListaActividades implements Serializable {
         actividades = new ArrayList<>();
         actividades.add(new Actividad(000005, "Recogida Alimentos", "Se va a recoger alimentos por malaga", new Date(2020, 5, 13), new Date(2020, 5, 20), "ACEPTADA", "Voluntariado", "Malaga"));
         actividades.add(new Actividad(000006, "Campaña E.T.S", "Test gratuitos de enfermedades de transimion sexual a cualquier persona", new Date(2020, 2, 11), new Date(2020, 2, 18), "FINALIZADA", "ApS", "Malaga"));
-
     }
 
     public Actividad getActividad() {
@@ -51,6 +50,9 @@ public class ListaActividades implements Serializable {
         return "anadirActividad.xhtml";
     }
     
+    public String verActividad(int id){
+        return "verActividad.xhtml";
+    }
 
     public String home() {
         // Si no ha iniciado sesion, le lleva al login

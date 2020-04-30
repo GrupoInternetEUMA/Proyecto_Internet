@@ -47,46 +47,46 @@
                     </table>
                 </h:form>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                <h:form>
-                    
-                    <h:column> 
-                    <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
-                </h:column>
-                <h:column> 
-                    <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
-                </h:column>
-                </h:form>
+                    <h:form>
+
+                        <h:column> 
+                            <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
+                        </h:column>
+                        <h:column> 
+                            <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
+                        </h:column>
+                    </h:form>
                 </c:if>
             </c:when>
-            
+
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                                
                 <h1 var = "i" value="#{ModificarActividad.actividad}">Modificar Actividad</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
-                   
+
                             <td>Estado: </td>
                             <td><h:inputText value="#{i.estado}"/></td>
                         </tr>
-                        
+
 
                     </table>
                 </h:form>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                <h:form>
-                    
-                    <h:column> 
-                    <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
-                </h:column>
-                <h:column> 
-                    <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
-                </h:column>
-                </h:form>
+                    <h:form>
+
+                        <h:column> 
+                            <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
+                        </h:column>
+                        <h:column> 
+                            <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
+                        </h:column>
+                    </h:form>
                 </c:if>
             </c:when>
-            
-            
-            
+
+
+
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ONG'}">                                
                 <h1 var = "i" value="#{ModificarActividad.actividad}">Modificar Actividad</h1>
                 <h:form id="editarAlumno">
@@ -95,7 +95,7 @@
                             <td>Nombre: </td>
                             <td><h:inputText value="#{i.nombre}"/></td>
                         </tr>
-                        
+
                         <tr>
                             <td>Fecha inicio: </td>
                             <td><h:inputText value="#{i.fecha_inicio}"/></td>
@@ -120,21 +120,21 @@
                     </table>
                 </h:form>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ONG'}">
-                <h:form>
-                    
-                    <h:column> 
-                    <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
-                </h:column>
-                <h:column> 
-                    <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
-                </h:column>
-                </h:form>
+                    <h:form>
+
+                        <h:column> 
+                            <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
+                        </h:column>
+                        <h:column> 
+                            <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
+                        </h:column>
+                    </h:form>
                 </c:if>
             </c:when>
-            
-            
-            
-            
+
+
+
+
             <c:otherwise>
                 <p>Ha ocurrido un error inesperado</p>
             </c:otherwise>

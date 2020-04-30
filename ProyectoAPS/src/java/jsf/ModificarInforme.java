@@ -43,7 +43,7 @@ public class ModificarInforme implements Serializable {
         return "listaInformes.xhtml";
     }
 
-    public String verInforme(int id) {
+    public String editarInforme(int id) {
         return "editarInforme.xhtml";
     }
     

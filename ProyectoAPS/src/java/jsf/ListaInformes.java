@@ -16,6 +16,11 @@ public class ListaInformes implements Serializable {
     private Actividad actividad;
     private Usuario usuario;
     private Informe informe;
+    private final ArrayList<Informe> informesid = new ArrayList<>();
+
+    public ArrayList<Informe> getInformesid() {
+        return informesid;
+    }
 
     public ListaInformes() {
         informes = new ArrayList<>();
@@ -58,4 +63,19 @@ public class ListaInformes implements Serializable {
         return "anadirInforme.xhtml";
     }
 
+    public String verInforme(int id){
+        return "verInforme.xhtml";
+    }
+    
+    public String verInformes(Actividad actividad){
+        informesid.clear();
+        informesid.add(new Informe(1, "Obtención de 5 créditos", "180 horas", "Curso de montaje de ordenador"));
+      /*for(Informe inf : informes){
+          if(inf.getActividad().equals(actividad)){
+               informesid.add(inf);
+          }
+        }*/
+        return "listaInformes1.xhtml";
+    }
+    
 }

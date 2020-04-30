@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/josea/OneDrive/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/anadirAlumno.xhtml</file>
-            <file>file:/C:/Users/josea/OneDrive/Documents/GitHub/Proyecto_Internet/ProyectoAPS/src/java/jpa/Usuario.java</file>
-            <file>file:/C:/Users/josea/OneDrive/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/anadirONG.xhtml</file>
-            <file>file:/C:/Users/josea/OneDrive/Documents/GitHub/Proyecto_Internet/ProyectoAPS/src/java/jsf/Login.java</file>
-            <file>file:/C:/Users/josea/OneDrive/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/editarResponsable.xhtml</file>
-            <file>file:/C:/Users/josea/OneDrive/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/editarActividad.xhtml</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/src/java/jsf/ModificarActividad.java</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/src/java/jsf/ListaInformes.java</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/src/java/jsf/ListaActividades.java</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/src/java/jsf/ModificarInforme.java</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/anadirInforme.xhtml</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/editarInforme.xhtml</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/WEB-INF/templates/plantilla.xhtml</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/listaInformes.xhtml</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/src/java/jsf/ControlAutorizacion.java</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/verActividad.xhtml</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/anadirResponsable.xhtml</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/src/java/jpa/Actividad.java</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/verInforme.xhtml</file>
+            <file>file:/C:/Users/Carlos/Documents/GitHub/Proyecto_Internet/ProyectoAPS/web/listaActividades.xhtml</file>
         </group>
     </open-files>
 </project-private>

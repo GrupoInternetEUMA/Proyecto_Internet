@@ -62,10 +62,10 @@ public class ModificarActividad implements Serializable {
         return "listaActividades.xhtml";
     }
 
-    public String verActividad(int id) {
+    public String editarActividad(int id) {
         return "editarActividad.xhtml";
     }
-
+    
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();

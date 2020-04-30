@@ -40,7 +40,7 @@
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
                                         <h:form id="actividadaccion">
                                             <h:column>
-                                                <h:commandButton value="Editar" action="#{ModificarActividad.verActividad(i.id)}" />
+                                                <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
                                             </h:column>
                                         </h:form> 
                                         </c:if>
@@ -48,6 +48,13 @@
                                         <h:form>
                                             <h:column>
                                                 <h:commandButton value="Borrar" action="#{ModificarActividad.eliminar()}" />
+                                            </h:column>
+                                        </h:form>
+                                        </c:if>
+                                        <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ALUMNO' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
+                                        <h:form>
+                                            <h:column>
+                                                <h:commandButton value="Ver" action="#{ListaActividades.verActividad(i.id)}" />
                                             </h:column>
                                         </h:form>
                                         </c:if>

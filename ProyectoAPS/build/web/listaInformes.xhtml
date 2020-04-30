@@ -7,8 +7,7 @@
     <ui:define name="title">Lista de Informes</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ONG' 
-                            || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ALUMNO'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ALUMNO'}">
                 <h1>MIS INFORMES</h1>
                 <div class="bordeTablaInformes">
                     <table id="tablaListaInformes">
@@ -21,25 +20,25 @@
                             </tr>
                         </thead>
                         <body>
-                            <ui:repeat var = "i" value="#{ListaInformes.informes}">
+                            <ui:repeat var = "i" value="#{ListaInformes.informesid}">
                                 <tr>                               
                                     <td>#{i.id}</td>                              
                                     <td>#{i.evaluacion}</td>                               
                                     <td>#{i.tiempo_empleado}</td>
                                     <td>#{i.tareas_realizadas}</td> 
-                                <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                                    <td> 
-                                        <h:form id = "informeaccion"> 
-                                            <h:column> 
-                                                <h:commandButton value="Editar" action="#{ModificarInforme.verInforme(i.id)}"/> 
-                                            </h:column> 
-                                        </h:form>
-                                        <h:form> 
-                                            <h:column> 
-                                                <h:commandButton value="Borrar" action="#{ModificarInforme.eliminar()}"/> 
-                                            </h:column> 
-                                        </h:form>
-                                    </td>
+                                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
+                                        <td> 
+                                            <h:form id = "informeaccion"> 
+                                                <h:column> 
+                                                    <h:commandButton value="Editar" action="#{ModificarInforme.editarInforme(i.id)}"/> 
+                                                </h:column> 
+                                            </h:form>
+                                            <h:form> 
+                                                <h:column> 
+                                                    <h:commandButton value="Borrar" action="#{ModificarInforme.eliminar()}"/> 
+                                                </h:column> 
+                                            </h:form>
+                                        </td>
                                     </c:if>
                                 </tr>
                             </ui:repeat>
@@ -47,12 +46,12 @@
                     </table>
                 </div>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                <h:form id = "informe">
-                    <h:column>
-                        <h:commandButton value="Inserta Informe" action="#{ListaInformes.crearInforme()}"/>
-                    </h:column>               
-                </h:form>
-               </c:if>
+                    <h:form id = "informe">
+                        <h:column>
+                            <h:commandButton value="Inserta Informe" action="#{ListaInformes.crearInforme()}"/>
+                        </h:column>               
+                    </h:form>
+                </c:if>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
