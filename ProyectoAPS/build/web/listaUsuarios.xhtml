@@ -21,7 +21,7 @@
                                 <th>Idioma</th>
                                 <th>Fecha Nacimiento</th>
                                 <th>Email</th>
-                                <th>Password</th>
+                                <th>Contrasenia</th>
                                 <th>Rol</th>
 
                             </tr>
@@ -30,18 +30,18 @@
                             <ui:repeat var = "i" value="#{ListaUsuarios.usuarios}">
                                 <tr>
                                     <td>#{i.nombre}</td>
-                                    <td>#{i.apellido}</td>
+                                    <td>#{i.apellidos}</td>
                                     <td>#{i.id}</td>
                                     <td>#{i.dni}</td>
                                     <td>#{i.estudios}</td>
                                     <td>#{i.idioma}</td>
                                     <td>#{i.fecha_nacimiento}</td>
                                     <td>#{i.email}</td>
-                                    <td>#{i.password}</td>
+                                    <td>#{i.contrasenia}</td>
                                     <td>#{i.rol}</td>
                                     <td> 
-                                        <h:form id = "usuarioaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarUsuario.verUsuario(i.id)}"/> </h:column> </h:form>
-                                        <h:form> <h:column> <h:commandButton value="Borrar" action="listaUsuarios.xhtml"/> </h:column> </h:form>
+                                        <h:form id = "usuarioaccion"> <h:column> <h:commandButton value="Editar" action="#{ModificarUsuario.verUsuario(i.id)}"/> </h:column> </h:form>
+                                        <h:form> <h:column> <h:commandButton value="Borrar" action="#{ModificarUsuario.eliminar()}"/> </h:column> </h:form>
                                     </td>
                                 </tr>
 
@@ -50,9 +50,9 @@
 
                     </table>
                 </div>
-                <h:form id = "usuario">
+                <h:form id = "insertar">
                     <h:column>
-                        <h:commandButton value="Inserta nuevo usuario" action="#{ListaUsuario.crearUsuario()}"/>
+                        <h:commandButton value="Inserta nuevo usuario" action="#{ListaUsuarios.crearUsuario()}"/>
                     </h:column>               
                 </h:form>
 

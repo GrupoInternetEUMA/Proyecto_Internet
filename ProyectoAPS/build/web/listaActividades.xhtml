@@ -10,8 +10,8 @@
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ONG' 
                             || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ALUMNO'}">
                 <h1>LISTA DE ACTIVIDADES</h1>
-                <div class="bordeTablaActividades">
-                    <table id="tablaListaActividades">
+                <div class="bordeTabla">
+                    <table id="tablaLista">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
@@ -76,7 +76,7 @@
                     </table>
                 </div>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ONG'}">
-                <h:form id = "actividad">
+                <h:form id = "insertar">
                     <h:column>
                         <h:commandButton value="Insertar Actividad" action="#{ListaActividades.crearActividad()}"/>
                     </h:column>               

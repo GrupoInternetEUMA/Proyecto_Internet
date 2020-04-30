@@ -9,8 +9,8 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ALUMNO'}">
                 <h1>MIS INFORMES</h1>
-                <div class="bordeTablaInformes">
-                    <table id="tablaListaInformes">
+                <div class="bordeTabla">
+                    <table id="tablaLista">
                         <thead>
                             <tr>				            
                                 <th>ID</th>
@@ -46,7 +46,7 @@
                     </table>
                 </div>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                    <h:form id = "informe">
+                    <h:form id = "insertar">
                         <h:column>
                             <h:commandButton value="Inserta Informe" action="#{ListaInformes.crearInforme()}"/>
                         </h:column>               

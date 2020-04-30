@@ -75,7 +75,7 @@ public class ListaInformes implements Serializable {
                informesid.add(inf);
           }
         }*/
-        return "listaInformes1.xhtml";
+        return "verInformesId.xhtml";
     }
     
 }
