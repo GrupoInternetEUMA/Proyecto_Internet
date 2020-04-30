@@ -82,6 +82,15 @@ ul.menulist li {
     margin: 1em;
 }
 
+#insertar {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#bienvenido {
+    text-align: center;
+    font-size:  16px;
+}
 
 #tablaLista {
     width: fit-content;

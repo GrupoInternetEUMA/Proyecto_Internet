@@ -7,6 +7,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario == null}">
+                <div align="center"><img alt="Logo UMA" width="300" height="300" src="./resources/img/uma.jpg"/></div>
                 <h:form id="login">
                     <table id="login">
                         <tr>
@@ -23,7 +24,7 @@
                             </td>
                         </tr>
                     </table>
-                    
+
                 </h:form>
             </c:when>
             <c:otherwise>
