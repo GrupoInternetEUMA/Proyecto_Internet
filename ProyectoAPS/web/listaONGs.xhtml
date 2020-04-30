@@ -10,8 +10,8 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA DE ONGS</h1>
-                <div class="bordeTablaONGs">
-                    <table id="tablaListaONGs">
+                <div class="bordeTabla">
+                    <table id="tablaLista">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -21,7 +21,7 @@
                                 <th>Telefono</th>
                                 <th>Direccion</th>
                                 <th>Pais</th>
-                                <th>Password</th>
+                                <th>Contrasenia</th>
                             </tr>
                         </thead>
                         <body>
@@ -34,7 +34,7 @@
                                     <td>#{i.telefono}</td>
                                     <td>#{i.direccion}</td>
                                     <td>#{i.pais}</td>
-                                    <td>#{i.password}</td>
+                                    <td>#{i.contrasenia}</td>
                                     <td>
                                         <h:form id="ongaccion">
                                             <h:column>
@@ -53,7 +53,7 @@
 
                     </table>
                 </div>
-                <h:form id="ong">
+                <h:form id="insertar">
                     <h:column>
                         <h:commandButton value="Inserta ONG" action="anadirONG.xhtml" />
                     </h:column>

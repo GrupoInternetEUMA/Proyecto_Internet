@@ -34,7 +34,7 @@ public class Informe implements Serializable {
         super();
     }
 
-    public Informe(Integer id, String evaluacion, String tiempo_empleado, String tareas_realizacas) {
+    public Informe(Integer id, String evaluacion, String tiempo_empleado, String tareas_realizadas) {
         this.id = id;
         this.evaluacion = evaluacion;
         this.tiempo_empleado = tiempo_empleado;

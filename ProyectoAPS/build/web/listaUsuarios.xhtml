@@ -9,46 +9,46 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>LISTA DE USUARIOS</h1>
-                <div class="bordeTablaUsuarios">
-                    <table id="tablaListaUsuarios">
-                    <thead>
-				<tr>
-					<th>Nombre</th>
-                                        <th>Apellido</th>
-					<th>ID</th>
-                                        <th>DNI</th>
-                                        <th>Estudios</th>
-                                        <th>Idioma</th>
-                                        <th>Fecha Nacimiento</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Rol</th>
-                                        
-                </tr>
-			</thead>
-			<body>
-                        <ui:repeat var = "i" value="#{ListaUsuarios.usuarios}">
+                <div class="bordeTabla">
+                    <table id="tablaLista">
+                        <thead>
                             <tr>
-                                <td>#{i.nombre}</td>
-                                <td>#{i.apellido}</td>
-                                <td>#{i.id}</td>
-                                <td>#{i.dni}</td>
-                                <td>#{i.estudios}</td>
-                                <td>#{i.idioma}</td>
-                                <td>#{i.fecha_nacimiento}</td>
-                                <td>#{i.email}</td>
-                                <td>#{i.password}</td>
-                                <td>#{i.rol}</td>
-                                <td> 
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>ID</th>
+                                <th>DNI</th>
+                                <th>Estudios</th>
+                                <th>Idioma</th>
+                                <th>Fecha Nacimiento</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Rol</th>
+
+                            </tr>
+                        </thead>
+                        <body>
+                            <ui:repeat var = "i" value="#{ListaUsuarios.usuarios}">
+                                <tr>
+                                    <td>#{i.nombre}</td>
+                                    <td>#{i.apellido}</td>
+                                    <td>#{i.id}</td>
+                                    <td>#{i.dni}</td>
+                                    <td>#{i.estudios}</td>
+                                    <td>#{i.idioma}</td>
+                                    <td>#{i.fecha_nacimiento}</td>
+                                    <td>#{i.email}</td>
+                                    <td>#{i.password}</td>
+                                    <td>#{i.rol}</td>
+                                    <td> 
                                         <h:form id = "usuarioaccion"> <h:column> <h:commandButton value="Ver" action="#{ModificarUsuario.verUsuario(i.id)}"/> </h:column> </h:form>
                                         <h:form> <h:column> <h:commandButton value="Borrar" action="listaUsuarios.xhtml"/> </h:column> </h:form>
-                                </td>
-                            </tr>
-                            
-          	</ui:repeat>
-                    </body>
-                    
-                </table>
+                                    </td>
+                                </tr>
+
+                            </ui:repeat>
+                        </body>
+
+                    </table>
                 </div>
                 <h:form id = "usuario">
                     <h:column>

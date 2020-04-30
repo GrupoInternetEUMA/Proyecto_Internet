@@ -81,3 +81,38 @@ ul.menulist li {
     display:inline;
     margin: 1em;
 }
+
+#insertar {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#bienvenido {
+    text-align: center;
+    font-size:  16px;
+}
+
+#tablaLista {
+    width: fit-content;
+    text-align: center;
+    margin: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.bordeTabla {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.bordeTabla th{
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.bordeTabla td{
+    border: 1px solid black;
+    margin: 0 auto;
+}
+

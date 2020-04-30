@@ -24,7 +24,7 @@ public class ONG implements Serializable {
     private Integer telefono;
     private String direccion;
     private String pais;
-    private String password;
+    private String contrasenia;
 
     @OneToMany(mappedBy = "ong")
     private Collection<Actividad> actividades;
@@ -35,7 +35,7 @@ public class ONG implements Serializable {
         super();
     }
 
-    public ONG(Integer id, String nombre, String descripcion, String email, Integer telefono, String direccion, String pais, String password) {
+    public ONG(Integer id, String nombre, String descripcion, String email, Integer telefono, String direccion, String pais, String contrasenia) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -43,7 +43,7 @@ public class ONG implements Serializable {
         this.telefono = telefono;
         this.direccion = direccion;
         this.pais = pais;
-        this.password = password;
+        this.contrasenia = contrasenia;
     }
 
     public Integer getId() {
@@ -102,12 +102,12 @@ public class ONG implements Serializable {
         this.pais = pais;
     }
 
-    public String getPassword() {
-        return this.password;
+    public String getContrasenia() {
+        return this.contrasenia;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     @Override

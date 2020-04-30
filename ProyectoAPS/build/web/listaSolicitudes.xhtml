@@ -9,8 +9,8 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ALUMNO'}">
                 <h1>LISTA DE SOLICITUDES DE ACTIVIDADES</h1>
-                <div class="bordeTablaSolicitudes">
-                    <table id="tablaListaSolicitudes">
+                <div class="bordeTabla">
+                    <table id="tablaLista">
                         <thead>
                             <tr>				            
                                 <th>ID</th>
@@ -46,7 +46,7 @@
                     </table>
                 </div>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h:form id = "solicitud">
+                <h:form id = "insertar">
                     <h:column>
                         <h:commandButton value="Inserta Solicitud" action="#{ListaSolicitudes.crearSolicitud()}"/>
                     </h:column>               
