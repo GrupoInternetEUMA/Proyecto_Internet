@@ -82,19 +82,28 @@ ul.menulist li {
     margin: 1em;
 }
 
-#tablaListaONGs {
+
+#tablaLista {
     width: fit-content;
     text-align: center;
-    padding: 5px;
     margin: 10px;
-    border: 1px solid black;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 0 auto;
 }
 
-.bordeTablaONGs th{
-    border: 1px solid black;
+.bordeTabla {
+    text-align: center;
+    margin: 0 auto;
 }
 
-.bordeTablaONGs td{
+.bordeTabla th{
     border: 1px solid black;
+    margin: 0 auto;
+}
+
+.bordeTabla td{
+    border: 1px solid black;
+    margin: 0 auto;
 }
 
