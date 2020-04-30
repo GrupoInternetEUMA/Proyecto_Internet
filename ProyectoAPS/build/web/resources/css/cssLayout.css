@@ -81,3 +81,20 @@ ul.menulist li {
     display:inline;
     margin: 1em;
 }
+
+#tablaListaONGs {
+    width: fit-content;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.bordeTablaONGs th{
+    border: 1px solid black;
+}
+
+.bordeTablaONGs td{
+    border: 1px solid black;
+}
+

@@ -58,8 +58,8 @@ public class ModificarONG implements Serializable {
         return this.ong.getPais();
     }
 
-    public String getPassword() {
-        return this.ong.getPassword();
+    public String getContrasenia() {
+        return this.ong.getContrasenia();
     }
 
     public String ListaONGs() {
