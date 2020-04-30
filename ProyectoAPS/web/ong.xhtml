@@ -8,7 +8,8 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ONG'}">
                 <h1>Usuario ONG</h1>
-                <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
+                <p id="bienvenido">¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
+                <div align="center"><img alt="Logo UMA" width="300" height="300" src="./resources/img/uma.jpg"/></div>
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
