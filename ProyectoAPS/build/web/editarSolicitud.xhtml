@@ -39,6 +39,31 @@
                 </h:form>
 
             </c:when>
+            
+            <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'RESPONSABLE'}">
+                <h1 var = "i" value="#{editarSolicitud.solicitud}">Modificar Solicitud</h1>
+                
+                <h:form id="ListaSolicitudes">
+                    <table>                       
+                        <tr>
+                            <td>Estado: </td>
+                            <td><h:inputText  value="#{i.estado}"/></td>
+                        </tr>                       
+                    </table>
+                </h:form>
+                
+                <h:form> 
+                    <h:column> 
+                        <h:commandButton value="Actualizar" action="#{ModificarSolicitud.editar()}"/> 
+                    </h:column> 
+                    <h:column> 
+                        <h:commandButton value="Cancelar" action="listaSolicitudes.xhtml" /> 
+                    </h:column> 
+                </h:form>
+
+            </c:when>
+            
+            
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
             </c:otherwise>

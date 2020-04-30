@@ -7,7 +7,7 @@
     <ui:define name="title">Formulario Nuevo Actividad</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ONG'}">
                 <h1>Insertar Actividad</h1>
                 <h:form id="anadirActividad">
                     <table>
@@ -27,10 +27,12 @@
                             <td>Fecha fin: </td>
                             <td><h:inputText value="#{ModificarActividad.actividad.fecha_fin}"/></td>
                         </tr>
+                        <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                         <tr>
                             <td>Estado: </td>
                             <td><h:inputText value="#{ModificarActividad.actividad.estado}"/></td>
                         </tr>
+                        </c:if>
                         <tr>
                             <td>Tipo de actividad: </td>
                             <td><h:inputText value="#{ModificarActividad.actividad.tipo}"/></td>
