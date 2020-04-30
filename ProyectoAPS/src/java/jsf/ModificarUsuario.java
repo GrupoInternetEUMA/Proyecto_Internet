@@ -78,21 +78,21 @@ public class ModificarUsuario implements Serializable {
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir a un alumno, inténtelo más tarde", "No ha sido posible añadir a un alumno, inténtelo más tarde"));
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir a un usuario, inténtelo más tarde", "No ha sido posible añadir a un usuario, inténtelo más tarde"));
         return null;
     }
 
     public String editar() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible editar a un alumno, inténtelo más tarde", "No ha sido posible editar a un alumno, inténtelo más tarde"));
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible editar a un usuario, inténtelo más tarde", "No ha sido posible editar a un usuario, inténtelo más tarde"));
         return null;
     }
 
     public String eliminar() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible eliminar a un alumno, inténtelo más tarde", "No ha sido posible eliminar a un alumno, inténtelo más tarde"));
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible eliminar a un usuario, inténtelo más tarde", "No ha sido posible eliminar a un usuario, inténtelo más tarde"));
         return null;
     }
 
