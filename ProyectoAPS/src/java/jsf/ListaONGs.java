@@ -18,16 +18,13 @@ public class ListaONGs implements Serializable {
 
     private final ArrayList<ONG> ongs;
     private ONG ong;
-    
 
     public ListaONGs() {
         ongs = new ArrayList<>();
         ongs.add(new ONG(1, "Unicef", "Organizacion...", "unicef@info.com", 99999999, "C/Europa", "Spain", "unicef"));
         ongs.add(new ONG(2, "Unesco", "Organizacion...", "Unesco@info.com", 99999998, "C/Europa", "Spain", "unesco"));
-        
-    }
 
-    
+    }
 
     public ArrayList<ONG> getONGs() {
         return ongs;

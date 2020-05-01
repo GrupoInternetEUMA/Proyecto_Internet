@@ -25,14 +25,11 @@ public class ONG implements Serializable {
     private String direccion;
     private String pais;
     private String contrasenia;
-    
-    
+
     @OneToMany(mappedBy = "ong")
     private Collection<Actividad> actividades;
 
     private static final long serialVersionUID = 1L;
-
-    
 
     public ONG(Integer id, String nombre, String descripcion, String email, Integer telefono, String direccion, String pais, String contrasenia) {
         this.id = id;
@@ -108,9 +105,6 @@ public class ONG implements Serializable {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
-
-   
-    
 
     @Override
     public int hashCode() {
