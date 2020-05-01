@@ -7,11 +7,10 @@
     <ui:define name="title">Lista de Informes</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' 
-                            || controlAutorizacion.usuario.rol == 'ALUMNO' || controlAutorizacion.usuario.rol == 'NORMAL'}">
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ALUMNO'}">
                 <h1>MIS INFORMES</h1>
-                <div class="bordeTabla">
-                    <table id="tablaLista">
+                <div class="bordeTablaInformes">
+                    <table id="tablaListaInformes">
                         <thead>
                             <tr>				            
                                 <th>ID</th>
@@ -50,10 +49,7 @@
                     <h:form id = "informe">
                         <h:column>
                             <h:commandButton value="Inserta Informe" action="#{ListaInformes.crearInforme()}"/>
-                        </h:column> 
-                        <h:column>
-                            <h:commandButton value="Atras" action="verActividad.xhtml"/>
-                        </h:column>
+                        </h:column>               
                     </h:form>
                 </c:if>
             </c:when>
