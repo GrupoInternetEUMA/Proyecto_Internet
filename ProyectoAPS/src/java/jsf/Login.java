@@ -37,6 +37,7 @@ public class Login {
         usuarios.add(new Usuario("ong", "ong", Rol.ONG));
         usuarios.add(new Usuario("resp", "resp", Rol.RESPONSABLE));
         usuarios.add(new Usuario("alu", "alu", Rol.ALUMNO));
+        usuarios.add(new Usuario("normal", "normal", Rol.NORMAL));
     }
 
     public String getUsuario() {

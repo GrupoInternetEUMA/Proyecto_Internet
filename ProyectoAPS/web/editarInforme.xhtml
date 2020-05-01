@@ -36,7 +36,7 @@
                 </h:form>
                 <h:form> 
                     <h:column> <h:commandButton value="Actualizar" action="#{ModificarInforme.editar()}"/> </h:column> 
-                    <h:column> <h:commandButton value="Cancelar" action="verInforme.xhtml" /> </h:column>                     
+                    <h:column> <h:commandButton value="Cancelar" action="#{ListaActividades.verActividad(i.id)}" /> </h:column>                     
                 </h:form>
                    
             </c:when>

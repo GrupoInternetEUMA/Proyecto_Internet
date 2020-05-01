@@ -56,6 +56,55 @@
                     <h:column> <h:commandButton value="Cancelar" action="listaUsuarios.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>
+            
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'NORMAL'}">
+                <h1 var = "i" value="#{ModificarUsuario.usuario}">Modificar Usuario</h1>
+                <h:form id="editarUsuario">
+                    <table>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText value="#{i.nombre}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Apellidos: </td>
+                            <td><h:inputText value="#{i.apellidos}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Estudios: </td>
+                            <td><h:inputText value="#{i.estudios}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Idioma: </td>
+                            <td><h:inputText value="#{i.idioma}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha nacimiento: </td>
+                            <td><h:inputText value="#{i.fecha_nacimiento}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:inputText value="#{i.email}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Password: </td>
+                            <td><h:inputText value="#{i.contrasenia}"/></td>
+                        </tr>
+                       
+                    </table>
+                </h:form>
+                <h:form> 
+                    <h:column> <h:commandButton value="Actualizar" action="#{ModificarUsuario.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Cancelar" action="misDatos.xhtml" /> </h:column>                     
+                </h:form>
+            </c:when>
+            
+            
             <c:otherwise>
                 <p>Ha ocurrido un error inesperado</p>
             </c:otherwise>

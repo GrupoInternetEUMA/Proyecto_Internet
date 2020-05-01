@@ -47,6 +47,9 @@ public class ControlAutorizacion implements Serializable {
         if (getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
             return "alumno.xhtml";
         }
+        if (getUsuario().getRol().equals(getUsuario().getRol().NORMAL)) {
+            return "normal.xhtml";
+        }
         return null;
     }
 
@@ -95,7 +98,8 @@ public class ControlAutorizacion implements Serializable {
 
     public String listaActividades() {
         if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR) || getUsuario().getRol().equals(getUsuario().getRol().ONG) 
-                || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE) || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
+                || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE) || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)
+                || getUsuario().getRol().equals(getUsuario().getRol().NORMAL)) {
             return "listaActividades.xhtml";
         }
         return null;
@@ -105,6 +109,14 @@ public class ControlAutorizacion implements Serializable {
         if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR) || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)
                 || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
             return "listaSolicitudes.xhtml";
+        }
+        return null;
+    }
+    
+    public String misDatos() {
+        if (getUsuario().getRol().equals(getUsuario().getRol().NORMAL) || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)
+                || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO) || getUsuario().getRol().equals(getUsuario().getRol().ONG)) {
+            return "misDatos.xhtml";
         }
         return null;
     }

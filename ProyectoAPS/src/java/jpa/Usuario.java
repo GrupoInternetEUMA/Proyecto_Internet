@@ -20,7 +20,8 @@ public class Usuario implements Serializable {
         ADMINISTRADOR,
         ONG,
         RESPONSABLE,
-        ALUMNO
+        ALUMNO,
+        NORMAL
     };
 
     @Id

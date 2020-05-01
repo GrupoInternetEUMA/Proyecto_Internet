@@ -31,12 +31,14 @@
                     
                     <!-- OPCIONES PARA ALUMNO-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
+                        <li><h:commandLink action="#{controlAutorizacion.misDatos()}" value="Mis Datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaActividades()}" value="Actividades"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaSolicitudes()}" value="Solicitudes"/></li>                       
                     </c:if>
                     
                     <!-- OPCIONES PARA RESPONSABLE-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
+                        <li><h:commandLink action="#{controlAutorizacion.misDatos()}" value="Mis Datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaAlumnos()}" value="Alumnos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaActividades()}" value="Actividades"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaSolicitudes()}" value="Solicitudes"/></li>
@@ -44,6 +46,13 @@
                     
                     <!-- OPCIONES PARA ONG-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'ONG'}">
+                        <li><h:commandLink action="#{controlAutorizacion.misDatos()}" value="Mis Datos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.listaActividades()}" value="Actividades"/></li>                      
+                    </c:if>
+                    
+                    <!-- OPCIONES PARA USUARIO NORMAL-->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'NORMAL'}">
+                        <li><h:commandLink action="#{controlAutorizacion.misDatos()}" value="Mis Datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaActividades()}" value="Actividades"/></li>                      
                     </c:if>
                     
