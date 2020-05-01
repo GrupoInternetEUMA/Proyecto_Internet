@@ -55,8 +55,11 @@
                             <h:column>
                                 <h:commandButton value="Informes" action="#{ListaInformes.verInformes(i)}"/> 
                             </h:column>
-                        </h:form> 
-
+                            <h:column>
+                                <h:commandButton value="Participantes " action="#{ModificarActividad.verParticipantes(i.id)}" />
+                            </h:column>
+                        </h:form>
+                        
                         <h:form id="actividadaccion">
                             <h:column>
                                 <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
