@@ -11,12 +11,23 @@ import java.util.Iterator;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import jpa.Usuario;
 
 @Named(value = "ModificarActividad")
 @SessionScoped
 public class ModificarActividad implements Serializable {
 
     private Actividad actividad;
+    
+    private ArrayList<Usuario> participantes;
+    
+    
+    public void listaParticipantes() {
+        participantes = new ArrayList<>();
+        participantes.add(new Usuario(9, 782536, "Jorge", "Javier Vazquez", "Presentador", "Castelano", new Date(1997, 2, 28), "jorjevzquez@gmail.com", "ContraQWER", null, "JorVaz"));
+        participantes.add(new Usuario(9, 782536, "Mariko", "Kaga", "Alquimista", "Japones", new Date(1997, 2, 28), "japonitoSabroso@gmail.com", "ContraQWER", null, "elJapo"));
+        
+    }
 
     public Actividad getActividad() {
         return this.actividad;
@@ -66,10 +77,21 @@ public class ModificarActividad implements Serializable {
         return "editarActividad.xhtml";
     }
     
+    public String verParticipantes(int id) {
+        return "listaParticipantesActividad.xhtml";
+    }
+    
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir la actividad, inténtelo más tarde", "No ha sido posible añadir la actividad, inténtelo más tarde"));
+        return null;
+    }
+    
+    public String anadirParticipante() throws ParseException {  // Pasar parámetros del login
+        // Implementar este método
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir el participante, inténtelo más tarde", "No ha sido posible añadir el participante, inténtelo más tarde"));
         return null;
     }
 
