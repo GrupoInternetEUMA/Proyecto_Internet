@@ -45,12 +45,12 @@ public class ListaActividades implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
+
     public String crearActividad() {
         return "anadirActividad.xhtml";
     }
-    
-    public String verActividad(int id){
+
+    public String verActividad(int id) {
         return "verActividad.xhtml";
     }
 

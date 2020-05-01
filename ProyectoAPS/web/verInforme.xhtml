@@ -6,7 +6,7 @@
     <ui:define name="title">Ver Informe</ui:define>
     <ui:define name="content">
         <c:choose>   
-        <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR' || controlAutorizacion.getUsuario().rol == 'ALUMNO' || controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                     
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR' || controlAutorizacion.getUsuario().rol == 'ALUMNO' || controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                     
                 <h1 var = "i" value="#{Informe.informe}">Ver Informe</h1>
                 <h:form id="verInforme">
                     <table>
@@ -49,9 +49,9 @@
                     <h:form>
 
                         <h:form id="actividadaccion">
-                                <h:column>
-                                    <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
-                                </h:column>
+                            <h:column>
+                                <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
+                            </h:column>
                         </h:form> 
                         <h:column> 
                             <h:commandButton value="Atras" action="verActividad.xhtml" /> 
@@ -64,7 +64,7 @@
                             <h:commandButton value="Atras" action="verActividad.xhtml" /> 
                         </h:column>
                     </h:form>
-                 </c:if>
+                </c:if>
             </c:when>
 
 

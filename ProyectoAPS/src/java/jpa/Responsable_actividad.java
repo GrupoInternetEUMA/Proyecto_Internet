@@ -1,6 +1,7 @@
 package jpa;
 
 import jpa.Usuario;
+import java.util.Date;
 import java.io.Serializable;
 import java.lang.String;
 import java.util.Collection;

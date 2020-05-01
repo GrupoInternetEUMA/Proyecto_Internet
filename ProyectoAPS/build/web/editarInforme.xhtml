@@ -4,13 +4,13 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
-    
+
     <ui:define name="title">Modificar Informe</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR' || controlAutorizacion.getUsuario().getRol() == 'RESPONSABLE'}">
                 <h1 var = "i" value="#{ModificarInforme.informe}">Modificar Informe</h1>
-                
+
                 <h:form id="ListaInformes">
                     <table>
                         <tr>
@@ -22,12 +22,12 @@
                             <td>Evaluación </td>
                             <td><h:inputText  value="#{i.evaluacion}"/></td>
                         </tr>
-                        
+
                         <tr>
                             <td>Tiempo_empleado </td>
                             <td><h:inputText  value="#{i.tiempo_empleado}"/></td>
                         </tr>
-                        
+
                         <tr>
                             <td>Tareas_realizadas </td>
                             <td><h:inputText  value="#{i.tareas_realizadas}"/></td>
@@ -36,9 +36,9 @@
                 </h:form>
                 <h:form> 
                     <h:column> <h:commandButton value="Actualizar" action="#{ModificarInforme.editar()}"/> </h:column> 
-                    <h:column> <h:commandButton value="Cancelar" action="verInforme.xhtml" /> </h:column>                     
+                    <h:column> <h:commandButton value="Cancelar" action="#{ListaActividades.verActividad(i.id)}" /> </h:column>                     
                 </h:form>
-                   
+
             </c:when>
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>

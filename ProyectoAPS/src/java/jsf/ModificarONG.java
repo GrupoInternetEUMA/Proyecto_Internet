@@ -15,7 +15,6 @@ import javax.inject.Named;
  *
  * @author José Antonio Bravo Gonzalez
  */
-
 @Named(value = "ModificarONG")
 @SessionScoped
 public class ModificarONG implements Serializable {
@@ -69,7 +68,7 @@ public class ModificarONG implements Serializable {
     public String verONG(int id) {
         return "editarONG.xhtml";
     }
-    
+
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();

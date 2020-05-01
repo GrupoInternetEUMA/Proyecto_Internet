@@ -1,4 +1,3 @@
-
 package jsf;
 
 import jpa.Usuario;
@@ -18,12 +17,11 @@ public class ListaUsuarios implements Serializable {
 
     private ArrayList<Usuario> usuarios;
     private Usuario usuario;
-    
 
     public ListaUsuarios() {
         usuarios = new ArrayList<>();
         usuarios.add(new Usuario(9, 782536, "Paula", "Lopes Bizagui", "Barrendera", "Castelano", new Date(1997, 2, 28), "paulita@gmail.com", "ContraQWER", null, "paulinaRubio69"));
-        
+
     }
 
     public void setUsuario(Usuario usuario) {

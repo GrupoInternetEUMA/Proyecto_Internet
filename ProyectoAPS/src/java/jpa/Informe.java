@@ -62,7 +62,7 @@ public class Informe implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-    
+
     public Integer getId() {
         return this.id;
     }

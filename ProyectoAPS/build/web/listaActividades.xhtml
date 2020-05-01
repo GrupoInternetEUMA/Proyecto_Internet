@@ -35,40 +35,40 @@
                                     <td>#{i.fecha_inicio}</td>
                                     <td>#{i.fecha_fin}</td>
                                     <td>#{i.descripcion}</td>
-                                    
+
                                     <td> 
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
-                                        <h:form id="actividadaccion">
-                                            <h:column>
-                                                <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
-                                            </h:column>
-                                        </h:form> 
+                                            <h:form id="actividadaccion">
+                                                <h:column>
+                                                    <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
+                                                </h:column>
+                                            </h:form> 
                                         </c:if>
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                                        <h:form>
-                                            <h:column>
-                                                <h:commandButton value="Borrar" action="#{ModificarActividad.eliminar()}" />
-                                            </h:column>
-                                        </h:form>
+                                            <h:form>
+                                                <h:column>
+                                                    <h:commandButton value="Borrar" action="#{ModificarActividad.eliminar()}" />
+                                                </h:column>
+                                            </h:form>
                                         </c:if>
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ALUMNO' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
-                                        <h:form>
-                                            <h:column>
-                                                <h:commandButton value="Ver" action="#{ListaActividades.verActividad(i.id)}" />
-                                            </h:column>
-                                        </h:form>
+                                            <h:form>
+                                                <h:column>
+                                                    <h:commandButton value="Ver" action="#{ListaActividades.verActividad(i.id)}" />
+                                                </h:column>
+                                            </h:form>
                                         </c:if>
-                                        
+
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO' }">
-                                        <h:form>
-                                            <h:column>
-                                                <h:commandButton value="Apuntarse"/>
-                                            </h:column>
-                                        </h:form>
+                                            <h:form>
+                                                <h:column>
+                                                    <h:commandButton value="Apuntarse"/>
+                                                </h:column>
+                                            </h:form>
                                         </c:if>
-                                        
+
                                     </td>
-                                    
+
                                 </tr>
                             </ui:repeat>
                         </body>
@@ -76,11 +76,11 @@
                     </table>
                 </div>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ONG'}">
-                <h:form id = "insertar">
-                    <h:column>
-                        <h:commandButton value="Insertar Actividad" action="#{ListaActividades.crearActividad()}"/>
-                    </h:column>               
-                </h:form>
+                    <h:form id = "insertar">
+                        <h:column>
+                            <h:commandButton value="Insertar Actividad" action="#{ListaActividades.crearActividad()}"/>
+                        </h:column>               
+                    </h:form>
                 </c:if>
             </c:when>
             <c:otherwise>

@@ -66,7 +66,7 @@
                     <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>
-            
+
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ALUMNO'}">
                 <h1 var = "i" value="#{ModificarAlumno.alumno}">Modificar Alumno</h1>
                 <h:form id="editarAlumno">
@@ -121,9 +121,9 @@
                     <h:column> <h:commandButton value="Cancelar" action="misDatos.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>
-            
-            
-            
+
+
+
             <c:otherwise>
                 <p>Ha ocurrido un error inesperado</p>
             </c:otherwise>

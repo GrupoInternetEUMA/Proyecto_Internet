@@ -46,7 +46,7 @@ public class ModificarInforme implements Serializable {
     public String editarInforme(int id) {
         return "editarInforme.xhtml";
     }
-    
+
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();

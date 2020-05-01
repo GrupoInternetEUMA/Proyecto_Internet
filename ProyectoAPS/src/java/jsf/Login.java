@@ -16,7 +16,6 @@ import jsf.ControlAutorizacion;
  *
  * @author José Antonio Bravo Gonzalez
  */
-
 @Named(value = "login")
 @RequestScoped
 public class Login {
@@ -90,4 +89,5 @@ public class Login {
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "El método autenticar() no está implementado", "El método autenticar() no está implementado"));
         return null;
     }
+
 }

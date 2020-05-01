@@ -18,15 +18,14 @@ import jpa.Usuario;
 public class ModificarActividad implements Serializable {
 
     private Actividad actividad;
-    
+
     private ArrayList<Usuario> participantes;
-    
-    
+
     public void listaParticipantes() {
         participantes = new ArrayList<>();
         participantes.add(new Usuario(9, 782536, "Jorge", "Javier Vazquez", "Presentador", "Castelano", new Date(1997, 2, 28), "jorjevzquez@gmail.com", "ContraQWER", null, "JorVaz"));
         participantes.add(new Usuario(9, 782536, "Mariko", "Kaga", "Alquimista", "Japones", new Date(1997, 2, 28), "japonitoSabroso@gmail.com", "ContraQWER", null, "elJapo"));
-        
+
     }
 
     public Actividad getActividad() {
@@ -68,7 +67,7 @@ public class ModificarActividad implements Serializable {
     public String getLugar() {
         return this.actividad.getLugar();
     }
-    
+
     public String ListaActividades() {
         return "listaActividades.xhtml";
     }
@@ -76,18 +75,18 @@ public class ModificarActividad implements Serializable {
     public String editarActividad(int id) {
         return "editarActividad.xhtml";
     }
-    
+
     public String verParticipantes(int id) {
         return "listaParticipantesActividad.xhtml";
     }
-    
+
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir la actividad, inténtelo más tarde", "No ha sido posible añadir la actividad, inténtelo más tarde"));
         return null;
     }
-    
+
     public String anadirParticipante() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();

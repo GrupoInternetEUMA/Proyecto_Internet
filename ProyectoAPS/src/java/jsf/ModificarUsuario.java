@@ -66,7 +66,6 @@ public class ModificarUsuario implements Serializable {
         return this.usuario.getRol();
     }
 
-
     public String ListaUsuarios() {
         return "listaUsuarios.xhtml";
     }

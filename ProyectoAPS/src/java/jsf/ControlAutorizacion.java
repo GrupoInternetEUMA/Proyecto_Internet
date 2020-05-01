@@ -14,7 +14,6 @@ import javax.faces.context.FacesContext;
  *
  * @author José Antonio Bravo Gonzalez
  */
-
 @Named(value = "controlAutorizacion")
 @SessionScoped
 public class ControlAutorizacion implements Serializable {
@@ -68,7 +67,7 @@ public class ControlAutorizacion implements Serializable {
     }
 
     public String listaInformes() {
-        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR)|| getUsuario().getRol().equals(getUsuario().getRol().ONG)
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR) || getUsuario().getRol().equals(getUsuario().getRol().ONG)
                 || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE) || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)) {
             return "listaInformes.xhtml";
         }
@@ -97,7 +96,7 @@ public class ControlAutorizacion implements Serializable {
     }
 
     public String listaActividades() {
-        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR) || getUsuario().getRol().equals(getUsuario().getRol().ONG) 
+        if (getUsuario().getRol().equals(getUsuario().getRol().ADMINISTRADOR) || getUsuario().getRol().equals(getUsuario().getRol().ONG)
                 || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE) || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)
                 || getUsuario().getRol().equals(getUsuario().getRol().NORMAL)) {
             return "listaActividades.xhtml";
@@ -112,10 +111,11 @@ public class ControlAutorizacion implements Serializable {
         }
         return null;
     }
-    
+
     public String misDatos() {
         if (getUsuario().getRol().equals(getUsuario().getRol().NORMAL) || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)
                 || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO) || getUsuario().getRol().equals(getUsuario().getRol().ONG)) {
+
             return "misDatos.xhtml";
         }
         return null;

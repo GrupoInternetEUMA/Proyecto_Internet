@@ -27,17 +27,17 @@
                                     <td> 
                                         <h:form id = "solicitudaccion">
                                             <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                                            <h:column> 
-                                                <h:commandButton value="Editar" action="#{ModificarSolicitud.verSolicitud(i.id)}"/> 
-                                            </h:column> 
+                                                <h:column> 
+                                                    <h:commandButton value="Editar" action="#{ModificarSolicitud.verSolicitud(i.id)}"/> 
+                                                </h:column> 
                                             </c:if>
                                         </h:form>
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                                        <h:form> 
-                                            <h:column> 
-                                                <h:commandButton value="Borrar" action="#{ModificarSolicitud.eliminar()}"/> 
-                                            </h:column> 
-                                        </h:form>
+                                            <h:form> 
+                                                <h:column> 
+                                                    <h:commandButton value="Borrar" action="#{ModificarSolicitud.eliminar()}"/> 
+                                                </h:column> 
+                                            </h:form>
                                         </c:if>
                                     </td>
                                 </tr>
@@ -46,11 +46,11 @@
                     </table>
                 </div>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h:form id = "insertar">
-                    <h:column>
-                        <h:commandButton value="Inserta Solicitud" action="#{ListaSolicitudes.crearSolicitud()}"/>
-                    </h:column>               
-                </h:form>
+                    <h:form id = "insertar">
+                        <h:column>
+                            <h:commandButton value="Inserta Solicitud" action="#{ListaSolicitudes.crearSolicitud()}"/>
+                        </h:column>               
+                    </h:form>
                 </c:if>
             </c:when>
             <c:otherwise>

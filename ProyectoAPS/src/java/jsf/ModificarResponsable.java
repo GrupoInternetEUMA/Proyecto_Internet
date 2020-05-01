@@ -75,7 +75,7 @@ public class ModificarResponsable implements Serializable {
     public Rol getRol() {
         return this.responsable.getRol();
     }
-    
+
     public String ListaResponsables() {
         return "listaResponsables.xhtml";
     }

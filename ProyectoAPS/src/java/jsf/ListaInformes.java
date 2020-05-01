@@ -63,19 +63,19 @@ public class ListaInformes implements Serializable {
         return "anadirInforme.xhtml";
     }
 
-    public String verInforme(int id){
+    public String verInforme(int id) {
         return "verInforme.xhtml";
     }
-    
-    public String verInformes(Actividad actividad){
+
+    public String verInformes(Actividad actividad) {
         informesid.clear();
         informesid.add(new Informe(1, "Obtención de 5 créditos", "180 horas", "Curso de montaje de ordenador"));
-      /*for(Informe inf : informes){
+        /*for(Informe inf : informes){
           if(inf.getActividad().equals(actividad)){
                informesid.add(inf);
           }
         }*/
         return "verInformesId.xhtml";
     }
-    
+
 }

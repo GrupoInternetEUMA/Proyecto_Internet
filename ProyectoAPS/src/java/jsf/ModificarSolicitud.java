@@ -43,7 +43,7 @@ public class ModificarSolicitud implements Serializable {
     public String verSolicitud(int id) {
         return "editarSolicitud.xhtml";
     }
-    
+
     public String anadir() throws ParseException {  // Pasar parámetros del login
         // Implementar este método
         FacesContext ctx = FacesContext.getCurrentInstance();
