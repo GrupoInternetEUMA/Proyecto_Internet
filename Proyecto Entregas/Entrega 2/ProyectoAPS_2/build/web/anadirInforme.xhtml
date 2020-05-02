@@ -1,0 +1,43 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                >
+    <ui:define name="title">Formulario Nuevo Informe</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'  || controlAutorizacion.getUsuario().getRol() == 'RESPONSABLE'}">
+                <h1>Insertar Informe</h1>
+                <h:form id="insertarInforme" >
+                    <h:panelGrid columns="3" >
+                        <h:outputText value="Id"/>
+                        <h:inputText id ="id" value="#{listaInformes.informe.id}" />
+                        <h:message for="id"/>
+
+                        <h:outputText value="Evaluacion"/>
+                        <h:inputText id ="evaluacion" value="#{listaInformes.informe.evaluacion}"/>
+                        <h:message for="evaluacion"/>
+
+                        <h:outputText value="Tiempo_empleado"/>
+                        <h:inputText id ="tiempo_empleado" value="#{listaInformes.informe.tiempo_empleado}"/>
+                        <h:message for="tiempo_empleado"/>
+
+                        <h:outputText value="Tareas_realizadas"/>
+                        <h:inputText id ="tareas_realizadas" value="#{listaInformes.informe.tareas_realizadas}"/>
+                        <h:message for="tareas_realizadas"/>
+
+                    </h:panelGrid>
+                </h:form>
+                <h:form>
+                    <h:commandButton value="Insertar" action="#{ModificarInforme.anadir()}"/>
+                    <h:commandButton value="Cancelar" action="verInformesId.xhtml"/>
+                    <h:commandButton value="Limpiar" type="reset" />
+                </h:form>
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>
