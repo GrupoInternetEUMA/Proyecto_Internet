@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 public class APS {
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("APSUP");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAPU");
         EntityManager em = emf.createEntityManager();
 
         em.close();
