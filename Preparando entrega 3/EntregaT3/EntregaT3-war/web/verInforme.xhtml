@@ -1,0 +1,79 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <ui:define name="title">Ver Informe</ui:define>
+    <ui:define name="content">
+        <c:choose>   
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR' || controlAutorizacion.getUsuario().rol == 'ALUMNO' || controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                     
+                <h1 var = "i" value="#{Informe.informe}">Ver Informe</h1>
+                <h:form id="verInforme">
+                    <table>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:outputText value="#{i.nombre}"/></td>
+                        </tr>
+                        <tr>
+                            <td>ID: </td>
+                            <td><h:outputText value="#{i.id}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Fecha inicio: </td>
+                            <td><h:outputText value="#{i.fecha_inicio}"/></td>
+                        </tr>                       
+                        <tr>
+                            <td>Fecha fin: </td>
+                            <td><h:outputText value="#{i.fecha_fin}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Estado: </td>
+                            <td><h:outputText value="#{i.estado}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Tipo de actividad: </td>
+                            <td><h:outputText value="#{i.tipo}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Lugar: </td>
+                            <td><h:outputText value="#{i.lugar}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Descripcion: </td>
+                            <td><h:outputText value="#{i.descripcion}"/></td>
+                        </tr>
+
+                    </table>
+                </h:form>
+                <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
+                    <h:form>
+
+                        <h:form id="actividadaccion">
+                            <h:column>
+                                <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
+                            </h:column>
+                        </h:form> 
+                        <h:column> 
+                            <h:commandButton value="Atras" action="verActividad.xhtml" /> 
+                        </h:column>
+                    </h:form>
+                </c:if>
+                <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
+                    <h:form>
+                        <h:column> 
+                            <h:commandButton value="Atras" action="verActividad.xhtml" /> 
+                        </h:column>
+                    </h:form>
+                </c:if>
+            </c:when>
+
+
+
+
+            <c:otherwise>
+                <p>Ha ocurrido un error inesperado</p>
+            </c:otherwise>
+        </c:choose>
+        <h:messages/>
+    </ui:define>
+</ui:composition>
