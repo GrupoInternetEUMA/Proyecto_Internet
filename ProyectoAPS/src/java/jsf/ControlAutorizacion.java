@@ -9,6 +9,7 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 /**
  *
@@ -22,6 +23,9 @@ public class ControlAutorizacion implements Serializable {
 
     private Usuario usuario;
 
+    @Inject
+    private BaseDeDatosLocal bd;
+   
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
@@ -130,5 +134,11 @@ public class ControlAutorizacion implements Serializable {
     }
 
     public ControlAutorizacion() {
+    }
+
+    private static class BaseDeDatosLocal {
+
+        public BaseDeDatosLocal() {
+        }
     }
 }
