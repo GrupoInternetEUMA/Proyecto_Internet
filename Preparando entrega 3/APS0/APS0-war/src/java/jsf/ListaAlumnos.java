@@ -11,6 +11,10 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import javax.faces.context.FacesContext;
+import modelos.AlumnosF;
+import entidades.*;
+import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
 
 @Named(value = "ListaAlumnos")
 @SessionScoped
@@ -18,12 +22,18 @@ public class ListaAlumnos implements Serializable {
 
     private ArrayList<Alumno> alumnos;
     private Usuario usuario;
-    private Alumno alumno;
-
-    public ListaAlumnos() {
+    @EJB
+    private AlumnosF alumnosF;
+    private Alumno alumno = new Alumno();
+    
+    /*public ListaAlumnos() {
         alumnos = new ArrayList<>();
         alumnos.add(new Alumno(000001, 12345678, "David", "El Gnomo", null, "Castellano", new Date(1997, 2, 28), "prueba@uma.es", "1234", Rol.ALUMNO, "DavidGnomo", "Ing Informatica", 1231234));
         alumnos.add(new Alumno(000002, 12312312, "Anastasia", "Sanches Cotrina", "Psicologia", "Castellano, Ingles", new Date(1998, 11, 3), "La_Anastasita_xula@uma.es", "twerk", Rol.ALUMNO, "AnaSans", "Universidad de la calle", 1234729));
+    }*/
+    
+    public ListaAlumnos(){
+        
     }
 
     public void setUsuario(Usuario usuario) {
@@ -48,6 +58,10 @@ public class ListaAlumnos implements Serializable {
 
     public String crearAlumno() {
         return "anadirAlumno.xhtml";
+    }
+    
+    public void delete(Alumno alu){
+        this.AlumnosF.remove(alu);
     }
 
     public String home() {
