@@ -27,5 +27,4 @@ public class AlumnosF extends AbstractF<Alumno> {
     public AlumnosF() {
         super(Alumno.class);
     }
-    
 }

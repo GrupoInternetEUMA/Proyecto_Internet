@@ -26,14 +26,10 @@ public class ListaAlumnos implements Serializable {
     private AlumnosF alumnosF;
     private Alumno alumno = new Alumno();
     
-    /*public ListaAlumnos() {
+    public ListaAlumnos() {
         alumnos = new ArrayList<>();
         alumnos.add(new Alumno(000001, 12345678, "David", "El Gnomo", null, "Castellano", new Date(1997, 2, 28), "prueba@uma.es", "1234", Rol.ALUMNO, "DavidGnomo", "Ing Informatica", 1231234));
         alumnos.add(new Alumno(000002, 12312312, "Anastasia", "Sanches Cotrina", "Psicologia", "Castellano, Ingles", new Date(1998, 11, 3), "La_Anastasita_xula@uma.es", "twerk", Rol.ALUMNO, "AnaSans", "Universidad de la calle", 1234729));
-    }*/
-    
-    public ListaAlumnos(){
-        
     }
 
     public void setUsuario(Usuario usuario) {
