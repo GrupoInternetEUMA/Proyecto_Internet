@@ -15,7 +15,6 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
-                                <th>ID</th>
                                 <th>DNI</th>
                                 <th>Estudios</th>
                                 <th>Idioma</th>
@@ -31,7 +30,6 @@
                                 <tr>
                                     <td>#{i.nombre}</td>
                                     <td>#{i.apellidos}</td>
-                                    <td>#{i.id}</td>
                                     <td>#{i.dni}</td>
                                     <td>#{i.estudios}</td>
                                     <td>#{i.idioma}</td>
@@ -40,7 +38,7 @@
                                     <td>#{i.contrasenia}</td>
                                     <td>#{i.rol}</td>
                                     <td> 
-                                        <h:form id = "usuarioaccion"> <h:column> <h:commandButton value="Editar" action="#{ModificarUsuario.verUsuario(i.id)}"/> </h:column> </h:form>
+                                        <h:form id = "usuarioaccion"> <h:column> <h:commandButton value="Editar" action="#{ModificarUsuario.verUsuario(i.dni)}"/> </h:column> </h:form>
                                         <h:form> <h:column> <h:commandButton value="Borrar" action="#{ModificarUsuario.eliminar()}"/> </h:column> </h:form>
                                     </td>
                                 </tr>

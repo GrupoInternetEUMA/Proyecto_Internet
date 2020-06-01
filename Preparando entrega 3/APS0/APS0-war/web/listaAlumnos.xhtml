@@ -12,9 +12,9 @@
                     <table id="tablaLista">
                         <thead>
                             <tr>
+                                <th>Usuario</th>
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
-                                <th>ID</th>
                                 <th>DNI</th>
                                 <th>Estudios</th>
                                 <th>Idioma</th>
@@ -32,9 +32,9 @@
                         <body>
                             <ui:repeat var="i" value="#{ListaAlumnos.alumnos}">
                                 <tr>
+                                    <td>#{i.usuario}</td>
                                     <td>#{i.nombre}</td>
-                                    <td>#{i.apellidos}</td>
-                                    <td>#{i.id}</td>
+                                    <td>#{i.apellidos}</td>               
                                     <td>#{i.dni}</td>
                                     <td>#{i.estudios}</td>
                                     <td>#{i.idioma}</td>
@@ -50,11 +50,12 @@
                                     <c:if test="#{ controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                         <td><h:form id="alumnoaccion">
                                                 <h:column>
-                                                    <h:commandLink value="Editar" action="#{listaAlumnos.edit(i)}"><i class="fas fa-edit"></i></h:commandLink>
+                                                    <h:commandButton value="Editar" action="#{ModificarAlumno.verAlumno(i.dni)}" />
                                                 </h:column>
                                             </h:form> <h:form>
                                                 <h:column>
-                                                    <h:commandLink value="Borrar" action="#{listaAlumnos.delete(i)}" onclick="return confirm('¿Estás seguro?')"><i class="fas fa-trash-alt"></i></h:commandLink>                                                </h:column>
+                                                    <h:commandButton value="Borrar" action="#{ModificarAlumno.eliminar()}" />
+                                                </h:column>
                                             </h:form></td>
                                     </c:if>
                                 </tr>

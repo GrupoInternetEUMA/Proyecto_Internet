@@ -14,7 +14,6 @@
                             <tr>
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
-                                <th>ID</th>
                                 <th>DNI</th>
                                 <th>Estudios</th>
                                 <th>Idioma</th>
@@ -31,7 +30,6 @@
                                 <tr>
                                     <td>#{i.nombre}</td>
                                     <td>#{i.apellidos}</td>
-                                    <td>#{i.id}</td>
                                     <td>#{i.dni}</td>
                                     <td>#{i.estudios}</td>
                                     <td>#{i.idioma}</td>
@@ -44,7 +42,7 @@
 
                                     <td><h:form id="responsableaccion">
                                             <h:column>
-                                                <h:commandButton value="Editar" action="#{ModificarResponsable.verResponsable(i.id)}" />
+                                                <h:commandButton value="Editar" action="#{ModificarResponsable.verResponsable(i.dni)}" />
                                             </h:column>
                                         </h:form> <h:form>
                                             <h:column>

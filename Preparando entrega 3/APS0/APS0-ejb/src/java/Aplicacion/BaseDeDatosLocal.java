@@ -6,6 +6,8 @@
 package Aplicacion;
 
 import Entidades.Alumno;
+import Entidades.Usuario;
+import excepciones.AcoesException;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -16,5 +18,7 @@ import javax.ejb.Local;
 @Local
 public interface BaseDeDatosLocal {
     public List<Alumno> getAlumnos();
-     public List<Alumno> getAlumnos1();        
+     public List<Alumno> getAlumnos1();
+     public void compruebaLogin(Usuario u) throws AcoesException;
+     public Usuario refrescarUsuario(Usuario u) throws AcoesException;
 }
