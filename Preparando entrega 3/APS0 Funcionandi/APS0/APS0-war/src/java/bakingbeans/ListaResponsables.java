@@ -1,36 +1,42 @@
 package bakingbeans;
 
+import javax.enterprise.context.RequestScoped;
 import Entidades.Usuario;
 import Entidades.Responsable_actividad;
 import Entidades.Usuario.Rol;
+import ejb.ONGEJB;
+import ejb.ResponsableEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 @Named(value = "ListaResponsables")
-@SessionScoped
+@RequestScoped
 public class ListaResponsables implements Serializable {
+    
+    @Inject ResponsableEJB bbdd;
 
     private ArrayList<Responsable_actividad> responsables;
     private Usuario usuario;
     private Responsable_actividad responsable;
 
-    public ListaResponsables() {
-        responsables = new ArrayList<>();
-        responsables.add(new Responsable_actividad( 12345678, "Francisco", "El guay", "Fisica Nuclear", "Castellano", new Date(1975, 5, 30), "profe1@uma.es", "pass123", Rol.RESPONSABLE, "fisicoLoco", "Ciencias naturales"));
-        responsables.add(new Responsable_actividad( 39645678, "Vaiana", "Jimenez Guacho", "Odontologia", "Aleman", new Date(1987, 10, 6), "profe2@uma.es", "321PaS", Rol.RESPONSABLE, "Sacamuelas", "Anatomia"));
+    public String ListaResponsables() {
+        return "listaResponsables.xhtml";
     }
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
+    
     public Usuario getUsuario() {
         return usuario;
     }
@@ -38,7 +44,7 @@ public class ListaResponsables implements Serializable {
     public ArrayList<Responsable_actividad> getResponsables() {
         return responsables;
     }
-
+    
     public void setResponsables(Responsable_actividad responsable) {
         this.responsable = responsable;
     }
@@ -46,11 +52,34 @@ public class ListaResponsables implements Serializable {
     public Responsable_actividad getResponsable() {
         return responsable;
     }
-
+    
     public String crearResponsable() {
         return "anadirResponsable.xhtml";
     }
-
+    
+    public Integer getDni(){
+        return responsable.getDni();
+    }
+    
+    public String anadir() throws ParseException{
+       this.bbdd.create(this.responsable);
+       this.responsable = new Responsable_actividad();
+       return "listaResponsables.xhtml";
+    }
+    
+    public String editar() throws ParseException {  // Pasar parámetros del login
+        this.responsable = responsable;
+        return "listaResponsables.xhtml";
+    }
+    
+    public void eliminar() throws ParseException {  // Pasar parámetros del login
+        this.bbdd.remove(responsable);
+    }  
+    
+    //public void ModificarResponsable (){ 
+    //    this.responsable = responsable
+    // }
+    
     public String home() {
         // Si no ha iniciado sesion, le lleva al login
         if (getUsuario() == null) {
