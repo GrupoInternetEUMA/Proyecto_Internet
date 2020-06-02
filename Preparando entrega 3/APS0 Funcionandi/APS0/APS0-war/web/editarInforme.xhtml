@@ -9,7 +9,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR' || controlAutorizacion.getUsuario().getRol() == 'RESPONSABLE'}">
-                <h1 var = "i" value="#{ModificarInforme.informe}">Modificar Informe</h1>
+                <h1 var = "i" value="#{ListaInformes.informe}">Modificar Informe</h1>
 
                 <h:form id="ListaInformes">
                     <table>
@@ -35,7 +35,7 @@
                     </table>
                 </h:form>
                 <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ModificarInforme.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaInformes.editar()}"/> </h:column> 
                     <h:column> <h:commandButton value="Cancelar" action="#{ListaActividades.verActividad(i.id)}" /> </h:column>                     
                 </h:form>
 
