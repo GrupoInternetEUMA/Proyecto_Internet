@@ -1,7 +1,8 @@
-package JSF;
+package bakingbeans;
 
 
 import Entidades.ONG;
+import Entidades.Usuario.Rol;
 import ejb.ONGEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -87,18 +88,20 @@ public class ListaONGs implements Serializable {
     }
 
     public String anadir() {
+       
         this.bbdd.create(this.ong);
         this.ong = new ONG();
         return "listaONGs.xhtml";
     }
 
-    public String editar() {
-        this.ong = ong;
+    public String editar(ONG a) {
+        this.ong = a;
+        bbdd.edit(this.ong);
         return "listaONGs.xhtml";
     }
 
-    public void eliminar() {
-        this.bbdd.remove(ong);
+    public void eliminar(ONG a) {
+        bbdd.remove(a);
     }
 
     public String crearInforme() {

@@ -1,4 +1,4 @@
-package JSF;
+package bakingbeans;
 
 import Entidades.Actividad;
 import Entidades.Usuario;
@@ -118,13 +118,14 @@ public class ListaActividades implements Serializable {
         return null;
     }
 
-    public String editar() {
-        this.actividad = actividad;
-        return "editarActividad.xhtml";
+    public String editar(Actividad a) {
+        this.actividad = a;
+        bbdd.edit(this.actividad);
+        return "listaActividades.xhtml";
     }
 
-    public void eliminar() {
-        this.bbdd.remove(actividad);
+    public void eliminar(Actividad a) {
+        bbdd.remove(a);
     }
 
     public String home() {
