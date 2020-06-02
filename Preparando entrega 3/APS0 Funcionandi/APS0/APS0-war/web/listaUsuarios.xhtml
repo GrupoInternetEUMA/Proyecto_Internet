@@ -1,0 +1,64 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                >
+    <ui:define name="title">Lista de usuarios</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
+                <h1>LISTA DE USUARIOS</h1>
+                <div class="bordeTabla">
+                    <table id="tablaLista">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>DNI</th>
+                                <th>Estudios</th>
+                                <th>Idioma</th>
+                                <th>Fecha Nacimiento</th>
+                                <th>Email</th>
+                                <th>Contrasenia</th>
+                                <th>Rol</th>
+
+                            </tr>
+                        </thead>
+                        <body>
+                            <ui:repeat var = "i" value="#{ListaUsuarios.usuarios}">
+                                <tr>
+                                    <td>#{i.nombre}</td>
+                                    <td>#{i.apellidos}</td>
+                                    <td>#{i.dni}</td>
+                                    <td>#{i.estudios}</td>
+                                    <td>#{i.idioma}</td>
+                                    <td>#{i.fecha_nacimiento}</td>
+                                    <td>#{i.email}</td>
+                                    <td>#{i.contrasenia}</td>
+                                    <td>#{i.rol}</td>
+                                    <td> 
+                                        <h:form id = "usuarioaccion"> <h:column> <h:commandButton value="Editar" action="#{ModificarUsuario.verUsuario(i.dni)}"/> </h:column> </h:form>
+                                        <h:form> <h:column> <h:commandButton value="Borrar" action="#{ModificarUsuario.eliminar()}"/> </h:column> </h:form>
+                                    </td>
+                                </tr>
+
+                            </ui:repeat>
+                        </body>
+
+                    </table>
+                </div>
+                <h:form id = "insertar">
+                    <h:column>
+                        <h:commandButton value="Inserta nuevo usuario" action="#{ListaUsuarios.crearUsuario()}"/>
+                    </h:column>               
+                </h:form>
+
+
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>
