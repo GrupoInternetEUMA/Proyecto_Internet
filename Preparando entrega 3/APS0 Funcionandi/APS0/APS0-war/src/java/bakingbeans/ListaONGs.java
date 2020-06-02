@@ -1,36 +1,41 @@
-package bakingbeans;
+package JSF;
+
 
 import Entidades.ONG;
+import ejb.ONGEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
-import javax.enterprise.context.RequestScoped;
+import java.util.List;
+import javax.ejb.EJB;
+import javax.inject.Inject;
+
 
 /**
  *
- * @author José Antonio Bravo Gonzalez
+ * @author JosÃ© Antonio Bravo Gonzalez
  */
 @Named(value = "ListaONGs")
 @SessionScoped
 
 public class ListaONGs implements Serializable {
 
-    private final ArrayList<ONG> ongs;
-    private ONG ong;
+   
+    private ONG ong = new ONG();
+    
+    @Inject
+    ONGEJB bbdd;
+    @Inject
+    ControlAutorizacion ctrl;
     
 
     public ListaONGs() {
-        ongs = new ArrayList<>();
-        ongs.add(new ONG(1, "Unicef", "Organizacion...", "unicef@info.com", 99999999, "C/Europa", "Spain", "unicef"));
-        ongs.add(new ONG(2, "Unesco", "Organizacion...", "Unesco@info.com", 99999998, "C/Europa", "Spain", "unesco"));
         
     }
 
-    
-
-    public ArrayList<ONG> getONGs() {
-        return ongs;
+    public List<ONG> getONGs(){
+        return this.bbdd.findAll();
     }
 
     public ONG getONG() {
@@ -40,9 +45,64 @@ public class ListaONGs implements Serializable {
     public void setONG(ONG ong) {
         this.ong = ong;
     }
+    
+    public Integer getId() {
+        return this.ong.getId();
+    }
+
+    public String getNombre() {
+        return this.ong.getNombre();
+    }
+
+    public String getDescripcion() {
+        return this.ong.getDescripcion();
+    }
+
+    public String getEmail() {
+        return this.ong.getEmail();
+    }
+
+    public Integer getTelefono() {
+        return this.ong.getTelefono();
+    }
+
+    public String getDireccion() {
+        return this.ong.getDireccion();
+    }
+
+    public String getPais() {
+        return this.ong.getPais();
+    }
+
+    public String getContrasenia() {
+        return this.ong.getContrasenia();
+    }
+
+    public String ListaONGs() {
+        return "listaONGs.xhtml";
+    }
+
+    public String verONG(int id) {
+        return "editarONG.xhtml";
+    }
+
+    public String anadir() {
+        this.bbdd.create(this.ong);
+        this.ong = new ONG();
+        return "listaONGs.xhtml";
+    }
+
+    public String editar() {
+        this.ong = ong;
+        return "listaONGs.xhtml";
+    }
+
+    public void eliminar() {
+        this.bbdd.remove(ong);
+    }
 
     public String crearInforme() {
-        return "anadirONG.xhtml";
+        return "anadirInforme.xhtml";
     }
 
 }

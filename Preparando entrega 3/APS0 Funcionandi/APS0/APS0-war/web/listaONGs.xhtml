@@ -25,7 +25,7 @@
                             </tr>
                         </thead>
                         <body>
-                            <ui:repeat var="i" value="#{ListaONGs.ONGs}">
+                            <ui:repeat var="i" value="#{ListaONGs.getONGs()}">
                                 <tr>
                                     <td>#{i.id}</td>
                                     <td>#{i.nombre}</td>
@@ -43,7 +43,7 @@
                                         </h:form> 
                                         <h:form>
                                             <h:column>
-                                                <h:commandButton value="Borrar" action="#{ModificarONG.eliminar()}" />
+                                                <h:commandButton value="Borrar" action="#{ListaONGs.eliminar()}" />
                                             </h:column>
                                         </h:form>
                                     </td>

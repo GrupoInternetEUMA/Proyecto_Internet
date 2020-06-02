@@ -49,7 +49,7 @@
 
                 <h:form> 
                     <h:column> 
-                        <h:commandButton value="Actualizar" action="#{ModificarONG.editar()}"/> 
+                        <h:commandButton value="Actualizar" action="#{ListaONGs.editar()}"/> 
                     </h:column> 
                     <h:column> 
                         <h:commandButton value="Cancelar" action="listaONGs.xhtml" /> 
@@ -59,7 +59,7 @@
             </c:when>
 
             <c:when test="#{controlAutorizacion.usuario.rol == 'ONG'}">
-                <h1 var = "i" value="#{ModificarONG.ONG}">Modificar ONG</h1>
+                <h1 var = "i" value="#{ListaONGs.ONG}">Modificar ONG</h1>
                 <h:form id="editarONG">
                     <table>
                         <tr>
@@ -100,7 +100,7 @@
 
                 <h:form> 
                     <h:column> 
-                        <h:commandButton value="Actualizar" action="#{ModificarONG.editar()}"/> 
+                        <h:commandButton value="Actualizar" action="#{ListaONGs.editar()}"/> 
                     </h:column> 
                     <h:column> 
                         <h:commandButton value="Cancelar" action="misDatos.xhtml" /> 

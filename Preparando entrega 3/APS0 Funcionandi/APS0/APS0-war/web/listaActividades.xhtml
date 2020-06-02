@@ -40,14 +40,14 @@
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
                                             <h:form id="actividadaccion">
                                                 <h:column>
-                                                    <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
+                                                    <h:commandButton value="Editar" action="#{ListaActividades.editarActividad(i.id)}" />
                                                 </h:column>
                                             </h:form> 
                                         </c:if>
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                             <h:form>
                                                 <h:column>
-                                                    <h:commandButton value="Borrar" action="#{ModificarActividad.eliminar()}" />
+                                                    <h:commandButton value="Borrar" action="#{ListaActividades.eliminar()}" />
                                                 </h:column>
                                             </h:form>
                                         </c:if>
