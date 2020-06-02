@@ -1,0 +1,21 @@
+
+
+insert into Usuario values (23, 375856147, 'Sherlock', 'Holmes', 'Investigación', 'Inglés', '02021999', 'evidentemente@uma.es', 'user', NORMAL, 'detective')
+
+insert into Alumno values (1, 111111111, 'Aitor', 'Tilla', 'bachillerato', 'Español', '01012001', 'tortilladeatun@uma.es', 'user', , ALUMNO, 'tillator', 'Grado en Turismo', 444444444)
+
+insert into Alumno values (7, 114151711, 'Espín', 'Nete', 'eso', 'Español', '01042000', 'puercoespin@gmail.com', 'user', , ALUMNO, 'espin', 'Grado en Filosofía', 448453444)
+
+insert into Responsable_actividad values (6, 865865865, 'Marco', 'Polo', 'Curso de primeros auxilios', 'Inglés', '08082008', 'poloflash@gmail.com', 'user', RESPONSABLE, 'pool25', 'Deportes')
+
+insert into Actividad values(0, 'Recogida de basura', 'Recoger basura en parajes naturales', '03062021', '04062021', 'pendiente', 'formación', 'Granada')
+
+insert into Informe values(3, 'Positiva', 'tres días', 'reparto de alimentos a distintos puntos')
+
+insert into ONG values(02, 'Manos Dispersas', 'Ayuda humanitaria en partes distintas del país', 'manosdsp@gmail.com', 111563964, 'Murcia', 'España', 'ong')
+
+insert into Solicitud_Actividad values (8, 'por confirmar', '04052020')
+
+delete from Actividad where fecha_fin < '01012000'
+
+select * from alumno
