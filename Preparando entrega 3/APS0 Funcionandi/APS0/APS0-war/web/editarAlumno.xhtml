@@ -9,7 +9,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{ModificarAlumno.alumno}">Modificar Alumno</h1>
+                <h1 var = "i" value="#{ListaAlumnos.alumno}">Modificar Alumno</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
@@ -55,20 +55,17 @@
                             <td>Password: </td>
                             <td><h:inputText value="#{i.contrasenia}"/></td>
                         </tr>
-                        <tr>
-                            <td>Rol: </td>
-                            <td><h:inputText value="#{i.rol}"/></td>
-                        </tr>
+                        
                     </table>
                 </h:form>
                 <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ModificarAlumno.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaAlumnos.editar(i)}"/> </h:column> 
                     <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>
 
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ALUMNO'}">
-                <h1 var = "i" value="#{ModificarAlumno.alumno}">Modificar Alumno</h1>
+                <h1 var = "i" value="#{ListaAlumnos.alumno}">Modificar Alumno</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
@@ -117,7 +114,7 @@
                     </table>
                 </h:form>
                 <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ModificarAlumno.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaAlumnos.editar(i)}"/> </h:column> 
                     <h:column> <h:commandButton value="Cancelar" action="misDatos.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>

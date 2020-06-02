@@ -9,11 +9,14 @@ import ejb.AlumnoEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
@@ -22,12 +25,15 @@ import javax.inject.Inject;
 public class ListaAlumnos implements Serializable {
 
     //private ArrayList<Alumno> alumnos;
+   
     private Usuario usuario;
-    private Alumno alumno;
+   
+    private Alumno alumno = new Alumno();
     @Inject
     AlumnoEJB bbdd;
     @Inject
     ControlAutorizacion ctrl;
+    
 
     /*public ListaAlumnos() {
         alumnos = new ArrayList<>();
@@ -87,5 +93,98 @@ public class ListaAlumnos implements Serializable {
         usuario = null;
         return "login.xhtml";
     }
+    
+       
 
+    public String getTitulacion() {
+        return this.alumno.getTitulacion();
+    }
+
+    public Integer getNum_expediente() {
+        return this.alumno.getNum_expediente();
+    }
+
+    public Integer getDni() {
+        return this.alumno.getDni();
+    }
+
+    public String getNombre() {
+        return this.alumno.getNombre();
+    }
+
+    public String getApellidos() {
+        return this.alumno.getApellidos();
+    }
+
+    public String getEstudios() {
+        return this.alumno.getEstudios();
+    }
+
+    public String getIdioma() {
+        return this.alumno.getIdioma();
+    }
+
+    public Date getFecha_nacimiento() {
+        return this.alumno.getFecha_nacimiento();
+    }
+
+    public String getEmail() {
+        return this.alumno.getEmail();
+    }
+
+    public String getContrasenia() {
+        return this.alumno.getContrasenia();
+    }
+
+    public Rol getRol() {
+        return this.alumno.getRol();
+    }
+
+    public String ListaAlumnos() {
+        return "listaAlumnos.xhtml";
+    }
+
+    public String verAlumno(Alumno a) {
+        return "editarAlumno.xhtml";
+    }
+    
+    public String editar(Alumno a){
+        this.alumno = a;
+        bbdd.edit(this.alumno);
+        return "listaAlumnos.xhtml";
+    }
+    
+    public void eliminar(Alumno a){
+        bbdd.remove(a);
+        
+    }
+    
+    public String anadir(){
+        alumno.setRol(Rol.ALUMNO);
+        this.bbdd.create(this.alumno);
+        this.alumno = new Alumno();
+        return "listaAlumnos.xhtml";
+       
+    }
+/*
+    public String anadir() throws ParseException {  // Pasar parámetros del login
+        // Implementar este método
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir a un alumno, inténtelo más tarde", "No ha sido posible añadir a un alumno, inténtelo más tarde"));
+        return null;
+    }
+
+    public String editar() throws ParseException {  // Pasar parámetros del login
+        // Implementar este método
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible editar a un alumno, inténtelo más tarde", "No ha sido posible editar a un alumno, inténtelo más tarde"));
+        return null;
+    }
+
+    public String eliminar() throws ParseException {  // Pasar parámetros del login
+        // Implementar este método
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible eliminar a un alumno, inténtelo más tarde", "No ha sido posible eliminar a un alumno, inténtelo más tarde"));
+        return null;
+    }*/
 }

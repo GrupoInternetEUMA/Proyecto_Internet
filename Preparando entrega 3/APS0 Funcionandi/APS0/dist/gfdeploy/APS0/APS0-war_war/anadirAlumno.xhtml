@@ -13,53 +13,58 @@
                 <h:form id="anadirAlumno">
                     <table>
                         <tr>
+                            <td>Usuario: </td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.usuario}"/></td>
+                        </tr>
+                        <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.nombre}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.apellidos}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.apellidos}"/></td>
+                        </tr>
+                        <tr>
+                            <td>DNI: </td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.dni}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.estudios}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.idioma}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.fecha_nacimiento}"/></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.email}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Titulación: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.titulacion}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.titulacion}"/></td>
                         </tr>
 
                         <tr>
                             <td>Nº expediente: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.n_expediente}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.num_expediente}"/></td>
                         </tr>
                         <tr>
                             <td>Contrasenia: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.contrasenia}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.contrasenia}"/></td>
                         </tr>
 
-                        <tr>
-                            <td>Rol: </td>
-                            <td><h:inputText value="#{ModificarAlumno.alumno.rol}"/></td>
-                        </tr>
+                        
 
                         <tr>
                             <td colspan="7">
@@ -69,7 +74,7 @@
                     </table>
                 </h:form>
                 <h:form>
-                    <h:commandButton value="Insertar" action="#{ModificarAlumno.anadir()}"/>
+                    <h:commandButton value="Insertar" action="#{ListaAlumnos.anadir()}"/>
                     <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column>
                 </h:form>
             </c:when>
