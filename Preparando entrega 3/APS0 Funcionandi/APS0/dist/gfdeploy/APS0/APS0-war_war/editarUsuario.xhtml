@@ -8,7 +8,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{ModificarUsuario.usuario}">Modificar Usuario</h1>
+                <h1 var = "i" value="#{ListaUsuarios.usuario}">Modificar Usuario</h1>
                 <h:form id="editarUsuario">
                     <table>
                         <tr>
@@ -52,7 +52,7 @@
                     </table>
                 </h:form>
                 <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ModificarUsuario.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaUsuarios.edit()}"/> </h:column> 
                     <h:column> <h:commandButton value="Cancelar" action="listaUsuarios.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>
