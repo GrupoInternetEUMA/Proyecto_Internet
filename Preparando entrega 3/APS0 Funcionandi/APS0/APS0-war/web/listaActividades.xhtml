@@ -40,21 +40,21 @@
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
                                             <h:form id="actividadaccion">
                                                 <h:column>
-                                                    <h:commandButton value="Editar" action="#{ListaActividades.editarActividad(i.id)}" />
+                                                    <h:commandButton value="Editar" action="#{ListaActividades.editarActividad(i)}" />
                                                 </h:column>
                                             </h:form> 
                                         </c:if>
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                             <h:form>
                                                 <h:column>
-                                                    <h:commandButton value="Borrar" action="#{ListaActividades.eliminar()}" />
+                                                    <h:commandButton value="Borrar" action="#{ListaActividades.eliminar(i)}" />
                                                 </h:column>
                                             </h:form>
                                         </c:if>
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'ALUMNO' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
                                             <h:form>
                                                 <h:column>
-                                                    <h:commandButton value="Ver" action="#{ListaActividades.verActividad(i.id)}" />
+                                                    <h:commandButton value="Ver" action="#{ListaActividades.verActividad(i)}" />
                                                 </h:column>
                                             </h:form>
                                         </c:if>
@@ -116,7 +116,7 @@
                                     <td> 
                                         <h:form>
                                             <h:column>
-                                                <h:commandButton value="Ver" action="#{ListaActividades.verActividad(i.id)}" />
+                                                <h:commandButton value="Ver" action="#{ListaActividades.verActividad(i)}" />
                                             </h:column>
                                         </h:form>
                                         <h:form>
