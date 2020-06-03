@@ -30,6 +30,10 @@
                         <h:outputText value="Direccion"/>
                         <h:inputText id ="direccion" value="#{listaONGs.ong.direccion}" />
                         <h:message for="direccion"/>
+                        
+                        <h:outputText value="Email"/>
+                        <h:inputText id ="email" value="#{listaONGs.ong.email}" />
+                        <h:message for="email"/>
 
                         <h:outputText value="Pais"/>
                         <h:inputText id ="pais" value="#{listaONGs.ong.pais}" />
@@ -42,7 +46,7 @@
                     </h:panelGrid>
                 </h:form>
                 <h:form>
-                    <h:commandButton value="Insertar" action="#{ModificarONG.anadir()}"/>
+                    <h:commandButton value="Insertar" action="#{ListaONGs.anadir()}"/>
                     <h:commandButton value="Cancelar" action="listaONGs.xhtml"/>
                 </h:form>
             </c:when>

@@ -50,11 +50,11 @@
                                     <c:if test="#{ controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                         <td><h:form id="alumnoaccion">
                                                 <h:column>
-                                                    <h:commandButton value="Editar" action="#{ModificarAlumno.verAlumno(i.dni)}" />
+                                                    <h:commandButton value="Editar" action="#{ListaAlumnos.verAlumno(i)}" />
                                                 </h:column>
                                             </h:form> <h:form>
                                                 <h:column>
-                                                    <h:commandButton value="Borrar" action="#{ModificarAlumno.eliminar()}" />
+                                                    <h:commandButton value="Borrar" action="#{ListaAlumnos.eliminar(i)}" />
                                                 </h:column>
                                             </h:form></td>
                                     </c:if>

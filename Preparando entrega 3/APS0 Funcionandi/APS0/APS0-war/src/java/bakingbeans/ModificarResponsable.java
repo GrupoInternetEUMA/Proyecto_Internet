@@ -1,4 +1,4 @@
-package bakingbeans;
+/*package bakingbeans;
 
 import Entidades.Usuario;
 import Entidades.Responsable_actividad;
@@ -104,3 +104,4 @@ public class ModificarResponsable implements Serializable {
     public ModificarResponsable() {
     }
 }
+*/

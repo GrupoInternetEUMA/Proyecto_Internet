@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import modelos.ActividadF;
+
 
 @Named(value = "ListaActividades")
 @SessionScoped
