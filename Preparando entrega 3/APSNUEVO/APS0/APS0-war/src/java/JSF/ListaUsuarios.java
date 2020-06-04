@@ -1,4 +1,4 @@
-package bakingbeans;
+package JSF;
 
 import Entidades.Usuario;
 import Entidades.Usuario.Rol;

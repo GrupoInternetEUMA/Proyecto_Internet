@@ -1,7 +1,6 @@
-package bakingbeans;
+package JSF;
 
-import Aplicacion.BaseDeDatos;
-import Aplicacion.BaseDeDatosLocal;
+
 import Entidades.Usuario;
 import Entidades.Alumno;
 import Entidades.Usuario.Rol;
@@ -31,8 +30,7 @@ public class ListaAlumnos implements Serializable {
     private Alumno alumno = new Alumno();
     @Inject
     AlumnoEJB bbdd;
-    @Inject
-    BaseDeDatosLocal db;
+    
     @Inject
     ControlAutorizacion ctrl;
     
@@ -182,25 +180,4 @@ public class ListaAlumnos implements Serializable {
         return "listaAlumnos.xhtml";
        
     }
-/*
-    public String anadir() throws ParseException {  // Pasar parámetros del login
-        // Implementar este método
-        FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible añadir a un alumno, inténtelo más tarde", "No ha sido posible añadir a un alumno, inténtelo más tarde"));
-        return null;
-    }
-
-    public String editar() throws ParseException {  // Pasar parámetros del login
-        // Implementar este método
-        FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible editar a un alumno, inténtelo más tarde", "No ha sido posible editar a un alumno, inténtelo más tarde"));
-        return null;
-    }
-
-    public String eliminar() throws ParseException {  // Pasar parámetros del login
-        // Implementar este método
-        FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible eliminar a un alumno, inténtelo más tarde", "No ha sido posible eliminar a un alumno, inténtelo más tarde"));
-        return null;
-    }*/
 }

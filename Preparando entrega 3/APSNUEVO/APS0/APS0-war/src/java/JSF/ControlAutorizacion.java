@@ -1,4 +1,4 @@
-package bakingbeans;
+package JSF;
 
 import Entidades.Usuario;
 import static Entidades.Usuario.Rol.ADMINISTRADOR;
