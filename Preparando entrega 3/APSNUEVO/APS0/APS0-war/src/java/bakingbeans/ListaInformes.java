@@ -27,10 +27,11 @@ public class ListaInformes implements Serializable {
     @Inject
     private ControlAutorizacion ctrl;
     
-    private final ArrayList<Informe> informes;
+    private ArrayList<Informe> informes;
     private Actividad actividad;
     private Usuario usuario;
     private Informe informe = new Informe();
+    private Actividad actividad_inf;
     
     
 
@@ -82,12 +83,24 @@ public class ListaInformes implements Serializable {
     public String verInformes(Actividad actividad) {
         /*informes.clear();
         informes.add(new Informe(1, "Obtención de 5 créditos", "180 horas", "Curso de montaje de ordenador"));*/
+        actividad_inf = new Actividad();
+        actividad_inf = actividad;
+        informes = new ArrayList<>();
         for(Informe inf : bbdd.findAll()){
-          if(inf.getActividad().equals(actividad)){
+          if(inf.getActividad().getId().equals(actividad.getId())){
                informes.add(inf);
           }
         }
+        
         return "verInformesId.xhtml";
+    }
+
+    public Actividad getActividad_inf() {
+        return actividad_inf;
+    }
+
+    public void setActividad_inf(Actividad actividad_inf) {
+        this.actividad_inf = actividad_inf;
     }
     
     public Integer getId() {
@@ -112,19 +125,18 @@ public class ListaInformes implements Serializable {
 
     public String editarInforme(Informe i) {
         informe = i;
-        bbdd.edit(this.informe);
-        return "listaInformes.xhtml";
+        return "editarInforme.xhtml";
     }
 
     public String anadir(){  // Pasar parámetros del login
-       bbdd.create(this.informe);
+       this.bbdd.create(this.informe);
        this.informe = new Informe();
        return "listaInformes.xhtml";
     }
 
-    public String editar(Informe informe){  // Pasar parámetros del login
-        this.informe = informe;
-        return "editarInforme.xhtml";
+    public String editar(){  // Pasar parámetros del login
+        bbdd.edit(this.informe);
+        return "verInformesId.xhtml";
     }
 
     public void eliminar(Informe i){  // Pasar parámetros del login

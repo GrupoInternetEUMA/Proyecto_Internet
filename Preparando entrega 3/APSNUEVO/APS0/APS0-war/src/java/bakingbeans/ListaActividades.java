@@ -45,20 +45,6 @@ public class ListaActividades implements Serializable {
         
     }
     
-    public Actividad ActividadBack(Informe i){
-        
-        Actividad ac = null;
-        
-        for(Actividad act : getActividades()){    
-            
-            if(act.getId().equals(i.getActividad())){
-                
-                ac = act;
-            }
-        }
-        return ac;
-    }
-    
     public Actividad getActividad() {
         return actividad;
     }
@@ -132,6 +118,7 @@ public class ListaActividades implements Serializable {
     }
 
     public String verActividad(Actividad a) {
+        actividad = new Actividad();
         actividad = a;
         return "verActividad.xhtml";
     }

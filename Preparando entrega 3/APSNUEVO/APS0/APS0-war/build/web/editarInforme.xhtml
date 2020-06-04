@@ -9,33 +9,33 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().getRol() == 'ADMINISTRADOR' || controlAutorizacion.getUsuario().getRol() == 'RESPONSABLE'}">
-                <h1 var = "i" value="#{ListaInformes.informe}">Modificar Informe</h1>
-
+                <h1>Modificar Informe</h1>
                 <h:form id="ListaInformes">
+                    <h:inputHidden value="#{ListaInformes.informe.id}"/>
                     <table>
                         <tr>
                             <td>Id </td>
-                            <td><h:inputText  value="#{i.id}"/></td>
+                            <td><h:inputText  value="#{ListaInformes.informe.id}"/></td>
                         </tr>
 
                         <tr>
                             <td>Evaluación </td>
-                            <td><h:inputText  value="#{i.evaluacion}"/></td>
+                            <td><h:inputText  value="#{ListaInformes.informe.evaluacion}"/></td>
                         </tr>
 
                         <tr>
                             <td>Tiempo_empleado </td>
-                            <td><h:inputText  value="#{i.tiempo_empleado}"/></td>
+                            <td><h:inputText  value="#{ListaInformes.informe.tiempo_empleado}"/></td>
                         </tr>
 
                         <tr>
                             <td>Tareas_realizadas </td>
-                            <td><h:inputText  value="#{i.tareas_realizadas}"/></td>
+                            <td><h:inputText  value="#{ListaInformes.informe.tareas_realizadas}"/></td>
                         </tr>
                     </table>
                 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ListaInformes.editar(i)}"/> </h:column> 
-                    <h:column> <h:commandButton value="Cancelar" action="#{ListaActividades.ActividadBack(i)}" /> </h:column>                     
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaInformes.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Cancelar" action="#{ListaActividades.ActividadBack(ListaInformes.informe)}" /> </h:column>                     
                 </h:form>
 
             </c:when>

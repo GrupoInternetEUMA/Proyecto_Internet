@@ -31,7 +31,7 @@
                                             <td> 
 
                                                 <h:column> 
-                                                    <h:commandButton value="Editar" action="#{ListaInformes.editar(i)}"/> 
+                                                    <h:commandButton value="Editar" action="#{ListaInformes.editarInforme(i)}"/> 
                                                 </h:column> 
 
                                                 <h:column> 
@@ -42,15 +42,22 @@
                                         </c:if>
                                     </tr>
                                 </ui:repeat>
+                                <h:column>
+                                    <h:commandButton value="Volver actividad" action="#{ListaActividades.verActividad(ListaInformes.informes.get(0).getActividad())}"/> 
+                                </h:column>     
                             </h:form>
                         </body>
                     </table>
+
                 </div>
+
+
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
                     <h:form>
                         <h:column>
                             <h:commandButton value="Inserta Informe" action="#{ListaInformes.crearInforme()}"/>
-                        </h:column>               
+                        </h:column>  
+
                     </h:form>
                 </c:if>
             </c:when>
