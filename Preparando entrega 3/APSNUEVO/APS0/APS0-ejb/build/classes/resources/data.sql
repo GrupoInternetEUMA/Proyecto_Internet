@@ -22,7 +22,9 @@ INSERT INTO APP.RESPONSABLE_ACTIVIDAD VALUES ('CIENTIFICO1','SUAREZ','1234','LCC
 INSERT INTO APP.RESPONSABLE_ACTIVIDAD VALUES ('resp','SUAREZ','resp','LCC',88779944,'suarez@uma.es','Doctor Ingenería Informática','1970-01-22','Espanol e Ingles','Alfredo','RESPONSABLE')
 INSERT INTO APP.USUARIO VALUES ('resp','SUAREZ','resp',88779944,'suarez@uma.es','Doctor Ingenería Informática','1970-01-22','Espanol e Ingles','Alfredo','RESPONSABLE')
 
+INSERT INTO APP.ONG (USUARIO,CONTRASENIA, DESCRIPCION,DIRECCION,DNI, EMAIL, FECHA_NACIMIENTO,NOMBRE,PAIS, ROL,TELEFONO) VALUES ('ong3', '1234','ONG que trata de salvar el medio ambiente','Calle Picos de Europa',20572,'arbolesverdes@gmail.com','1999-08-15', 'Arboles verdes',  'España','ONG', 608321654)
 INSERT INTO APP.ONG (USUARIO,CONTRASENIA, DESCRIPCION,DIRECCION,DNI, EMAIL, FECHA_NACIMIENTO,NOMBRE,PAIS, ROL,TELEFONO) VALUES ('ong1', '1234','ONG Siempre acompañado es una ONG que se dedica a pasar el tiempo con aquellos que por cualquier circunstancia pasan mucho tiempo en soledad','Calle sin nombre',10225,'ONGSA@gmail.com','2000-01-20', 'Siempre acompañado',  'España','ONG', 661543216)
+INSERT INTO APP.ONG (USUARIO,CONTRASENIA, DESCRIPCION,DIRECCION,DNI, EMAIL, FECHA_NACIMIENTO,NOMBRE,PAIS, ROL,TELEFONO) VALUES ('ong2', '1234','ONG que trata de repartir recursos','Calle Quevedo',38504,'dosong@gmail.com','2004-03-19', 'Todos Tienen',  'España','ONG', 623630415)
 
 INSERT INTO APP.ACTIVIDAD VALUES(1,'Recogida de caca de perro','PENDIENTE','2020-05-12','2021-05-13','EN UN LUGAR DE LA MANCHA', 'RECOGIDA DE MIERDAS','VOLUNTARIADO','ong1','CIENTIFICO1' )
 INSERT INTO APP.USUARIO  VALUES ('Anastasia', 'Sanches','1234',50627756,'anas@gmail.com', 'Psicologia',  '2000-05-15', 'Español e ingles', 'anstasia', 'ALUMNO')
@@ -39,9 +41,6 @@ INSERT INTO APP.ALUMNO (USUARIO, APELLIDOS, CONTRASENIA, DNI, EMAIL, ESTUDIOS, F
 
 INSERT INTO APP.ALUMNO (USUARIO, APELLIDOS, CONTRASENIA, DNI, EMAIL, ESTUDIOS, FECHA_NACIMIENTO, IDIOMA, NOMBRE, NUM_EXPEDIENTE, ROL, TITULACION) VALUES ('Reportera', 'Velasco', 'password', 7712358, 'alumno2@hotmail.com', 'Comunnicaciones', '2001-09-05', 'ingles', 'Monica', 54995, 'ALUMNO', 'Audiovisuales')
 
-INSERT INTO APP.ONG  VALUES ('', '1234','ONG Siempre acompañado es una ONG que se dedica a pasar el tiempo con aquellos que por cualquier circunstancia pasan mucho tiempo en soledad','Calle sin nombre','ONGSA@gmail.com', 'Siempre acompañado',  'España', 661543216)
-
-INSERT INTO APP.ONG (ID, CONTRASENIA, DESCRIPCION, DIRECCION, EMAIL, NOMBRE, PAIS, TELEFONO) VALUES(2, 'ongpass', 'ong de pruebaa papu', 'calle inventada n5', 'ongmail@gmail.com', 'manos ardientes', 'España', 952404040)
 
 INSERT INTO APP.RESPONSABLE_ACTIVIDAD VALUES ('CIENTIFICO1','SUAREZ','1234','LCC',88779944,'suarez@uma.es','Doctor Ingenería Informática','1970-01-22', 'Espanol e Ingles','Alfredo','RESPONSABLE')
 
