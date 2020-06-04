@@ -1,6 +1,5 @@
 package Entidades;
 
-import static Entidades.Usuario_.usuario;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;

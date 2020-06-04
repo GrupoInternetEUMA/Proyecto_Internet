@@ -33,10 +33,9 @@
                             <td><h:inputText  value="#{i.tareas_realizadas}"/></td>
                         </tr>
                     </table>
-                </h:form>
-                <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ListaInformes.editar()}"/> </h:column> 
-                    <h:column> <h:commandButton value="Cancelar" action="#{ListaActividades.verActividad(i.id)}" /> </h:column>                     
+                
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaInformes.editar(i)}"/> </h:column> 
+                    <h:column> <h:commandButton value="Cancelar" action="#{ListaActividades.ActividadBack(i)}" /> </h:column>                     
                 </h:form>
 
             </c:when>

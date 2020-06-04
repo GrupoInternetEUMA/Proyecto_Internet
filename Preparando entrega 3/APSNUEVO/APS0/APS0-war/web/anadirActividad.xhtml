@@ -3,7 +3,8 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                >
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:define name="title">Formulario Nuevo Actividad</ui:define>
     <ui:define name="content">
         <c:choose>
@@ -13,37 +14,50 @@
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ListaActividad.actividad.nombre}"/></td>
+                            <td><h:inputText value="#{ListaActividades.actividad.nombre}"/></td>
                         </tr>
                         <tr>
                             <td>ID: </td>
-                            <td><h:inputText value="#{ListaActividad.actividad.id}"/></td>
+                            <td><h:inputText value="#{ListaActividades.actividad.id}"/></td>
                         </tr>
                         <tr>
                             <td>Fecha inicio: </td>
-                            <td><h:inputText value="#{ListaActividad.actividad.fecha_inicio}"/></td>
+                            <td><h:inputText value="#{ListaActividades.actividad.fecha_inicio}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
+                            
                         </tr>
                         <tr>
                             <td>Fecha fin: </td>
-                            <td><h:inputText value="#{ListaActividad.actividad.fecha_fin}"/></td>
+                            <td><h:inputText value="#{ListaActividades.actividad.fecha_fin}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
                         </tr>
                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                             <tr>
                                 <td>Estado: </td>
-                                <td><h:inputText value="#{ListaActividad.actividad.estado}"/></td>
+                                <td><h:inputText value="#{ListaActividades.actividad.estado}"/></td>
                             </tr>
                         </c:if>
                         <tr>
                             <td>Tipo de actividad: </td>
-                            <td><h:inputText value="#{ListaActividad.actividad.tipo}"/></td>
+                            <td><h:inputText value="#{ListaActividades.actividad.tipo}"/></td>
                         </tr>
                         <tr>
                             <td>Lugar: </td>
-                            <td><h:inputText value="#{ListaActividad.actividad.lugar}"/></td>
+                            <td><h:inputText value="#{ListaActividades.actividad.lugar}"/></td>
                         </tr>
                         <tr>
                             <td>Descripcion: </td>
-                            <td><h:inputText value="#{ListaActividad.actividad.descripcion}"/></td>
+                            <td><h:inputText value="#{ListaActividades.actividad.descripcion}"/></td>
+                        </tr>
+                        <tr>
+                            <td>ONG: </td>
+                            <td><h:inputText value="#{ListaActividades.o}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Responsable: </td>
+                            <td><h:inputText value="#{ListaActividades.r}"/></td>
                         </tr>
                         <tr>
                             <td colspan="7">
@@ -51,8 +65,7 @@
                             </td>
                         </tr>
                     </table>
-                </h:form>
-                <h:form>
+                
                     <h:commandButton value="Insertar"  action="#{ListaActividades.anadir()}"/>
                     <h:column> <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> </h:column>
                 </h:form>

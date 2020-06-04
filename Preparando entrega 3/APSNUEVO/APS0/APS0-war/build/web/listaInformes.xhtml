@@ -20,33 +20,34 @@
                             </tr>
                         </thead>
                         <body>
-                            <ui:repeat var = "i" value="#{ListaInformes.getInformes()}">
-                                <tr>                               
-                                    <td>#{i.id}</td>                              
-                                    <td>#{i.evaluacion}</td>                               
-                                    <td>#{i.tiempo_empleado}</td>
-                                    <td>#{i.tareas_realizadas}</td> 
-                                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                                        <td> 
-                                            <h:form id = "informeaccion"> 
+                            <h:form id="ListaInformes">
+                                <ui:repeat var = "i" value="#{ListaInformes.getInformes()}">
+                                    <tr>                               
+                                        <td>#{i.id}</td>                              
+                                        <td>#{i.evaluacion}</td>                               
+                                        <td>#{i.tiempo_empleado}</td>
+                                        <td>#{i.tareas_realizadas}</td> 
+                                        <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
+                                            <td> 
+
                                                 <h:column> 
-                                                    <h:commandButton value="Editar" action="#{ListaInformes.editarInforme(i.id)}"/> 
+                                                    <h:commandButton value="Editar" action="#{ListaInformes.editar(i)}"/> 
                                                 </h:column> 
-                                            </h:form>
-                                            <h:form> 
+
                                                 <h:column> 
-                                                    <h:commandButton value="Borrar" action="#{ListaInformes.eliminar()}"/> 
+                                                    <h:commandButton value="Borrar" action="#{ListaInformes.eliminar(i)}"/> 
                                                 </h:column> 
-                                            </h:form>
-                                        </td>
-                                    </c:if>
-                                </tr>
-                            </ui:repeat>
+
+                                            </td>
+                                        </c:if>
+                                    </tr>
+                                </ui:repeat>
+                            </h:form>
                         </body>
                     </table>
                 </div>
                 <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                    <h:form id = "insertar">
+                    <h:form>
                         <h:column>
                             <h:commandButton value="Inserta Informe" action="#{ListaInformes.crearInforme()}"/>
                         </h:column>               

@@ -1,9 +1,12 @@
 package bakingbeans;
 
 import Entidades.Actividad;
+import Entidades.Informe;
 import Entidades.Usuario;
 import Entidades.Usuario.Rol;
 import ejb.ActividadEJB;
+import ejb.ONGEJB;
+import ejb.ResponsableEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -12,13 +15,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 
 @Named(value = "ListaActividades")
-@SessionScoped
+@RequestScoped
 public class ListaActividades implements Serializable {
 
     
@@ -28,12 +32,33 @@ public class ListaActividades implements Serializable {
     @Inject
     ActividadEJB bbdd;
     @Inject
+    ResponsableEJB bbddr;
+    @Inject
     ControlAutorizacion ctrl;
-
+    
+    protected String o =new String();
+    protected String r = new String();
+    @Inject
+    ONGEJB bbddo;
+    
     public ListaActividades(){
         
     }
-
+    
+    public Actividad ActividadBack(Informe i){
+        
+        Actividad ac = null;
+        
+        for(Actividad act : getActividades()){    
+            
+            if(act.getId().equals(i.getActividad())){
+                
+                ac = act;
+            }
+        }
+        return ac;
+    }
+    
     public Actividad getActividad() {
         return actividad;
     }
@@ -42,7 +67,24 @@ public class ListaActividades implements Serializable {
         return this.bbdd.findAll();
     }
 
+    public String getO() {
+        return o;
+    }
 
+    public void setO(String o) {
+        this.o = o;
+    }
+
+    public String getR() {
+        return r;
+    }
+
+    public void setR(String r) {
+        this.r = r;
+    }
+
+    
+    
     public void setActividad(Actividad actividad) {
         this.actividad = actividad;
     }
@@ -89,7 +131,8 @@ public class ListaActividades implements Serializable {
         return "anadirActividad.xhtml";
     }
 
-    public String verActividad(int id) {
+    public String verActividad(Actividad a) {
+        actividad = a;
         return "verActividad.xhtml";
     }
 
@@ -97,7 +140,8 @@ public class ListaActividades implements Serializable {
         return "listaActividades.xhtml";
     }
 
-    public String editarActividad(int id) {
+    public String editarActividad(Actividad a) {
+        actividad = a;
         return "editarActividad.xhtml";
     }
 
@@ -106,9 +150,11 @@ public class ListaActividades implements Serializable {
     }
 
     public String anadir() {
+        actividad.setOng(bbddo.find(o));
+        actividad.setResponsable_actividad(bbddr.find(r));
         this.bbdd.create(this.actividad);
         this.actividad = new Actividad();
-        return "listaActividad.xhtml";
+        return "listaActividades.xhtml";
     }
 
     public String anadirParticipante() throws ParseException {  // Pasar parÃ¡metros del login
@@ -118,8 +164,7 @@ public class ListaActividades implements Serializable {
         return null;
     }
 
-    public String editar(Actividad a) {
-        this.actividad = a;
+    public String editar() {
         bbdd.edit(this.actividad);
         return "listaActividades.xhtml";
     }
@@ -152,5 +197,6 @@ public class ListaActividades implements Serializable {
         usuario = null;
         return "login.xhtml";
     }
-
+    
+    
 }

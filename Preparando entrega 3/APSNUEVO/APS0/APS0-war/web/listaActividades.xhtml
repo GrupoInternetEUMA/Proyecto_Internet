@@ -35,14 +35,16 @@
                                     <td>#{i.fecha_inicio}</td>
                                     <td>#{i.fecha_fin}</td>
                                     <td>#{i.descripcion}</td>
+                                    <td>#{i.ong.usuario}</td>
+                                    <td>#{i.responsable_actividad.usuario}</td>
 
                                     <td> 
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE' || controlAutorizacion.usuario.rol == 'ONG'}">
-                                            <h:form id="actividadaccion">
+                                            <h:form>
                                                 <h:column>
                                                     <h:commandButton value="Editar" action="#{ListaActividades.editarActividad(i)}" />
                                                 </h:column>
-                                            </h:form> 
+                                            </h:form>
                                         </c:if>
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                             <h:form>
@@ -100,6 +102,8 @@
                                 <th>Fecha Inicio</th>
                                 <th>Fecha Fin</th>
                                 <th>Descripcion</th>
+                                <th>Ong</th>
+                                <th>Responsable</th>
                             </tr>
                         </thead>
                         <body>
@@ -113,6 +117,8 @@
                                     <td>#{i.fecha_inicio}</td>
                                     <td>#{i.fecha_fin}</td>
                                     <td>#{i.descripcion}</td>
+                                    <td>#{i.ong}</td>
+                                    <td>#{i.responsable_actividad}</td>
                                     <td> 
                                         <h:form>
                                             <h:column>

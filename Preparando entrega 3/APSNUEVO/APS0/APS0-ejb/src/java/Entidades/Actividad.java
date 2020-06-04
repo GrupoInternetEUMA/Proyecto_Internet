@@ -49,7 +49,7 @@ public class Actividad implements Serializable {
         super();
     }
 
-    public Actividad(Integer id, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, String estado, String tipo, String lugar) {
+    public Actividad(Integer id, String nombre, String descripcion, Date fecha_inicio, Date fecha_fin, String estado, String tipo, String lugar, ONG ong, Responsable_actividad responsable_actividad) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -58,8 +58,26 @@ public class Actividad implements Serializable {
         this.estado = estado;
         this.tipo = tipo;
         this.lugar = lugar;
+        this.ong = ong;
+        this.responsable_actividad = responsable_actividad;
+    }
+    
+    public ONG getOng() {
+        return this.ong;
     }
 
+    public void setOng(ONG ong) {
+        this.ong = ong;
+    }
+    
+    public Responsable_actividad getResponsable_actividad() {
+        return this.responsable_actividad;
+    }
+
+    public void setResponsable_actividad(Responsable_actividad responsable_actividad) {
+        this.responsable_actividad = responsable_actividad;
+    }
+    
     public Integer getId() {
         return this.id;
     }

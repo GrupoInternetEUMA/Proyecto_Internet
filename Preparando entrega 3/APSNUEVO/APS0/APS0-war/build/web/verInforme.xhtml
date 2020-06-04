@@ -7,7 +7,7 @@
     <ui:define name="content">
         <c:choose>   
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR' || controlAutorizacion.getUsuario().rol == 'ALUMNO' || controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                     
-                <h1 var = "i" value="#{Informe.informe}">Ver Informe</h1>
+                <h1 var = "i" value="#{ListaInformes.informe}">Ver Informe</h1>
                 <h:form id="verInforme">
                     <table>
                         <tr>
@@ -44,26 +44,26 @@
                         </tr>
 
                     </table>
-                </h:form>
-                <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                    <h:form>
 
-                        <h:form id="actividadaccion">
-                            <h:column>
-                                <h:commandButton value="Editar" action="#{ModificarActividad.editarActividad(i.id)}" />
-                            </h:column>
-                        </h:form> 
-                        <h:column> 
-                            <h:commandButton value="Atras" action="verActividad.xhtml" /> 
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
+
+                         
+                    <!-- Revisar si hace falta, y cómo implementarlo -->
+                        <h:column>
+                            <h:commandButton value="Editar" action="#{ListaActividades.editarActividad(i)}" />
                         </h:column>
-                    </h:form>
-                </c:if>
-                <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
-                    <h:form>
+                    
                         <h:column> 
-                            <h:commandButton value="Atras" action="verActividad.xhtml" /> 
+                            <h:commandButton value="Atras" action="#{ListaActividades.ActividadBack(i)}" /> 
                         </h:column>
-                    </h:form>
+
+                    </c:if>
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
+
+                        <h:column> 
+                            <h:commandButton value="Atras" action="#{ListaActividades.ActividadBack(i)}" /> 
+                        </h:column>
+                </h:form>
                 </c:if>
             </c:when>
 
