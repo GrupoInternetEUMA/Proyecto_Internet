@@ -1,0 +1,84 @@
+
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Formulario Nuevo Usuario</ui:define>
+
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+                <h1>Insertar Usuario</h1>
+                <h:form id="anadirUsuario">
+                    <table>
+                        <tr>
+                            <td>Usuario: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.usuario}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.nombre}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Apellidos: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.apellidos}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>DNI: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.dni}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Estudios: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.estudios}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Idioma: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.idioma}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha nacimiento: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.fecha_nacimiento}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.email}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Contrasenia: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.contrasenia}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Rol: </td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.rol}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="7">
+
+                            </td>
+                        </tr>
+                    </table>
+                    <h:commandButton value="Insertar" action="#{ListaUsuarios.add()}"/>
+                    <h:column> <h:commandButton value="Cancelar" action="listaUsuarios.xhtml" /> </h:column>
+                </h:form>
+            </c:when>
+            <c:otherwise>
+                <p>Ha ocurrido un error inesperado</p>
+            </c:otherwise>
+        </c:choose>
+        <h:messages/>
+    </ui:define>
+</ui:composition>

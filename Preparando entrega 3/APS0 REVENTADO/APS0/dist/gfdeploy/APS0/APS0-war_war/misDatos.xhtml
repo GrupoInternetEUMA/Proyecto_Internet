@@ -1,0 +1,248 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Mis Datos</ui:define>
+    <ui:define name="content">
+        <c:choose>   
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                     
+                <h1>Mis Datos</h1>
+                <h:form id="verResponsable">
+                               
+                    <table>
+                         <tr>
+                            <td>Usuario: </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.usuario}"/></td>
+                        </tr>
+                         <tr>
+                            <td>Contrasenia: </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.contrasenia}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.nombre}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Apellidos: </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.apellidos}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Estudios: </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.estudios}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Idioma: </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.idioma}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha nacimiento: </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.fecha_nacimiento}">
+                                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:outputText></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.email}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Departamento </td>
+                            <td><h:outputText value="#{ListaResponsables.responsable.departamento}"/></td>
+                        </tr>
+                        
+                        
+                    </table>
+                </h:form>
+
+                <h:form>
+
+                    <h:form id="responsableaccionaccion">
+                        <h:column>
+                            <h:commandButton value="Editar" action="#{ModificarResponsable.verResponsable(i.id)}" />
+                        </h:column>
+                    </h:form>
+                </h:form>
+            </c:when>
+
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ALUMNO'}">                     
+                <h1 var = "i" value="#{Alumno.alumno}">Mis Datos</h1>
+                <h:form id="verAlumno">
+                    <table>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:outputText value="Francisco de Asis"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Apellidos: </td>
+                            <td><h:outputText value="De Los Rosales"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Estudios: </td>
+                            <td><h:outputText value="Bachillerato"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Idioma: </td>
+                            <td><h:outputText value="Español, Catalán"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha nacimiento: </td>
+                            <td><h:outputText value="12/04/2001"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:outputText value="facs@gmail.com"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Titulación: </td>
+                            <td><h:outputText value="Graduado en Magisterio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Nº expediente: </td>
+                            <td><h:outputText value="1401114558/6"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password: </td>
+                            <td><h:outputText value="siempreane"/></td>
+                        </tr>
+                        <tr>
+                            <td>Rol: </td>
+                            <td><h:outputText value="ALUMNO"/></td>
+                        </tr>
+                    </table>
+                </h:form>
+
+                <h:form>
+
+                    <h:form id="alumnoaccion">
+                        <h:column>
+                            <h:commandButton value="Editar" action="#{ModificarAlumno.verAlumno(i.id)}" />
+                        </h:column>
+                    </h:form>
+                </h:form>
+            </c:when>
+
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ONG'}">                     
+                <h1 var = "i" value="#{ONG.ong}">Mis Datos</h1>
+                <h:form id="verONG">
+                    <table>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:outputText value="Amigos Por  El Mundo"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Descripción: </td>
+                            <td><h:outputText value="Nos dedicamos a ayudar a gente sin amigos, y combatir las injusticias del Bullying."/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:outputText value="APEM@gmail.com"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Teléfono: </td>
+                            <td><h:outputText value="999666213"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Dirección: </td>
+                            <td><h:outputText value="C/Barrio la lata"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>País: </td>
+                            <td><h:outputText value="Noruega"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password: </td>
+                            <td><h:outputText value="APEM1234"/></td>
+                        </tr>
+                    </table>
+                </h:form>
+
+                <h:form>
+
+                    <h:form id="ongaccion">
+                        <h:column>
+                            <h:commandButton value="Editar" action="#{ModificarONG.verONG(i.id)}" />
+                        </h:column>
+                    </h:form>
+                </h:form>
+            </c:when>
+
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'NORMAL'}">                     
+                <h1 var = "i" value="#{Usuario.usuario}">Mis Datos</h1>
+                <h:form id="verUsuario">
+                    <table>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:outputText value="María"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Apellidos: </td>
+                            <td><h:outputText value="Palacio"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Estudios: </td>
+                            <td><h:outputText value="ESO"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Idioma: </td>
+                            <td><h:outputText value="Inglés, Español"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha nacimiento: </td>
+                            <td><h:outputText value="12/01/2005"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:outputText value="mariaguapa2005@gmail.com"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Password: </td>
+                            <td><h:outputText value="MariaP2005"/></td>
+                        </tr>
+                        <tr>
+                            <td>Rol: </td>
+                            <td><h:outputText value="NORMAL"/></td>
+                        </tr>
+                    </table>
+                </h:form>
+
+                <h:form>
+
+                    <h:form id="Usuarioaccion">
+                        <h:column>
+                            <h:commandButton value="Editar" action="#{ModificarUsuario.verUsuario(i.id)}" />
+                        </h:column>
+                    </h:form>
+                </h:form>
+            </c:when>
+            <c:otherwise>
+                <p>Ha ocurrido un error inesperado</p>
+            </c:otherwise>
+        </c:choose>
+        <h:messages/>
+    </ui:define>
+</ui:composition>
