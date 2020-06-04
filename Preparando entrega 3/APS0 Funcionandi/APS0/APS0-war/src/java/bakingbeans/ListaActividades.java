@@ -55,7 +55,7 @@ public class ListaActividades implements Serializable {
         this.usuario = usuario;
     }
 
-   
+    
     
     public String getNombre() {
         return this.actividad.getNombre();

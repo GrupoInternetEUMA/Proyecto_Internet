@@ -8,47 +8,48 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
-                <h1>Modificar ONG</h1>
+                <h1 var = "i" value="#{ListaONGs.ONG}">Modificar ONG</h1>
                 <h:form id="editarONG">
-                     <h:inputHidden value="#{ListaONGs.ONG.usuario}"/>
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ListaONGs.ONG.nombre}"/></td>
+                            <td><h:inputText value="#{i.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Descripción: </td>
-                            <td><h:inputText value="#{ListaONGs.ONG.descripcion}"/></td>
+                            <td><h:inputText value="#{i.descripcion}"/></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{ListaONGs.ONG.email}"/></td>
+                            <td><h:inputText value="#{i.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Teléfono: </td>
-                            <td><h:inputText value="#{ListaONGs.ONG.telefono}"/></td>
+                            <td><h:inputText value="#{i.telefono}"/></td>
                         </tr>
 
                         <tr>
                             <td>Dirección: </td>
-                            <td><h:inputText value="#{ListaONGs.ONG.direccion}"/></td>
+                            <td><h:inputText value="#{i.direccion}"/></td>
                         </tr>
 
                         <tr>
                             <td>País: </td>
-                            <td><h:inputText value="#{ListaONGs.ONG.pais}"/></td>
+                            <td><h:inputText value="#{i.pais}"/></td>
                         </tr>
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{ListaONGs.ONG.contrasenia}"/></td>
+                            <td><h:inputText value="#{i.contrasenia}"/></td>
                         </tr>
                     </table>
-                
+                </h:form>
+
+                <h:form> 
                     <h:column> 
-                        <h:commandButton value="Actualizar" action="#{ListaONGs.editar()}"/> 
+                        <h:commandButton value="Actualizar" action="#{ListaONGs.editar(i)}"/> 
                     </h:column> 
                     <h:column> 
                         <h:commandButton value="Cancelar" action="listaONGs.xhtml" /> 

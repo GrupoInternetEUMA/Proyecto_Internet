@@ -18,19 +18,17 @@ import javax.inject.Inject;
 @Named(value = "ListaUsuarios")
 @RequestScoped
 public class ListaUsuarios implements Serializable {
-    
-    private Usuario usuario = new Usuario();
-    @Inject
-    UsuarioEJB bbdd;
-    @Inject
-    ControlAutorizacion ctrl;
-    
+
+    @EJB
+    private UsuarioEJB usuariosEJB;
+    private Usuario usu;
+
     public ListaUsuarios() {
 
     }
 
     public List<Usuario> findAll() {
-        return this.bbdd.findAll();
+        return this.usuariosEJB.findAll();
     }
     
     public Rol[] getRoles(){
@@ -38,54 +36,47 @@ public class ListaUsuarios implements Serializable {
     }
 
     public Usuario getUsuario() {
-        return usuario;
+        return usu;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(Usuario usu) {
+        this.usu = usu;
     }
     
     public Integer getDni() {
-        return this.usuario.getDni();
+        return this.usu.getDni();
     }
 
     public String getNombre() {
-        return this.usuario.getNombre();
+        return this.usu.getNombre();
     }
 
     public String getApellidos() {
-        return this.usuario.getApellidos();
+        return this.usu.getApellidos();
     }
 
     public String getEstudios() {
-        return this.usuario.getEstudios();
+        return this.usu.getEstudios();
     }
 
     public String getIdioma() {
-        return this.usuario.getIdioma();
+        return this.usu.getIdioma();
     }
-    
-    public String registro(){
-            usuario.setRol(Rol.NORMAL);
-            this.bbdd.create(this.usuario);
-            this.usuario = new Usuario();
-            return "login.xhtml";
-    }
-    
+
     public Date getFecha_nacimiento() {
-        return this.usuario.getFecha_nacimiento();
+        return this.usu.getFecha_nacimiento();
     }
 
     public String getEmail() {
-        return this.usuario.getEmail();
+        return this.usu.getEmail();
     }
 
     public String getContrasenia() {
-        return this.usuario.getContrasenia();
+        return this.usu.getContrasenia();
     }
 
     public Usuario.Rol getRol() {
-        return this.usuario.getRol();
+        return this.usu.getRol();
     }
 
     public String crearUsuario() {
@@ -96,23 +87,27 @@ public class ListaUsuarios implements Serializable {
         return "listaUsuarios.xhtml";
     }
 
-    public String verUsuario(Usuario usu) {
-        usuario = usu;
+    public String verUsuario(int id) {
         return "editarUsuario.xhtml";
     }
     
     public String add(){
-        this.bbdd.create(this.usuario);
-        this.usuario = new Usuario();
+        this.usuariosEJB.create(this.usu);
+        this.usu = new Usuario();
         return "listaUsuarios.xhtml";
     }
     
-    public void delete(Usuario usuario){
-        this.bbdd.remove(usuario);
+    public void delete(Usuario u){
+        this.usuariosEJB.remove(u);
+    }
+    
+    public String edit(Usuario usu){
+        this.usu = usu;
+        return "editarUsuario.xhtml";
     }
     
     public String edit(){
-        this.bbdd.edit(this.usuario);
+        this.usuariosEJB.edit(this.usu);
         return "listaUsuarios.xhtml";
     }
 
@@ -137,7 +132,7 @@ public class ListaUsuarios implements Serializable {
         // Destruye la sesión (y con ello, el ámbito de este bean)
         FacesContext ctx = FacesContext.getCurrentInstance();
         ctx.getExternalContext().invalidateSession();
-        usuario = null;
+        usu = null;
         return "login.xhtml";
     }
 

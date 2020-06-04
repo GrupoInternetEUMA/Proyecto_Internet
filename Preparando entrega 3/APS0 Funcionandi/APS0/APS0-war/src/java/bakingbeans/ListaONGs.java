@@ -2,7 +2,6 @@ package bakingbeans;
 
 
 import Entidades.ONG;
-import Entidades.Usuario;
 import Entidades.Usuario.Rol;
 import ejb.ONGEJB;
 import javax.inject.Named;
@@ -11,7 +10,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 
@@ -20,42 +18,11 @@ import javax.inject.Inject;
  * @author JosÃ© Antonio Bravo Gonzalez
  */
 @Named(value = "ListaONGs")
-@RequestScoped
+@SessionScoped
+
 public class ListaONGs implements Serializable {
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public ONG getOng() {
-        return ong;
-    }
-
-    public void setOng(ONG ong) {
-        this.ong = ong;
-    }
-
-    public ONGEJB getBbdd() {
-        return bbdd;
-    }
-
-    public void setBbdd(ONGEJB bbdd) {
-        this.bbdd = bbdd;
-    }
-
-    public ControlAutorizacion getCtrl() {
-        return ctrl;
-    }
-
-    public void setCtrl(ControlAutorizacion ctrl) {
-        this.ctrl = ctrl;
-    }
-
-   private Usuario usuario;
+   
     private ONG ong = new ONG();
     
     @Inject
@@ -80,7 +47,9 @@ public class ListaONGs implements Serializable {
         this.ong = ong;
     }
     
-    
+    public Integer getId() {
+        return this.ong.getId();
+    }
 
     public String getNombre() {
         return this.ong.getNombre();
@@ -114,23 +83,19 @@ public class ListaONGs implements Serializable {
         return "listaONGs.xhtml";
     }
 
-    public String verONG(ONG a) {
-        this.ong = a;
+    public String verONG(int id) {
         return "editarONG.xhtml";
     }
 
     public String anadir() {
-       this.ong.setRol(Rol.ONG);
-        this.bbdd.create(ong);
+       
+        this.bbdd.create(this.ong);
         this.ong = new ONG();
         return "listaONGs.xhtml";
     }
-    public String crearONG() {
-        return "anadirONG.xhtml";
-    }
 
-    public String editar() {
-        
+    public String editar(ONG a) {
+        this.ong = a;
         bbdd.edit(this.ong);
         return "listaONGs.xhtml";
     }
