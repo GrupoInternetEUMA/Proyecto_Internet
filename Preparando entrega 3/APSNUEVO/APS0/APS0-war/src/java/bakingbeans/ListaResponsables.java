@@ -34,10 +34,13 @@ public class ListaResponsables implements Serializable {
     }
     
     public String getResponsableC(){
-        
-      responsable = (Responsable_actividad) ctrl.getUsuario();
-      
-       
+        responsableconectado = new Responsable_actividad();
+      for(Responsable_actividad res : bbdd.findAll()){
+           if(res.getUsuario().equals(ctrl.getUsuario().getUsuario())){
+               responsable = res;
+               responsableconectado = res;
+           }
+       } 
       return "misDatos.xhtml";
      }
     
@@ -135,7 +138,7 @@ public class ListaResponsables implements Serializable {
     }
 
     public String editarResponsable() {
-        responsable = (Responsable_actividad) ctrl.getUsuario();
+        
         return "editarResponsable.xhtml";
     }
     

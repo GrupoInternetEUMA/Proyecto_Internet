@@ -68,7 +68,7 @@ public class Login {
 
     public String autenticar() {
         // Implementar este método
-        /*usuarios = getUsuarios();
+        usuarios = getUsuarios();
         FacesContext ctx = FacesContext.getCurrentInstance();
         Iterator<Usuario> iter = usuarios.iterator();
         boolean pass = false;
@@ -99,16 +99,7 @@ public class Login {
         }
 
         ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "El método autenticar() no está implementado", "El método autenticar() no está implementado"));
-        return null;*/
-        Usuario u = bbdd.comprobarContrasenia(usuario,contrasenia);
-        if(u!=null){
-            ctrl.setUsuario(u);
-            return ctrl.home();
-        }
         return null;
-       
     }
-        
-        
 
 }

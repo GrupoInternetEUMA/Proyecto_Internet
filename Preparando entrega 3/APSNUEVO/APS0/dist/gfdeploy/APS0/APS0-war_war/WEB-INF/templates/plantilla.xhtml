@@ -31,7 +31,7 @@
 
                     <!-- OPCIONES PARA ALUMNO-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
-                        <li><h:commandLink action="#{ListaAlumnos.getAlumnoC()}" value="Mis Datos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.misDatos()}" value="Mis Datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaActividades()}" value="Actividades"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaSolicitudes()}" value="Solicitudes"/></li>                       
                     </c:if>
@@ -46,13 +46,13 @@
 
                     <!-- OPCIONES PARA ONG-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'ONG'}">
-                        <li><h:commandLink action="#{ListaONGs.getONGC()}" value="Mis Datos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.misDatos()}" value="Mis Datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaActividades()}" value="Actividades"/></li>                      
                     </c:if>
 
                     <!-- OPCIONES PARA USUARIO NORMAL-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'NORMAL'}">
-                        <li><h:commandLink action="#{ListaUsuarios.getUsuarioC()}" value="Mis Datos"/></li>
+                        <li><h:commandLink action="#{controlAutorizacion.misDatos()}" value="Mis Datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaActividades()}" value="Actividades"/></li>                      
                     </c:if>
 

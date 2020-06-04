@@ -62,40 +62,30 @@
                 </h:form>
             </c:when>
 
-             <c:when test="#{controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                                
-                <h1>Modificar Actividad</h1>
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                                
+                <h1 var = "i" value="#{ListaActividad.actividad}">Modificar Actividad</h1>
                 <h:form id="editarAlumno">
-                     <h:inputHidden value="#{ListaActividades.actividad.id}"/>
                     <table>
-                        
                         <tr>
+
                             <td>Estado: </td>
-                            <td><h:inputText value="#{ListaActividades.actividad.estado}"/></td>
+                            <td><h:inputText value="#{i.estado}"/></td>
                         </tr>
-                        <tr>
-                            <td>Tipo de actividad: </td>
-                            <td><h:inputText value="#{ListaActividades.actividad.tipo}"/></td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Descripcion: </td>
-                            <td><h:inputText value="#{ListaActividades.actividad.descripcion}"/></td>
-                        </tr>
+
 
                     </table>
-
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-
+                </h:form>
+                <c:if test="#{controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
+                    <h:form>
 
                         <h:column> 
-                            <h:commandButton value="Actualizar" action="#{ListaActividades.editar()}"/> 
+                            <h:commandButton value="Actualizar" action="#{ListaActividad.editar(i)}"/> 
                         </h:column>
                         <h:column> 
                             <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
                         </h:column>
-
-                    </c:if>
-                </h:form>
+                    </h:form>
+                </c:if>
             </c:when>
 
 
