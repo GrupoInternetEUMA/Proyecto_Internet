@@ -33,6 +33,11 @@ public class ListaResponsables implements Serializable {
     
     }
     
+    public String verResponsable(Responsable_actividad a) {
+        responsable = a;
+        return "editarResponsable.xhtml";
+    }
+    
     public String getResponsableC(){
         responsableconectado = new Responsable_actividad();
       for(Responsable_actividad res : bbdd.findAll()){
