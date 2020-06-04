@@ -22,6 +22,17 @@ import javax.inject.Inject;
 @Named(value = "ListaONGs")
 @RequestScoped
 public class ListaONGs implements Serializable {
+    
+    public String getONGC(){
+        
+      for(ONG ong : bbdd.findAll()){
+           if(ong.getUsuario().equals(ctrl.getUsuario().getUsuario())){
+               this.ong = ong;
+               
+           }
+       } 
+      return "misDatos.xhtml";
+     }
 
     public Usuario getUsuario() {
         return usuario;

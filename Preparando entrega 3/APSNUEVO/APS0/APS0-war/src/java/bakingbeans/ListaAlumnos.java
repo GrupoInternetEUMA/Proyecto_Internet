@@ -4,6 +4,7 @@ import Aplicacion.BaseDeDatos;
 import Aplicacion.BaseDeDatosLocal;
 import Entidades.Usuario;
 import Entidades.Alumno;
+import Entidades.Responsable_actividad;
 import Entidades.Usuario.Rol;
 import ejb.AlumnoEJB;
 import javax.inject.Named;
@@ -48,6 +49,16 @@ public class ListaAlumnos implements Serializable {
         alumnos.add(new Alumno( 12312312, "Anastasia", "Sanches Cotrina", "Psicologia", "Castellano, Ingles", new Date(1998, 11, 3), "La_Anastasita_xula@uma.es", "twerk", Rol.ALUMNO, "AnaSans", "Universidad de la calle", 1234729));
         //alumnos = (ArrayList<Alumno>) BaseDeDatos.getAlumnos1();
     }*/
+    
+    public String getAlumnoC(){
+        
+      for(Alumno alu : bbdd.findAll()){
+           if(alu.getUsuario().equals(ctrl.getUsuario().getUsuario())){
+               alumno = alu;
+            }
+       } 
+      return "misDatos.xhtml";
+     }
     
     public List<Alumno> getAlumnos() {
         return bbdd.findAll();

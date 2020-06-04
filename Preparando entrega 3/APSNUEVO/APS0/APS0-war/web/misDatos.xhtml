@@ -53,7 +53,7 @@
                         </tr>
 
                         <tr>
-                            <td>Departamento </td>
+                            <td>Departamento: </td>
                             <td><h:outputText value="#{ListaResponsables.responsable.departamento}"/></td>
                         </tr>
                         
@@ -70,172 +70,181 @@
             </c:when>
 
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ALUMNO'}">                     
-                <h1 var = "i" value="#{Alumno.alumno}">Mis Datos</h1>
-                <h:form id="verAlumno">
+                <h1>Mis Datos</h1>
+                <h:form id="verResponsable">
+                               
                     <table>
+                         <tr>
+                            <td>Usuario: </td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.usuario}"/></td>
+                        </tr>
+                         <tr>
+                            <td>Contrasenia: </td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.contrasenia}"/></td>
+                        </tr>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:outputText value="Francisco de Asis"/></td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:outputText value="De Los Rosales"/></td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:outputText value="Bachillerato"/></td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:outputText value="Español, Catalán"/></td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:outputText value="12/04/2001"/></td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.fecha_nacimiento}">
+                                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:outputText></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:outputText value="facs@gmail.com"/></td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.email}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Titulación: </td>
-                            <td><h:outputText value="Graduado en Magisterio"/></td>
-                        </tr>
-
-                        <tr>
-                            <td>Nº expediente: </td>
-                            <td><h:outputText value="1401114558/6"/></td>
+                            <td>Titulacion: </td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.titulacion}"/></td>
                         </tr>
                         <tr>
-                            <td>Password: </td>
-                            <td><h:outputText value="siempreane"/></td>
+                            <td>Mumero de Expediente: </td>
+                            <td><h:outputText value="#{ListaAlumnos.alumno.num_expediente}"/></td>
                         </tr>
-                        <tr>
-                            <td>Rol: </td>
-                            <td><h:outputText value="ALUMNO"/></td>
-                        </tr>
+                        
+                        
                     </table>
-                </h:form>
+                
 
-                <h:form>
-
-                    <h:form id="alumnoaccion">
+                    
                         <h:column>
-                            <h:commandButton value="Editar" action="#{ModificarAlumno.verAlumno(i.id)}" />
+                            <h:commandButton value="Editar" action="#{ListaAlumnos.editarAlumno()}" />
                         </h:column>
-                    </h:form>
+                    
                 </h:form>
+
             </c:when>
 
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ONG'}">                     
-                <h1 var = "i" value="#{ONG.ong}">Mis Datos</h1>
-                <h:form id="verONG">
+                <h1>Mis Datos</h1>
+                <h:form id="verResponsable">
+                               
                     <table>
+                         <tr>
+                            <td>Usuario: </td>
+                            <td><h:outputText value="#{ListaONGs.ong.usuario}"/></td>
+                        </tr>
+                         <tr>
+                            <td>Contrasenia: </td>
+                            <td><h:outputText value="#{ListaONGs.ong.contrasenia}"/></td>
+                        </tr>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:outputText value="Amigos Por  El Mundo"/></td>
+                            <td><h:outputText value="#{ListaONGs.ong.nombre}"/></td>
                         </tr>
-
                         <tr>
-                            <td>Descripción: </td>
-                            <td><h:outputText value="Nos dedicamos a ayudar a gente sin amigos, y combatir las injusticias del Bullying."/></td>
+                            <td>Fecha nacimiento: </td>
+                            <td><h:outputText value="#{ListaONGs.ong.fecha_nacimiento}">
+                                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:outputText></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:outputText value="APEM@gmail.com"/></td>
+                            <td><h:outputText value="#{ListaONGs.ong.email}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Teléfono: </td>
-                            <td><h:outputText value="999666213"/></td>
-                        </tr>
-
-                        <tr>
-                            <td>Dirección: </td>
-                            <td><h:outputText value="C/Barrio la lata"/></td>
-                        </tr>
-
-                        <tr>
-                            <td>País: </td>
-                            <td><h:outputText value="Noruega"/></td>
+                            <td>Pais: </td>
+                            <td><h:outputText value="#{ListaONGs.ong.pais}"/></td>
                         </tr>
                         <tr>
-                            <td>Password: </td>
-                            <td><h:outputText value="APEM1234"/></td>
+                            <td>Telefono: </td>
+                            <td><h:outputText value="#{ListaONGs.ong.telefono}"/></td>
                         </tr>
+                        
+                        
                     </table>
-                </h:form>
+                
 
-                <h:form>
-
-                    <h:form id="ongaccion">
+                    
                         <h:column>
-                            <h:commandButton value="Editar" action="#{ModificarONG.verONG(i.id)}" />
+                            <h:commandButton value="Editar" action="#{ListaONG.editarONG()}" />
                         </h:column>
-                    </h:form>
+                    
                 </h:form>
+
             </c:when>
 
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'NORMAL'}">                     
-                <h1 var = "i" value="#{Usuario.usuario}">Mis Datos</h1>
-                <h:form id="verUsuario">
+               <h1>Mis Datos</h1>
+                <h:form id="verResponsable">
+                               
                     <table>
+                         <tr>
+                            <td>Usuario: </td>
+                            <td><h:outputText value="#{ListaUsuarios.usuario.usuario}"/></td>
+                        </tr>
+                         <tr>
+                            <td>Contrasenia: </td>
+                            <td><h:outputText value="#{ListaUsuarios.usuario.contrasenia}"/></td>
+                        </tr>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:outputText value="María"/></td>
+                            <td><h:outputText value="#{ListaUsuarios.usuario.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:outputText value="Palacio"/></td>
+                            <td><h:outputText value="#{ListaUsuarios.usuario.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:outputText value="ESO"/></td>
+                            <td><h:outputText value="#{ListaUsuarios.usuario.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:outputText value="Inglés, Español"/></td>
+                            <td><h:outputText value="#{ListaUsuarios.usuario.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:outputText value="12/01/2005"/></td>
+                            <td><h:outputText value="#{ListaUsuarios.usuario.fecha_nacimiento}">
+                                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:outputText></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:outputText value="mariaguapa2005@gmail.com"/></td>
+                            <td><h:outputText value="#{ListaUsuarios.usuario.email}"/></td>
                         </tr>
 
-                        <tr>
-                            <td>Password: </td>
-                            <td><h:outputText value="MariaP2005"/></td>
-                        </tr>
-                        <tr>
-                            <td>Rol: </td>
-                            <td><h:outputText value="NORMAL"/></td>
-                        </tr>
+                        
+                        
+                        
                     </table>
-                </h:form>
+                
 
-                <h:form>
-
-                    <h:form id="Usuarioaccion">
+                    
                         <h:column>
-                            <h:commandButton value="Editar" action="#{ModificarUsuario.verUsuario(i.id)}" />
+                            <h:commandButton value="Editar" action="#{ListaUsuarios.editarUsuario()}" />
                         </h:column>
-                    </h:form>
+                    
                 </h:form>
+
             </c:when>
             <c:otherwise>
                 <p>Ha ocurrido un error inesperado</p>

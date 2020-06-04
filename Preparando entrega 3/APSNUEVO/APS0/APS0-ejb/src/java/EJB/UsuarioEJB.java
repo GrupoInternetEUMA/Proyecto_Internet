@@ -9,6 +9,8 @@ import Entidades.Usuario;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -16,6 +18,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class UsuarioEJB extends AbstractEJB<Usuario> {
+    
     @PersistenceContext(unitName = "APS0-ejbPU")
     private EntityManager em;
 
@@ -26,6 +29,18 @@ public class UsuarioEJB extends AbstractEJB<Usuario> {
 
     public UsuarioEJB() {
         super(Usuario.class);
+    }
+    
+    public Usuario comprobarContrasenia(String usuario,String contrasenia){
+       try{
+           Query query = em.createQuery("Select u from Usuario u where u.contrasenia = :pass and u.usuario = :user");
+           query.setParameter("pass",contrasenia);
+        query.setParameter("user",usuario);
+        return (Usuario) query.getSingleResult();
+       }catch (Exception e){
+           return null;
+       }
+        
     }
     
 }
