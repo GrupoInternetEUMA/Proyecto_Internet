@@ -35,10 +35,12 @@ public class Solicitud_Actividad implements Serializable {
         super();
     }
 
-    public Solicitud_Actividad(Integer id, String estado, Date fecha_solicitud) {
+    public Solicitud_Actividad(Integer id, String estado, Date fecha_solicitud,Actividad acitividad, Usuario usuario) {
         this.id = id;
         this.estado = estado;
         this.fecha_solicitud = fecha_solicitud;
+        this.usuario = usuario;
+        this.actividad = actividad;
     }
 
     public Integer getId() {

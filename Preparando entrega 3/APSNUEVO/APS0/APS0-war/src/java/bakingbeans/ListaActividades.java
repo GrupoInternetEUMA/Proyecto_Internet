@@ -1,12 +1,16 @@
 package bakingbeans;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import Entidades.Actividad;
 import Entidades.Informe;
+import Entidades.Solicitud_Actividad;
 import Entidades.Usuario;
 import Entidades.Usuario.Rol;
 import ejb.ActividadEJB;
 import ejb.ONGEJB;
 import ejb.ResponsableEJB;
+import ejb.SolicitudEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -15,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
+import javafx.scene.input.DataFormat;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -35,11 +41,14 @@ public class ListaActividades implements Serializable {
     ResponsableEJB bbddr;
     @Inject
     ControlAutorizacion ctrl;
+    @Inject
+    SolicitudEJB bbdds;
     
     protected String o =new String();
     protected String r = new String();
     @Inject
     ONGEJB bbddo;
+    Date d;
     
     public ListaActividades(){
         
@@ -82,8 +91,19 @@ public class ListaActividades implements Serializable {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
-   
+    
+    public static String getFechaActual() {
+    Date ahora = new Date();
+    SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+    return formateador.format(ahora);
+    }
+    
+    public String Apuntarse(Actividad a){
+        Date d = new Date();
+        Random r = new Random(40000);
+        bbdds.create(new Solicitud_Actividad(r.nextInt(),"Solicitada",new Date(d.getYear(),d.getMonth(),d.getDay()),a,ctrl.getUsuario()));
+        return "listaActividades.xhtml";
+    }
     
     public String getNombre() {
         return this.actividad.getNombre();
@@ -132,7 +152,7 @@ public class ListaActividades implements Serializable {
         return "editarActividad.xhtml";
     }
 
-    public String verParticipantes(int id) {
+    public String verParticipantes(Actividad a) {
         return "listaParticipantesActividad.xhtml";
     }
 
@@ -143,13 +163,12 @@ public class ListaActividades implements Serializable {
         this.actividad = new Actividad();
         return "listaActividades.xhtml";
     }
-
-    public String anadirParticipante() throws ParseException {  // Pasar parÃ¡metros del login
-        // Implementar este mÃ©todo
-        FacesContext ctx = FacesContext.getCurrentInstance();
-        ctx.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "No ha sido posible aÃ±adir el participante, intÃ©ntelo mÃ¡s tarde", "No ha sido posible aÃ±adir el participante, intÃ©ntelo mÃ¡s tarde"));
-        return null;
+    
+    /*
+    public String anadirParticipante(){ 
+        
     }
+    */
 
     public String editar() {
         bbdd.edit(this.actividad);

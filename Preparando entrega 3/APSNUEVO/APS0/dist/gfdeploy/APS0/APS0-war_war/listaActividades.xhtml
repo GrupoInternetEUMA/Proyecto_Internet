@@ -62,11 +62,11 @@
                                         </c:if>
 
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO' }">
-                                            <h:form>
+                                            
                                                 <h:column>
-                                                    <h:commandButton value="Apuntarse"/>
+                                                    <h:commandButton value="Apuntarse" action="#{ListaActividades.Apuntarse(i)}"/>
                                                 </h:column>
-                                            </h:form>
+                                            
                                         </c:if>
 
                                     </td>
