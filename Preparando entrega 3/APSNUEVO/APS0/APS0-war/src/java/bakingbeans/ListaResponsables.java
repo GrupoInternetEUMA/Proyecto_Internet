@@ -20,6 +20,7 @@ import javax.inject.Inject;
 public class ListaResponsables implements Serializable {
 
     private Usuario usuario;
+    private Responsable_actividad responsableconectado;
     
     private Responsable_actividad responsable = new Responsable_actividad();
     @Inject
@@ -33,10 +34,11 @@ public class ListaResponsables implements Serializable {
     }
     
     public String getResponsableC(){
-        
+        responsableconectado = new Responsable_actividad();
       for(Responsable_actividad res : bbdd.findAll()){
            if(res.getUsuario().equals(ctrl.getUsuario().getUsuario())){
                responsable = res;
+               responsableconectado = res;
            }
        } 
       return "misDatos.xhtml";
@@ -135,8 +137,8 @@ public class ListaResponsables implements Serializable {
         return "listaResponsables.xhtml";
     }
 
-    public String verResponsable(Responsable_actividad res) {
-        responsable = res;
+    public String editarResponsable() {
+        
         return "editarResponsable.xhtml";
     }
     

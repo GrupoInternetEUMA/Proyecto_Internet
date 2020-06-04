@@ -12,8 +12,9 @@
                 <h1>Modificar Responsable</h1>
                 <h:form id="editarResponsable">
                     <h:inputHidden value="#{ListaResponsables.responsable.usuario}"/>
-                    <h:inputHidden value="#{ListaResponsables.responsable.dni}"/>                    
+                    <h:inputHidden value="#{ListaUsuarios.usuario.dni}"/>       
                     <table>
+                        
                         <tr>
                             <td>Nombre: </td>
                             <td><h:inputText value="#{ListaResponsables.responsable.nombre}"/></td>
@@ -65,26 +66,27 @@
                 <h1>Modificar Responsable</h1>
                 <h:form id="editarResponsable">
                     <h:inputHidden value="#{ListaResponsables.responsable.usuario}"/>
-                    <h:inputHidden value="#{ListaUsuarios.usuario.dni}"/> 
+                    
                     <table>
+                        
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ListaResponsables.nombre}"/></td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{ListaResponsables.apellidos}"/></td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{ListaResponsables.estudios}"/></td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{ListaResponsables.idioma}"/></td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.idioma}"/></td>
                         </tr>
 
                         <tr>
@@ -96,21 +98,21 @@
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{ListaResponsables.email}"/></td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Departamento </td>
-                            <td><h:inputText value="#{ListaResponsables.departamento}"/></td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.departamento}"/></td>
                         </tr>
 
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{ListaResponsables.contrasenia}"/></td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.contrasenia}"/></td>
                         </tr>                       
                     </table>
                     <h:column> <h:commandButton value="Actualizar" action="#{ListaResponsables.editar()}"/> </h:column> 
-                    <h:column> <h:commandButton value="Cancelar" action="misDatos.xhtml" /> </h:column>                     
+                    <h:column> <h:commandButton value="Cancelar" action="#{ListaResponsables.getResponsableC()}" /> </h:column>                     
                 </h:form>
             </c:when>
 
