@@ -1,0 +1,126 @@
+
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">editar responsable</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
+                <h1>Modificar Responsable</h1>
+                <h:form id="editarResponsable">
+                    <h:inputHidden value="#{ListaResponsables.responsable.usuario}"/>
+                    <h:inputHidden value="#{ListaUsuarios.usuario.dni}"/>       
+                    <table>
+                        
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.nombre}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Apellidos: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.apellidos}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Estudios: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.estudios}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Idioma: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.idioma}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha nacimiento: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.fecha_nacimiento}">
+                                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.email}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Departamento </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.departamento}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.contrasenia}"/></td>
+                        </tr>
+                        
+                    </table>
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaResponsables.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Cancelar" action="listaResponsables.xhtml" /> </h:column>                     
+                </h:form>
+            </c:when>
+
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">
+                <h1>Modificar Responsable</h1>
+                <h:form id="editarResponsable">
+                    <h:inputHidden value="#{ListaResponsables.responsable.usuario}"/>
+                    
+                    <table>
+                        
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.nombre}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Apellidos: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.apellidos}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Estudios: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.estudios}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Idioma: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.idioma}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha nacimiento: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.fecha_nacimiento}">
+                                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
+                        </tr>
+
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.email}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Departamento </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.departamento}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Password: </td>
+                            <td><h:inputText value="#{ListaResponsables.responsable.contrasenia}"/></td>
+                        </tr>                       
+                    </table>
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaResponsables.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Cancelar" action="#{ListaResponsables.getResponsableC()}" /> </h:column>                     
+                </h:form>
+            </c:when>
+
+            <c:otherwise>
+                <p>Ha ocurrido un error inesperado</p>
+            </c:otherwise>
+        </c:choose>
+        <h:messages/>
+    </ui:define>
+</ui:composition>
+
