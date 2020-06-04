@@ -16,5 +16,6 @@ import javax.ejb.Local;
 @Local
 public interface BaseDeDatosLocal {
     public List<Alumno> getAlumnos();
+    public void editAlumno(Alumno a);
      public List<Alumno> getAlumnos1();        
 }

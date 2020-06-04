@@ -3,46 +3,72 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                >    
+                    
+                xmlns:f="http://xmlns.jcp.org/jsf/core">    
     <ui:define name="title">Formulario Nuevo ONG</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                 <h1>Insertar ONG</h1>
                 <h:form id="insertarONG" >
-                    <h:panelGrid columns="3" >
-                        <h:outputText value="Id"/>
-                        <h:inputText id ="id" value="#{listaONGs.ong.id}" />
-                        <h:message for="id"/>
+                   <table>
+                        <tr>
+                            <td>Usuario: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.usuario}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.nombre}"/></td>
+                        </tr>
 
-                        <h:outputText value="Nombre"/>
-                        <h:inputText id ="nombre" value="#{listaONGs.ong.nombre}" />
-                        <h:message for="nombre"/>
+                        <tr>
+                            <td>Contrasenia: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.contrasenia}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Numero de Identificacion ONG: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.dni}"/></td>
+                        </tr>
 
-                        <h:outputText value="Descripcion"/>
-                        <h:inputText id ="descripcion" value="#{listaONGs.ong.descripcion}" />
-                        <h:message for="descripcion"/>
+                        <tr>
+                            <td>Descripcion: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.descripcion}"/></td>
+                        </tr>
 
-                        <h:outputText value="Telefono"/>
-                        <h:inputText id ="telefono" value="#{listaONGs.ong.telefono}" />
-                        <h:message for="telefono"/>
+                        <tr>
+                            <td>Direccion: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.descripcion}"/></td>
+                        </tr>
 
-                        <h:outputText value="Direccion"/>
-                        <h:inputText id ="direccion" value="#{listaONGs.ong.direccion}" />
-                        <h:message for="direccion"/>
+                        <tr>
+                            <td>Fecha Creacion: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.fecha_nacimiento}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
+                        </tr>
 
-                        <h:outputText value="Pais"/>
-                        <h:inputText id ="pais" value="#{listaONGs.ong.pais}" />
-                        <h:message for="pais"/>
+                        <tr>
+                            <td>Email: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.email}"/></td>
+                        </tr>
 
-                        <h:outputText value="Password"/>
-                        <h:inputText id ="password" value="#{listaONGs.ong.password}" />
-                        <h:message for="password"/>
+                        <tr>
+                            <td>Pais: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.pais}"/></td>
+                        </tr>
 
-                    </h:panelGrid>
-                </h:form>
-                <h:form>
-                    <h:commandButton value="Insertar" action="#{ModificarONG.anadir()}"/>
+                        <tr>
+                            <td>Telefono: </td>
+                            <td><h:inputText value="#{ListaONGs.ong.telefono}"/></td>
+                        </tr>
+                                             
+                        <tr>
+                            <td colspan="7">
+
+                            </td>
+                        </tr>
+                    </table>
+                    <h:commandButton value="Insertar" action="#{ListaONGs.anadir()}"/>
                     <h:commandButton value="Cancelar" action="listaONGs.xhtml"/>
                 </h:form>
             </c:when>

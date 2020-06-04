@@ -11,6 +11,12 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import Entidades.Usuario;
 import Entidades.Usuario.Rol;
+import ejb.UsuarioEJB;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
@@ -30,18 +36,18 @@ public class Login {
     
 
     @Inject
-    private BaseDeDatosLocal bd;
+    UsuarioEJB bbdd;
 
     /**
      * Creates a new instance of Login
      */
     public Login() {
-        usuarios = new ArrayList<Usuario>();
-        usuarios.add(new Usuario("admin", "admin", Rol.ADMINISTRADOR));
-        usuarios.add(new Usuario("ong", "ong", Rol.ONG));
-        usuarios.add(new Usuario("resp", "resp", Rol.RESPONSABLE));
-        usuarios.add(new Usuario("alu", "alu", Rol.ALUMNO));
-        usuarios.add(new Usuario("normal", "normal", Rol.NORMAL));
+        
+    }
+     
+    public List<Usuario> getUsuarios(){
+        
+       return bbdd.findAll();
     }
 
     public String getUsuario() {
@@ -62,6 +68,7 @@ public class Login {
 
     public String autenticar() {
         // Implementar este método
+        usuarios = getUsuarios();
         FacesContext ctx = FacesContext.getCurrentInstance();
         Iterator<Usuario> iter = usuarios.iterator();
         boolean pass = false;

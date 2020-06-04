@@ -1,9 +1,11 @@
 package Entidades;
 
+import static Entidades.Usuario_.usuario;
 import java.io.Serializable;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Collection;
+import java.util.Objects;
 import javax.persistence.*;
 
 /**
@@ -12,19 +14,14 @@ import javax.persistence.*;
  */
 @Entity
 
-public class ONG implements Serializable {
+public class ONG extends Usuario implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String nombre;
+    
+    
     private String descripcion;
-    @Column(nullable = false)
-    private String email;
     private Integer telefono;
     private String direccion;
     private String pais;
-    private String contrasenia;
     
     
     @OneToMany(mappedBy = "ong")
@@ -33,35 +30,21 @@ public class ONG implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public ONG(){
-        
+        super();
     }
 
-    public ONG(Integer id, String nombre, String descripcion, String email, Integer telefono, String direccion, String pais, String contrasenia) {
-        this.id = id;
-        this.nombre = nombre;
+    public ONG(String descripcion,Integer telefono, String direccion, String pais) {
+        
+        
         this.descripcion = descripcion;
-        this.email = email;
+        
         this.telefono = telefono;
         this.direccion = direccion;
         this.pais = pais;
-        this.contrasenia = contrasenia;
+        
     }
 
-    public Integer getId() {
-        return this.id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+   
 
     public String getDescripcion() {
         return this.descripcion;
@@ -71,13 +54,7 @@ public class ONG implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    
 
     public Integer getTelefono() {
         return this.telefono;
@@ -103,23 +80,15 @@ public class ONG implements Serializable {
         this.pais = pais;
     }
 
-    public String getContrasenia() {
-        return this.contrasenia;
-    }
-
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
-    }
-
-   
-    
-
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        return result;
+        int hash = 5;
+        hash = 61 * hash + Objects.hashCode(this.descripcion);
+        hash = 61 * hash + Objects.hashCode(this.telefono);
+        hash = 61 * hash + Objects.hashCode(this.direccion);
+        hash = 61 * hash + Objects.hashCode(this.pais);
+        hash = 61 * hash + Objects.hashCode(this.actividades);
+        return hash;
     }
 
     @Override
@@ -133,12 +102,17 @@ public class ONG implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        ONG other = (ONG) obj;
-        if (id == null) {
-            if (other.id != null) {
-                return false;
-            }
-        } else if (!id.equals(other.id)) {
+        final ONG other = (ONG) obj;
+        if (!Objects.equals(this.descripcion, other.descripcion)) {
+            return false;
+        }
+        if (!Objects.equals(this.pais, other.pais)) {
+            return false;
+        }
+        if (!Objects.equals(this.telefono, other.telefono)) {
+            return false;
+        }
+        if (!Objects.equals(this.actividades, other.actividades)) {
             return false;
         }
         return true;
@@ -146,7 +120,9 @@ public class ONG implements Serializable {
 
     @Override
     public String toString() {
-        return "ONG [id=" + id + ", nombre=" + nombre + "]";
+        return "ONG{" + "descripcion=" + descripcion + ", telefono=" + telefono + ", direccion=" + direccion + ", pais=" + pais + ", actividades=" + actividades + '}';
     }
 
+   
+   
 }

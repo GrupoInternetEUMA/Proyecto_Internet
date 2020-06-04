@@ -13,37 +13,37 @@
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{ModificarActividad.actividad.nombre}"/></td>
+                            <td><h:inputText value="#{ListaActividad.actividad.nombre}"/></td>
                         </tr>
                         <tr>
                             <td>ID: </td>
-                            <td><h:inputText value="#{ModificarActividad.actividad.id}"/></td>
+                            <td><h:inputText value="#{ListaActividad.actividad.id}"/></td>
                         </tr>
                         <tr>
                             <td>Fecha inicio: </td>
-                            <td><h:inputText value="#{ModificarActividad.actividad.fecha_inicio}"/></td>
+                            <td><h:inputText value="#{ListaActividad.actividad.fecha_inicio}"/></td>
                         </tr>
                         <tr>
                             <td>Fecha fin: </td>
-                            <td><h:inputText value="#{ModificarActividad.actividad.fecha_fin}"/></td>
+                            <td><h:inputText value="#{ListaActividad.actividad.fecha_fin}"/></td>
                         </tr>
                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                             <tr>
                                 <td>Estado: </td>
-                                <td><h:inputText value="#{ModificarActividad.actividad.estado}"/></td>
+                                <td><h:inputText value="#{ListaActividad.actividad.estado}"/></td>
                             </tr>
                         </c:if>
                         <tr>
                             <td>Tipo de actividad: </td>
-                            <td><h:inputText value="#{ModificarActividad.actividad.tipo}"/></td>
+                            <td><h:inputText value="#{ListaActividad.actividad.tipo}"/></td>
                         </tr>
                         <tr>
                             <td>Lugar: </td>
-                            <td><h:inputText value="#{ModificarActividad.actividad.lugar}"/></td>
+                            <td><h:inputText value="#{ListaActividad.actividad.lugar}"/></td>
                         </tr>
                         <tr>
                             <td>Descripcion: </td>
-                            <td><h:inputText value="#{ModificarActividad.actividad.descripcion}"/></td>
+                            <td><h:inputText value="#{ListaActividad.actividad.descripcion}"/></td>
                         </tr>
                         <tr>
                             <td colspan="7">
@@ -53,7 +53,7 @@
                     </table>
                 </h:form>
                 <h:form>
-                    <h:commandButton value="Insertar"  action="#{ModificarActividad.anadir()}"/>
+                    <h:commandButton value="Insertar"  action="#{ListaActividades.anadir()}"/>
                     <h:column> <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> </h:column>
                 </h:form>
             </c:when>

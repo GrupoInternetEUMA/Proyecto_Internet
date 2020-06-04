@@ -5,6 +5,11 @@ import static Entidades.Usuario.Rol.ADMINISTRADOR;
 import static Entidades.Usuario.Rol.ONG;
 import static Entidades.Usuario.Rol.RESPONSABLE;
 import static Entidades.Usuario.Rol.ALUMNO;
+import ejb.ActividadEJB;
+import ejb.AlumnoEJB;
+import ejb.ONGEJB;
+import ejb.ResponsableEJB;
+import ejb.UsuarioEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -23,6 +28,8 @@ public class ControlAutorizacion implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Usuario usuario;
+  
+           
    
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
@@ -115,12 +122,27 @@ public class ControlAutorizacion implements Serializable {
     }
 
     public String misDatos() {
-        if (getUsuario().getRol().equals(getUsuario().getRol().NORMAL) || getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)
-                || getUsuario().getRol().equals(getUsuario().getRol().ALUMNO) || getUsuario().getRol().equals(getUsuario().getRol().ONG)) {
-
+        
+        if (getUsuario().getRol().equals(getUsuario().getRol().NORMAL)){
+           
             return "misDatos.xhtml";
         }
+        else if(getUsuario().getRol().equals(getUsuario().getRol().RESPONSABLE)){
+            
+            return "misDatos.xhtml";
+        }else if(getUsuario().getRol().equals(getUsuario().getRol().ALUMNO)){
+            
+            return "misDatos.xhtml";
+        }else if(getUsuario().getRol().equals(getUsuario().getRol().ONG)){
+        
+            return "misDatos.xhtml";
+        }
+            
+            
+        else{
+    
         return null;
+        }
     }
 
     public String logout() {

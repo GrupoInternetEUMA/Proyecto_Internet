@@ -38,7 +38,7 @@
 
                     <!-- OPCIONES PARA RESPONSABLE-->
                     <c:if test="#{controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-                        <li><h:commandLink action="#{controlAutorizacion.misDatos()}" value="Mis Datos"/></li>
+                        <li><h:commandLink action="#{ListaResponsables.getResponsableC()}" value="Mis Datos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaAlumnos()}" value="Alumnos"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaActividades()}" value="Actividades"/></li>
                         <li><h:commandLink action="#{controlAutorizacion.listaSolicitudes()}" value="Solicitudes"/></li>

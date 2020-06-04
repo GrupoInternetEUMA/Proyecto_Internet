@@ -3,103 +3,107 @@
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:define name="title">editar usuario</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{ModificarUsuario.usuario}">Modificar Usuario</h1>
+                <h1>Modificar Usuario</h1>
                 <h:form id="editarUsuario">
+                <h:inputHidden value="#{ListaUsuarios.usuario.usuario}"/>
+                <h:inputHidden value="#{ListaUsuarios.usuario.dni}"/>
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{i.nombre}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{i.apellidos}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{i.estudios}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{i.idioma}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{i.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.fecha_nacimiento}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{i.email}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{i.contrasenia}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.contrasenia}"/></td>
                         </tr>
                         <tr>
                             <td>Rol: </td>
-                            <td><h:inputText value="#{i.rol}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.rol}"/></td>
                         </tr>
                     </table>
-                </h:form>
-                <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ModificarUsuario.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaUsuarios.edit()}"/> </h:column> 
                     <h:column> <h:commandButton value="Cancelar" action="listaUsuarios.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>
 
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'NORMAL'}">
-                <h1 var = "i" value="#{ModificarUsuario.usuario}">Modificar Usuario</h1>
+                <h1>Modificar Usuario</h1>
                 <h:form id="editarUsuario">
+                <h:inputHidden value="#{ListaUsuarios.usuario.usuario}"/>
+                <h:inputHidden value="#{ListaUsuarios.usuario.dni}"/>
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{i.nombre}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{i.apellidos}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{i.estudios}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{i.idioma}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{i.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.fecha_nacimiento}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{i.email}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{i.contrasenia}"/></td>
+                            <td><h:inputText value="#{ListaUsuarios.usuario.contrasenia}"/></td>
                         </tr>
-
                     </table>
-                </h:form>
-                <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ModificarUsuario.editar()}"/> </h:column> 
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaUsuarios.edit()}"/> </h:column> 
                     <h:column> <h:commandButton value="Cancelar" action="misDatos.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>

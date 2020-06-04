@@ -3,6 +3,7 @@ package bakingbeans;
 import Entidades.Usuario;
 import Entidades.Responsable_actividad;
 import Entidades.Usuario.Rol;
+import ejb.ResponsableEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -12,31 +13,45 @@ import java.util.Iterator;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 @Named(value = "ListaResponsables")
-@SessionScoped
+@RequestScoped
 public class ListaResponsables implements Serializable {
 
-    private ArrayList<Responsable_actividad> responsables;
     private Usuario usuario;
-    private Responsable_actividad responsable;
-
+    
+    private Responsable_actividad responsable = new Responsable_actividad();
+    @Inject
+    ResponsableEJB bbdd;
+    @Inject
+    ControlAutorizacion ctrl;
+    
+    
     public ListaResponsables() {
-        responsables = new ArrayList<>();
-        responsables.add(new Responsable_actividad( 12345678, "Francisco", "El guay", "Fisica Nuclear", "Castellano", new Date(1975, 5, 30), "profe1@uma.es", "pass123", Rol.RESPONSABLE, "fisicoLoco", "Ciencias naturales"));
-        responsables.add(new Responsable_actividad( 39645678, "Vaiana", "Jimenez Guacho", "Odontologia", "Aleman", new Date(1987, 10, 6), "profe2@uma.es", "321PaS", Rol.RESPONSABLE, "Sacamuelas", "Anatomia"));
+    
     }
-
+    
+    public String getResponsableC(){
+        
+      for(Responsable_actividad res : bbdd.findAll()){
+           if(res.getUsuario().equals(ctrl.getUsuario().getUsuario())){
+               responsable = res;
+           }
+       } 
+      return "misDatos.xhtml";
+     }
+    
+    public List<Responsable_actividad> getResponsables() {
+        return bbdd.findAll();
+    }
+    
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
     public Usuario getUsuario() {
         return usuario;
-    }
-
-    public ArrayList<Responsable_actividad> getResponsables() {
-        return responsables;
     }
 
     public void setResponsables(Responsable_actividad responsable) {
@@ -75,5 +90,71 @@ public class ListaResponsables implements Serializable {
         usuario = null;
         return "login.xhtml";
     }
+    
+    public String getDepartamento() {
+        return this.responsable.getDepartamento();
+    }
 
+    public Integer getDni() {
+        return this.responsable.getDni();
+    }
+
+    public String getNombre() {
+        return this.responsable.getNombre();
+    }
+
+    public String getApellidos() {
+        return this.responsable.getApellidos();
+    }
+
+    public String getEstudios() {
+        return this.responsable.getEstudios();
+    }
+
+    public String getIdioma() {
+        return this.responsable.getIdioma();
+    }
+
+    public Date getFecha_nacimiento() {
+        return this.responsable.getFecha_nacimiento();
+    }
+
+    public String getEmail() {
+        return this.responsable.getEmail();
+    }
+
+    public String getContrasenia() {
+        return this.responsable.getContrasenia();
+    }
+
+    public Rol getRol() {
+        return this.responsable.getRol();
+    }
+
+    public String ListaResponsables() {
+        return "listaResponsables.xhtml";
+    }
+
+    public String verResponsable(Responsable_actividad res) {
+        responsable = res;
+        return "editarResponsable.xhtml";
+    }
+    
+    public String editar(){
+        bbdd.edit(responsable);
+        return "listaResponsables.xhtml";
+    }
+    
+    public void eliminar(Responsable_actividad a){
+        bbdd.remove(a);
+        
+    }
+    
+    public String anadir(){
+        responsable.setRol(Rol.RESPONSABLE);
+        this.bbdd.create(this.responsable);
+        this.responsable = new Responsable_actividad();
+        return "listaResponsables.xhtml";
+       
+    }
 }

@@ -6,12 +6,14 @@
 package ejb;
 
 import java.util.List;
+import javax.ejb.Local;
 import javax.persistence.EntityManager;
 
 /**
  *
  * @author josea
  */
+@Local
 public abstract class AbstractEJB<T> {
     private Class<T> entityClass;
 
@@ -36,6 +38,7 @@ public abstract class AbstractEJB<T> {
     public T find(Object id) {
         return getEntityManager().find(entityClass, id);
     }
+    
 
     public List<T> findAll() {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();

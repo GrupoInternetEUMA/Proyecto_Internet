@@ -14,7 +14,7 @@
                     <table id="tablaLista">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Usuario</th>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
                                 <th>Email</th>
@@ -25,9 +25,9 @@
                             </tr>
                         </thead>
                         <body>
-                            <ui:repeat var="i" value="#{ListaONGs.ONGs}">
+                            <ui:repeat var="i" value="#{ListaONGs.getONGs()}">
                                 <tr>
-                                    <td>#{i.id}</td>
+                                    <td>#{i.usuario}</td>
                                     <td>#{i.nombre}</td>
                                     <td>#{i.descripcion}</td>
                                     <td>#{i.email}</td>
@@ -38,12 +38,12 @@
                                     <td>
                                         <h:form id="ongaccion">
                                             <h:column>
-                                                <h:commandButton value="Editar" action="editarONG.xhtml" />
+                                                <h:commandButton value="Editar" action="#{ListaONGs.verONG(i)}" />
                                             </h:column>
                                         </h:form> 
                                         <h:form>
                                             <h:column>
-                                                <h:commandButton value="Borrar" action="#{ModificarONG.eliminar()}" />
+                                                <h:commandButton value="Borrar" action="#{ListaONGs.eliminar(i)}" />
                                             </h:column>
                                         </h:form>
                                     </td>
@@ -55,7 +55,7 @@
                 </div>
                 <h:form id="insertar">
                     <h:column>
-                        <h:commandButton value="Inserta ONG" action="anadirONG.xhtml" />
+                        <h:commandButton value="Inserta ONG" action="#{ListaONGs.crearONG()}" />
                     </h:column>
                 </h:form>
 

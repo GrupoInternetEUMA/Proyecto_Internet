@@ -32,7 +32,13 @@ public class ListaAlumnos implements Serializable {
     @Inject
     AlumnoEJB bbdd;
     @Inject
+    BaseDeDatosLocal db;
+    @Inject
     ControlAutorizacion ctrl;
+    
+    public ListaAlumnos() {
+        
+    }
     
 
     /*public ListaAlumnos() {
@@ -145,12 +151,12 @@ public class ListaAlumnos implements Serializable {
     }
 
     public String verAlumno(Alumno a) {
+        alumno = a;
         return "editarAlumno.xhtml";
     }
     
-    public String editar(Alumno a){
-        this.alumno = a;
-        bbdd.edit(this.alumno);
+    public String editar(){
+        bbdd.edit(alumno);
         return "listaAlumnos.xhtml";
     }
     
@@ -161,7 +167,7 @@ public class ListaAlumnos implements Serializable {
     
     public String anadir(){
         alumno.setRol(Rol.ALUMNO);
-        this.bbdd.create(this.alumno);
+        this.bbdd.create(alumno);
         this.alumno = new Alumno();
         return "listaAlumnos.xhtml";
        

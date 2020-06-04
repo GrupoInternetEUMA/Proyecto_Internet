@@ -49,6 +49,10 @@ public class BaseDeDatos implements BaseDeDatosLocal {
       em.persist(em.merge(u));
   }
   
+  public void editAlumno(Alumno a) {
+      em.persist(em.merge(a));
+  }
+  
   public void borrarUsario(Usuario u) {
       em.remove(u);
   }

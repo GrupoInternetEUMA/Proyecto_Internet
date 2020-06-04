@@ -19,23 +19,23 @@
                             </tr>
                         </thead>
                         <body>
-                            <ui:repeat var = "i" value="#{ListaSolicitudes.solicitudes}">
+                            <ui:repeat var = "i" value="#{ListaSolicitudes.getSolicitudes()}">
                                 <tr>                               
                                     <td>#{i.id}</td>                              
                                     <td>#{i.estado}</td>                               
                                     <td>#{i.fecha_solicitud}</td>                                                        
                                     <td> 
-                                        <h:form id = "solicitudaccion">
+                                        <h:form id="solicitudaccion"> 
                                             <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
                                                 <h:column> 
-                                                    <h:commandButton value="Editar" action="#{ModificarSolicitud.verSolicitud(i.id)}"/> 
+                                                    <h:commandButton value="Editar" action="#{ListaSolicitudes.verSolicitud(i)}"/> 
                                                 </h:column> 
                                             </c:if>
-                                        </h:form>
+                                        </h:form> 
                                         <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
                                             <h:form> 
                                                 <h:column> 
-                                                    <h:commandButton value="Borrar" action="#{ModificarSolicitud.eliminar()}"/> 
+                                                    <h:commandButton value="Borrar" action="#{ListaSolicitudes.eliminar(i)}"/> 
                                                 </h:column> 
                                             </h:form>
                                         </c:if>

@@ -4,117 +4,120 @@
                 xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f = "http://java.sun.com/jsf/core">
     <ui:define name="title">editar alumno</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">
-                <h1 var = "i" value="#{ListaAlumnos.alumno}">Modificar Alumno</h1>
+                <h1>Modificar Alumno</h1>
                 <h:form id="editarAlumno">
+                    <h:inputHidden value="#{ListaAlumnos.alumno.usuario}"/>
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{i.nombre}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{i.apellidos}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{i.estudios}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{i.idioma}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{i.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.fecha_nacimiento}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{i.email}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Titulación: </td>
-                            <td><h:inputText value="#{i.titulacion}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.titulacion}"/></td>
                         </tr>
 
                         <tr>
                             <td>Nº expediente: </td>
-                            <td><h:inputText value="#{i.num_expediente}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.num_expediente}"/></td>
                         </tr>
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{i.contrasenia}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.contrasenia}"/></td>
                         </tr>
                         
-                    </table>
-                </h:form>
-                <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ListaAlumnos.editar(i)}"/> </h:column> 
+                    </table> 
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaAlumnos.editar()}"/> </h:column> 
                     <h:column> <h:commandButton value="Cancelar" action="listaAlumnos.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>
 
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ALUMNO'}">
-                <h1 var = "i" value="#{ListaAlumnos.alumno}">Modificar Alumno</h1>
+                <h1>Modificar Alumno</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
                             <td>Nombre: </td>
-                            <td><h:inputText value="#{i.nombre}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.nombre}"/></td>
                         </tr>
 
                         <tr>
                             <td>Apellidos: </td>
-                            <td><h:inputText value="#{i.apellidos}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.apellidos}"/></td>
                         </tr>
 
                         <tr>
                             <td>Estudios: </td>
-                            <td><h:inputText value="#{i.estudios}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.estudios}"/></td>
                         </tr>
 
                         <tr>
                             <td>Idioma: </td>
-                            <td><h:inputText value="#{i.idioma}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.idioma}"/></td>
                         </tr>
 
                         <tr>
                             <td>Fecha nacimiento: </td>
-                            <td><h:inputText value="#{i.fecha_nacimiento}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.fecha_nacimiento}">
+                                <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
                         </tr>
 
                         <tr>
                             <td>Email: </td>
-                            <td><h:inputText value="#{i.email}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.email}"/></td>
                         </tr>
 
                         <tr>
                             <td>Titulación: </td>
-                            <td><h:inputText value="#{i.titulacion}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.titulacion}"/></td>
                         </tr>
 
                         <tr>
                             <td>Nº expediente: </td>
-                            <td><h:inputText value="#{i.num_expediente}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.num_expediente}"/></td>
                         </tr>
                         <tr>
                             <td>Password: </td>
-                            <td><h:inputText value="#{i.contrasenia}"/></td>
+                            <td><h:inputText value="#{ListaAlumnos.alumno.contrasenia}"/></td>
                         </tr>
                     </table>
-                </h:form>
-                <h:form> 
-                    <h:column> <h:commandButton value="Actualizar" action="#{ListaAlumnos.editar(i)}"/> </h:column> 
+   
+                    <h:column> <h:commandButton value="Actualizar" action="#{ListaAlumnos.editar()}"/> </h:column> 
                     <h:column> <h:commandButton value="Cancelar" action="misDatos.xhtml" /> </h:column>                     
                 </h:form>
             </c:when>

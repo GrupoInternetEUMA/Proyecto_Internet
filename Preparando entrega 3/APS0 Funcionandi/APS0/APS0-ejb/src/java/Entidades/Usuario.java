@@ -55,7 +55,7 @@ public class Usuario implements Serializable {
     public Usuario() {
         super();
     }
-
+    
     public Usuario(String usuario, String contrasenia, Rol rol) {
         setUsuario(usuario);
         setContrasenia(contrasenia);

@@ -8,7 +8,7 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ADMINISTRADOR'}">                                
-                <h1 var = "i" value="#{ModificarActividad.actividad}">Modificar Actividad</h1>
+                <h1 var = "i" value="#{ListaActividad.actividad}">Modificar Actividad</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
@@ -50,7 +50,7 @@
                     <h:form>
 
                         <h:column> 
-                            <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
+                            <h:commandButton value="Actualizar" action="#{ListaActividades.editar(i)}"/> 
                         </h:column>
                         <h:column> 
                             <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
@@ -60,7 +60,7 @@
             </c:when>
 
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                                
-                <h1 var = "i" value="#{ModificarActividad.actividad}">Modificar Actividad</h1>
+                <h1 var = "i" value="#{ListaActividad.actividad}">Modificar Actividad</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
@@ -76,7 +76,7 @@
                     <h:form>
 
                         <h:column> 
-                            <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
+                            <h:commandButton value="Actualizar" action="#{ListaActividad.editar(i)}"/> 
                         </h:column>
                         <h:column> 
                             <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
@@ -88,7 +88,7 @@
 
 
             <c:when test="#{controlAutorizacion.getUsuario().rol == 'ONG'}">                                
-                <h1 var = "i" value="#{ModificarActividad.actividad}">Modificar Actividad</h1>
+                <h1 var = "i" value="#{ListaActividad.actividad}">Modificar Actividad</h1>
                 <h:form id="editarAlumno">
                     <table>
                         <tr>
@@ -123,7 +123,7 @@
                     <h:form>
 
                         <h:column> 
-                            <h:commandButton value="Actualizar" action="#{ModificarActividad.editar()}"/> 
+                            <h:commandButton value="Actualizar" action="#{ListaActividad.editar(i)}"/> 
                         </h:column>
                         <h:column> 
                             <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 

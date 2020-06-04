@@ -3,7 +3,8 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+                xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     <html>
 
         <ui:define name="content">
@@ -43,7 +44,7 @@
                                         <tr>
 
                                             <td><h:inputText a:placeholder="NOMBRE"
-                                                             value="#{ModificarUsuario.usuario.nombre}"
+                                                             value="#{ListaUsuarios.usuario.nombre}"
                                                              style="padding: 15px 20px;
                                                              box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" />
                                             </td>
@@ -51,7 +52,7 @@
                                         <tr>
 
                                             <td><h:inputText a:placeholder="APELLIDOS"
-                                                             value="#{ModificarUsuario.usuario.apellidos}"
+                                                             value="#{ListaUsuarios.usuario.apellidos}"
                                                              style="padding: 15px 20px;
                                                              box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" /></td>
                                         </tr>
@@ -59,7 +60,7 @@
                                         <tr>
 
                                             <td><h:inputText a:placeholder="E-MAIL"
-                                                             value="#{ModificarUsuario.usuario.email}"
+                                                             value="#{ListaUsuarios.usuario.email}"
                                                              style="padding: 15px 20px;
                                                              box-sizing: border-box; text-align: center; font-size: 100%px;" /></td>
                                         </tr>
@@ -67,21 +68,15 @@
                                         <tr>
 
                                             <td><h:inputSecret a:placeholder="CONTRASEÑA"
-                                                               value="#{ModificarUsuario.usuario.contrasenia}"
+                                                               value="#{ListaUsuarios.usuario.contrasenia}"
                                                                style="padding: 15px 20px;
                                                                box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" /></td>
                                         </tr>
+                                        
                                         <tr>
 
-                                            <td><h:inputText a:placeholder="REPETIR CONTRASEÑA"
-                                                             value="#{ModificarUsuario.usuario.contrasenia}"
-                                                             style="padding: 15px 20px;
-                                                             box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" /></td>
-                                        </tr>
-                                        <tr>
-
-                                            <td><h:inputText a:placeholder="NIF"
-                                                             value="#{ModificarUsuario.usuario.NIF}"
+                                            <td><h:inputText a:placeholder="DNI"
+                                                             value="#{ListaUsuarios.usuario.dni}"
                                                              style="padding: 15px 20px;
                                                              box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" /></td>
                                         </tr>
@@ -89,32 +84,35 @@
                                         <tr>
 
                                             <td><h:inputText a:placeholder="USUARIO (NICK)"
-                                                             value="#{ModificarUsuario.usuario.usuario}"
+                                                             value="#{ListaUsuarios.usuario.usuario}"
                                                              style="padding: 15px 20px;
                                                              box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" /></td>
                                         </tr>
                                         <tr>
                                             <td><h:inputText a:placeholder="FECHA NACIMIENTO"
-                                                             value="#{ModificarUsuario.usuario.fecha_nacimiento}"
+                                                             value="#{ListaUsuarios.usuario.fecha_nacimiento}"
                                                              style="padding: 15px 20px;
-                                                             box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" /></td>
+                                                             box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" >
+                                            <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                                </h:inputText></td>
                                         </tr>
                                         <tr>
                                             <td><h:inputText a:placeholder="ESTUDIOS"
-                                                             value="#{ModificarUsuario.usuario.estudios}"
+                                                             value="#{ListaUsuarios.usuario.estudios}"
                                                              style="padding: 15px 20px;
                                                              box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" /></td>
                                         </tr>
                                         <tr>
                                             <td><h:inputText a:placeholder="IDIOMA"
-                                                             value="#{ModificarUsuario.usuario.idioma}"
+                                                             value="#{ListaUsuarios.usuario.idioma}"
                                                              style="padding: 15px 20px;
                                                              box-sizing: border-box; text-align: center; font-size: 100%px; margin:5px;" /></td>
                                         </tr>
+                                        
                                         <tr>
                                             <h:form id="registrarse">
                                                 <td colspan="11"><h:commandButton value="Registrar"
-                                                                                  action="#{ModificarUsuario.anadir()}"
+                                                                                  action="#{ListaUsuarios.registro()}"
                                                                                   style="  text-decoration: none;
                                                                                   font: 20px arial, sans-serif;
                                                                                   margin-top: 10px;
