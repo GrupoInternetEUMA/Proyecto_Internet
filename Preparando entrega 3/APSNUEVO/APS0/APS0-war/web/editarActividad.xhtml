@@ -48,7 +48,7 @@
 
                     </table>
 
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR' || controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMINISTRADOR'}">
 
 
                         <h:column> 
@@ -62,30 +62,82 @@
                 </h:form>
             </c:when>
 
-             <c:when test="#{controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                                
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'RESPONSABLE'}">                                
                 <h1>Modificar Actividad</h1>
-                <h:form id="editarAlumno">
-                     <h:inputHidden value="#{ListaActividades.actividad.id}"/>
+                <h:form id="editarActividad">
                     <table>
-                        
                         <tr>
+                            <td><h:inputHidden value="#{ListaActividades.actividad.nombre}"/></td>
+                            
+                            <td><h:inputHidden value="#{ListaActividades.actividad.fecha_inicio}">
+                             <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputHidden></td>
+                            
+                            <td><h:inputHidden value="#{ListaActividades.actividad.fecha_fin}">
+                            <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputHidden></td>
+                            
+                            <td><h:inputHidden value="#{ListaActividades.actividad.tipo}"/></td>
+                            <td><h:inputHidden value="#{ListaActividades.actividad.lugar}"/></td>
+                            <td><h:inputHidden value="#{ListaActividades.actividad.descripcion}"/></td>
+                            <h:inputHidden value="#{ListaActividades.actividad.id}"/>
+
                             <td>Estado: </td>
                             <td><h:inputText value="#{ListaActividades.actividad.estado}"/></td>
                         </tr>
+
+
+                    </table>
+
+                        <h:column> 
+                            <h:commandButton value="Actualizar" action="#{ListaActividades.editar()}"/> 
+                        </h:column>
+                        <h:column> 
+                            <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
+                        </h:column>
+                    
+                    </h:form>
+                
+            </c:when>
+
+
+
+            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ONG'}">                                
+                <h1>Modificar Actividad</h1>
+                <h:form id="editarActividad">
+                    <table>
+                        <h:inputHidden value="#{ListaActividades.actividad.id}"/>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td><h:inputText value="#{ListaActividades.actividad.nombre}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha inicio: </td>
+                            <td><h:inputText value="#{ListaActividades.actividad.fecha_inicio}">
+                            <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
+                        </tr>                       
+                        <tr>
+                            <td>Fecha fin: </td>
+                            <td><h:inputText value="#{ListaActividades.actividad.fecha_fin}"><f:convertDateTime pattern="yyyy-MM-dd"/>  
+                                </h:inputText></td>
+                        </tr>                        
                         <tr>
                             <td>Tipo de actividad: </td>
                             <td><h:inputText value="#{ListaActividades.actividad.tipo}"/></td>
                         </tr>
-                        
+                        <tr>
+                            <td>Lugar: </td>
+                            <td><h:inputText value="#{ListaActividades.actividad.lugar}"/></td>
+                        </tr>
                         <tr>
                             <td>Descripcion: </td>
                             <td><h:inputText value="#{ListaActividades.actividad.descripcion}"/></td>
                         </tr>
 
                     </table>
-
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'RESPONSABLE'}">
-
+                
 
                         <h:column> 
                             <h:commandButton value="Actualizar" action="#{ListaActividades.editar()}"/> 
@@ -93,56 +145,8 @@
                         <h:column> 
                             <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
                         </h:column>
-
-                    </c:if>
-                </h:form>
-            </c:when>
-
-
-
-            <c:when test="#{controlAutorizacion.getUsuario().rol == 'ONG'}">                                
-                <h1 var = "i" value="#{ListaActividad.actividad}">Modificar Actividad</h1>
-                <h:form id="editarAlumno">
-                    <table>
-                        <tr>
-                            <td>Nombre: </td>
-                            <td><h:inputText value="#{i.nombre}"/></td>
-                        </tr>
-
-                        <tr>
-                            <td>Fecha inicio: </td>
-                            <td><h:inputText value="#{i.fecha_inicio}"/></td>
-                        </tr>                       
-                        <tr>
-                            <td>Fecha fin: </td>
-                            <td><h:inputText value="#{i.fecha_fin}"/></td>
-                        </tr>                        
-                        <tr>
-                            <td>Tipo de actividad: </td>
-                            <td><h:inputText value="#{i.tipo}"/></td>
-                        </tr>
-                        <tr>
-                            <td>Lugar: </td>
-                            <td><h:inputText value="#{i.lugar}"/></td>
-                        </tr>
-                        <tr>
-                            <td>Descripcion: </td>
-                            <td><h:inputText value="#{i.descripcion}"/></td>
-                        </tr>
-
-                    </table>
-                </h:form>
-                <c:if test="#{controlAutorizacion.usuario.rol == 'ONG'}">
-                    <h:form>
-
-                        <h:column> 
-                            <h:commandButton value="Actualizar" action="#{ListaActividad.editar(i)}"/> 
-                        </h:column>
-                        <h:column> 
-                            <h:commandButton value="Cancelar" action="listaActividades.xhtml" /> 
-                        </h:column>
                     </h:form>
-                </c:if>
+                
             </c:when>
 
 

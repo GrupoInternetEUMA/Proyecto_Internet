@@ -7,6 +7,7 @@ import Entidades.Usuario.Rol;
 import ejb.ActividadEJB;
 import ejb.ONGEJB;
 import ejb.ResponsableEJB;
+import ejb.UsuarioEJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -32,17 +33,19 @@ public class ListaActividades implements Serializable {
     @Inject
     ActividadEJB bbdd;
     @Inject
+    UsuarioEJB bbdd2;
+    @Inject
     ResponsableEJB bbddr;
     @Inject
     ControlAutorizacion ctrl;
-    
+    private ArrayList<Usuario> participantes;
     protected String o =new String();
     protected String r = new String();
     @Inject
     ONGEJB bbddo;
     
     public ListaActividades(){
-        
+        participantes = new ArrayList<>();
     }
     
     public Actividad getActividad() {
@@ -51,6 +54,16 @@ public class ListaActividades implements Serializable {
     
     public List<Actividad> getActividades(){
         return this.bbdd.findAll();
+    }
+    
+    public List<Usuario> getParticipantes(){
+        participantes = new ArrayList<>();
+        for(Usuario u : bbdd2.findAll()){
+          if(u.getUsuario().equals(actividad)){
+               participantes.add(u);
+          }
+        }
+        return null;
     }
 
     public String getO() {

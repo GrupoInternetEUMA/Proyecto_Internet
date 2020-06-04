@@ -1,7 +1,6 @@
 package bakingbeans;
 
-import Aplicacion.BaseDeDatos;
-import Aplicacion.BaseDeDatosLocal;
+
 import Entidades.Usuario;
 import Entidades.Alumno;
 import Entidades.Responsable_actividad;
@@ -32,8 +31,7 @@ public class ListaAlumnos implements Serializable {
     private Alumno alumno = new Alumno();
     @Inject
     AlumnoEJB bbdd;
-    @Inject
-    BaseDeDatosLocal db;
+   
     @Inject
     ControlAutorizacion ctrl;
     
