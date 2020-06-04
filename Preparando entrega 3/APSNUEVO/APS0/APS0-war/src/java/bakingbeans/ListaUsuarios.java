@@ -28,7 +28,16 @@ public class ListaUsuarios implements Serializable {
     public ListaUsuarios() {
 
     }
-
+public String getUsuarioC(){
+        
+      for(Usuario usu : bbdd.findAll()){
+           if(usu.getUsuario().equals(ctrl.getUsuario().getUsuario())){
+               usuario = usu;
+            }
+       } 
+      return "misDatos.xhtml";
+     }
+    
     public List<Usuario> findAll() {
         return this.bbdd.findAll();
     }

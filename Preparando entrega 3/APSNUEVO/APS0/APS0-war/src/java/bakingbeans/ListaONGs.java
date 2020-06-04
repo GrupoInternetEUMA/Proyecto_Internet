@@ -26,7 +26,16 @@ public class ListaONGs implements Serializable {
     public Usuario getUsuario() {
         return usuario;
     }
-
+public String getONGC(){
+        
+      for(ONG ong : bbdd.findAll()){
+           if(ong.getUsuario().equals(ctrl.getUsuario().getUsuario())){
+               this.ong = ong;
+               
+           }
+       } 
+      return "misDatos.xhtml";
+     }
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }

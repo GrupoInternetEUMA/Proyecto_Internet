@@ -52,7 +52,17 @@ public class ListaAlumnos implements Serializable {
     public List<Alumno> getAlumnos() {
         return bbdd.findAll();
     }
-
+    
+    public String getAlumnoC(){
+        
+      for(Alumno alu : bbdd.findAll()){
+           if(alu.getUsuario().equals(ctrl.getUsuario().getUsuario())){
+               alumno = alu;
+            }
+       } 
+      return "misDatos.xhtml";
+     }
+    
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
